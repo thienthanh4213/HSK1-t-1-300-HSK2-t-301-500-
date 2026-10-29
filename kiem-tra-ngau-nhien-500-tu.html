@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK 500 từ — Kiểm tra ngẫu nhiên</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#ea580c; --primary-dark:#c2410c; --primary-light:#fef3c7;
+  --blue:#1e40af; --green:#059669;
+  --bg:#fffbeb; --card-bg:#ffffff; --text:#1f2937; --text-muted:#64748b;
+  --border:#e2e8f0; --correct:#10b981; --incorrect:#ef4444; --warn:#d97706;
+  --font:'Outfit','Noto Sans SC','Segoe UI',Arial,sans-serif;
+  --shadow:0 10px 25px -5px rgba(0,0,0,.05),0 8px 10px -6px rgba(0,0,0,.05);
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0f172a;--card-bg:#1e293b;--text:#f8fafc;--text-muted:#94a3b8;--border:#334155;--primary-light:rgba(245,158,11,.18);}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:21px}
+.vi{font-size:1.08rem}
+.back{display:inline-block;margin-bottom:12px;color:var(--primary);font-weight:700;text-decoration:none}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;}
+.site-header{background:linear-gradient(120deg,#facc15,#f59e0b 55%,#ea580c);color:#3b1d00;color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.unit-byline{font-size:.75rem;opacity:.85;margin-bottom:3px;}
+.unit-title{font-size:1.2rem;font-weight:700;line-height:1.2;}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:1.35rem;background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.7);border-radius:9999px;padding:4px 16px;min-width:104px;text-align:center;}
+.timer.low{background:#ef4444;border-color:#ef4444;animation:pulse 1s infinite;}
+@keyframes pulse{50%{opacity:.7}}
+main{max-width:760px;margin:0 auto;padding:24px 16px 120px;}
+.intro{color:var(--text-muted);font-size:.93rem;margin-bottom:18px;line-height:1.6;}
+.intro b{color:var(--text);}
+.student-bar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:18px;box-shadow:var(--shadow);}
+.student-bar label{font-weight:700;font-size:.9rem;white-space:nowrap;}
+.student-bar input{font-family:var(--font);font-size:.95rem;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;flex:1;min-width:180px;background:var(--bg);color:var(--text);}
+.student-bar input:focus{outline:none;border-color:var(--primary);}
+.warn{display:none;color:var(--incorrect);font-size:.86rem;font-weight:700;width:100%;}
+.btn{font-family:var(--font);font-weight:700;font-size:.95rem;border:none;border-radius:12px;padding:11px 22px;cursor:pointer;background:var(--primary);color:#fff;transition:.2s;}
+.btn:hover{background:var(--primary-dark);}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:6px 20px;box-shadow:var(--shadow);}
+.card.locked{opacity:.45;pointer-events:none;filter:blur(3px);user-select:none;}
+.q{display:grid;grid-template-columns:34px 1fr;gap:4px 10px;padding:14px 0;border-top:1px dashed var(--border);align-items:center;}
+.q:first-child{border-top:none;}
+.qnum{font-weight:800;color:var(--primary);}
+.prompt{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:1rem;}
+.vi{font-weight:600;}
+.pos{font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:9999px;background:var(--primary-light);color:var(--primary-dark);font-style:italic;}
+@media (prefers-color-scheme: dark){.pos{color:#fdba74;}}
+.ans{grid-column:2;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;}
+input.gap{font-family:var(--font);font-size:1.15rem;font-weight:600;color:var(--primary-dark);background:transparent;border:none;border-bottom:2px solid var(--primary);width:220px;max-width:100%;padding:4px 6px;}
+@media (prefers-color-scheme: dark){input.gap{color:#fdba74;}}
+input.gap:focus{outline:none;background:var(--primary-light);}
+input.gap.correct{border-color:var(--correct);color:var(--correct);}
+input.gap.incorrect{border-color:var(--incorrect);color:var(--incorrect);text-decoration:line-through;}
+input.gap.unanswered{border-color:var(--warn);background:rgba(217,119,6,.08);}
+.key{display:none;font-size:.9rem;color:var(--green);font-weight:700;}
+.key .ipa{font-weight:400;color:var(--text-muted);margin-left:4px;}
+.key.show{display:inline;}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px;}
+.result{display:none;margin-top:20px;background:var(--card-bg);border:2px solid var(--primary);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);}
+.result.show{display:block;}
+.big{font-size:1.9rem;font-weight:800;color:var(--primary);}
+.sub{color:var(--text-muted);font-size:.92rem;margin-top:4px;}
+.submit-status{margin-top:10px;font-size:.88rem;font-weight:600;}
+.submit-status.ok{color:var(--green);} .submit-status.fail{color:var(--incorrect);} .submit-status.sending{color:var(--text-muted);}
+footer{text-align:center;color:var(--text-muted);font-size:.78rem;margin-top:30px;}
+@media (max-width:520px){.unit-title{font-size:1.02rem;} .timer{font-size:1.15rem;min-width:88px;} input.gap{width:100%;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="unit-byline">HSK 3.0 · 500 từ · Từ vựng · Kiểm tra ngẫu nhiên</div>
+    <div class="unit-title">🎲 Ngẫu nhiên 20/500 — Nghĩa → Từ</div>
+  </div>
+  <div class="timer" id="timer">10:00</div>
+</header>
+
+<main>
+  <a class="back" href="index.html">← Mục lục tổng</a>
+  <p class="intro">Đọc <b>nghĩa tiếng Việt</b> và <b>từ loại</b>, rồi gõ <b>từ tiếng Trung</b> tương ứng (bốc ngẫu nhiên 20 từ trong cả 500 từ, mỗi lần mở là một đề mới).
+  Gõ <b>chữ Hán</b> hoặc <b>pinyin</b> đều được — pinyin <b>không cần dấu thanh</b>, không cần dấu cách (vd: <i>àihào</i> = <i>aihao</i>).
+  Có <b>20 câu</b>, làm trong <b>10 phút</b>. Hết giờ bài tự nộp.</p>
+
+  <div class="student-bar">
+    <label for="studentName">👤 Họ tên học sinh:</label>
+    <input type="text" id="studentName" placeholder="Nhập họ tên của em..." autocomplete="off">
+    <button class="btn" id="startBtn" type="button">▶ Bắt đầu làm bài</button>
+    <span class="warn" id="nameWarn">⚠️ Vui lòng nhập họ tên trước khi bắt đầu.</span>
+  </div>
+
+  <div class="card locked" id="quiz"></div>
+
+  <div class="actions">
+    <button class="btn" id="submitBtn" type="button" disabled>📤 Nộp bài</button>
+    <span class="warn" id="blankWarn"></span>
+  </div>
+
+  <div class="result" id="result">
+    <div class="big" id="scoreBig"></div>
+    <div class="sub" id="scoreSub"></div>
+    <div class="submit-status" id="submitStatus"></div>
+    <button class="btn" type="button" style="margin-top:14px" onclick="location.reload()">🔄 Làm đề ngẫu nhiên khác</button>
+  </div>
+
+  <footer>© Ms. Thủy Tiên · 0388929741</footer>
+</main>
+
+<script>
+/* Các từ cố định (no = STT gốc, dùng cho thống kê theo câu); thứ tự hiển thị xáo mỗi lần mở */
+const ITEMS=[
+  {"no": 1, "vi": "Yêu, thích", "pos": "động từ", "a": "爱", "ipa": "ài", "alt": ["ài"]},
+  {"no": 2, "vi": "Số 8", "pos": "số từ", "a": "八", "ipa": "bā", "alt": ["bā"]},
+  {"no": 3, "vi": "Bố", "pos": "danh từ", "a": "爸爸", "ipa": "bàba", "alt": ["bàba"]},
+  {"no": 4, "vi": "Nhé, đi (gợi ý)", "pos": "trợ từ ngữ khí", "a": "吧", "ipa": "ba", "alt": ["ba"]},
+  {"no": 5, "vi": "Trắng", "pos": "tính từ", "a": "白", "ipa": "bái", "alt": ["bái"]},
+  {"no": 6, "vi": "Ban ngày", "pos": "danh từ", "a": "白天", "ipa": "báitiān", "alt": ["báitiān"]},
+  {"no": 7, "vi": "Trăm", "pos": "số từ", "a": "百", "ipa": "bǎi", "alt": ["bǎi"]},
+  {"no": 8, "vi": "Một nửa, rưỡi", "pos": "số từ", "a": "半", "ipa": "bàn", "alt": ["bàn"]},
+  {"no": 9, "vi": "Bánh bao", "pos": "danh từ", "a": "包子", "ipa": "bāozi", "alt": ["bāozi"]},
+  {"no": 10, "vi": "Cốc, ly", "pos": "lượng từ", "a": "杯", "ipa": "bēi", "alt": ["bēi"]},
+  {"no": 11, "vi": "Cái cốc", "pos": "danh từ", "a": "杯子", "ipa": "bēizi", "alt": ["bēizi"]},
+  {"no": 12, "vi": "Phía bắc", "pos": "danh từ phương vị", "a": "北边", "ipa": "běibian", "alt": ["běibian"]},
+  {"no": 13, "vi": "Bắc Kinh", "pos": "danh từ riêng", "a": "北京", "ipa": "Běijīng", "alt": ["Běijīng"]},
+  {"no": 14, "vi": "Quyển, cuốn", "pos": "lượng từ", "a": "本", "ipa": "běn", "alt": ["běn"]},
+  {"no": 15, "vi": "Cái khác", "pos": "đại từ", "a": "别的", "ipa": "biéde", "alt": ["biéde"]},
+  {"no": 16, "vi": "Người khác", "pos": "đại từ", "a": "别人", "ipa": "biérén", "alt": ["biérén"]},
+  {"no": 17, "vi": "Bệnh, ốm", "pos": "danh từ / động từ", "a": "病", "ipa": "bìng", "alt": ["bìng"]},
+  {"no": 18, "vi": "Bệnh nhân", "pos": "danh từ", "a": "病人", "ipa": "bìngrén", "alt": ["bìngrén"]},
+  {"no": 19, "vi": "Không", "pos": "phó từ", "a": "不", "ipa": "bù", "alt": ["bù"]},
+  {"no": 20, "vi": "Không có gì", "pos": "cụm từ", "a": "不客气", "ipa": "bú kèqi", "alt": ["bú kèqi"]},
+  {"no": 21, "vi": "Không cần", "pos": "phó từ", "a": "不用", "ipa": "búyòng", "alt": ["búyòng"]},
+  {"no": 22, "vi": "Món ăn, rau", "pos": "danh từ", "a": "菜", "ipa": "cài", "alt": ["cài"]},
+  {"no": 23, "vi": "Trà", "pos": "danh từ", "a": "茶", "ipa": "chá", "alt": ["chá"]},
+  {"no": 24, "vi": "Kém, thiếu", "pos": "động từ / tính từ", "a": "差", "ipa": "chà", "alt": ["chà"]},
+  {"no": 25, "vi": "Thường thường", "pos": "phó từ", "a": "常常", "ipa": "chángcháng", "alt": ["chángcháng"]},
+  {"no": 26, "vi": "Hát", "pos": "động từ", "a": "唱", "ipa": "chàng", "alt": ["chàng"]},
+  {"no": 27, "vi": "Hát, ca hát", "pos": "động từ ly hợp", "a": "唱歌", "ipa": "chànggē", "alt": ["chànggē"]},
+  {"no": 28, "vi": "Xe", "pos": "danh từ", "a": "车", "ipa": "chē", "alt": ["chē"]},
+  {"no": 29, "vi": "Vé xe", "pos": "danh từ", "a": "车票", "ipa": "chēpiào", "alt": ["chēpiào"]},
+  {"no": 30, "vi": "Ăn", "pos": "động từ", "a": "吃", "ipa": "chī", "alt": ["chī"]},
+  {"no": 31, "vi": "Ăn cơm", "pos": "động từ ly hợp", "a": "吃饭", "ipa": "chīfàn", "alt": ["chīfàn"]},
+  {"no": 32, "vi": "Taxi", "pos": "danh từ", "a": "出租车", "ipa": "chūzūchē", "alt": ["chūzūchē"]},
+  {"no": 33, "vi": "Mặc, đi (giày)", "pos": "động từ", "a": "穿", "ipa": "chuān", "alt": ["chuān"]},
+  {"no": 34, "vi": "Gọi điện thoại", "pos": "cụm động từ", "a": "打电话", "ipa": "dǎ diànhuà", "alt": ["dǎ diànhuà"]},
+  {"no": 35, "vi": "Chơi bóng", "pos": "động từ ly hợp", "a": "打球", "ipa": "dǎqiú", "alt": ["dǎqiú"]},
+  {"no": 36, "vi": "To, lớn", "pos": "tính từ", "a": "大", "ipa": "dà", "alt": ["dà"]},
+  {"no": 37, "vi": "Đại học", "pos": "danh từ", "a": "大学", "ipa": "dàxué", "alt": ["dàxué"]},
+  {"no": 38, "vi": "Sinh viên", "pos": "danh từ", "a": "大学生", "ipa": "dàxuéshēng", "alt": ["dàxuéshēng"]},
+  {"no": 39, "vi": "Của (trợ từ kết cấu)", "pos": "trợ từ kết cấu", "a": "的", "ipa": "de", "alt": ["de"]},
+  {"no": 40, "vi": "Nhận được, đạt được", "pos": "động từ", "a": "得到", "ipa": "dédào", "alt": ["dédào"]},
+  {"no": 41, "vi": "Nơi, chỗ", "pos": "danh từ", "a": "地方", "ipa": "dìfang", "alt": ["dìfang"]},
+  {"no": 42, "vi": "Bản đồ", "pos": "danh từ", "a": "地图", "ipa": "dìtú", "alt": ["dìtú"]},
+  {"no": 43, "vi": "Em trai", "pos": "danh từ", "a": "弟弟", "ipa": "dìdi", "alt": ["dìdi"]},
+  {"no": 44, "vi": "Thứ (chỉ thứ tự)", "pos": "tiền tố", "a": "第", "ipa": "dì", "alt": ["dì"]},
+  {"no": 45, "vi": "Điện thoại", "pos": "danh từ", "a": "电话", "ipa": "diànhuà", "alt": ["diànhuà"]},
+  {"no": 46, "vi": "Máy tính", "pos": "danh từ", "a": "电脑", "ipa": "diànnǎo", "alt": ["diànnǎo"]},
+  {"no": 47, "vi": "Ti vi", "pos": "danh từ", "a": "电视", "ipa": "diànshì", "alt": ["diànshì"]},
+  {"no": 48, "vi": "Phim", "pos": "danh từ", "a": "电影", "ipa": "diànyǐng", "alt": ["diànyǐng"]},
+  {"no": 49, "vi": "Rạp chiếu phim", "pos": "danh từ", "a": "电影院", "ipa": "diànyǐngyuàn", "alt": ["diànyǐngyuàn"]},
+  {"no": 50, "vi": "Phía đông", "pos": "danh từ phương vị", "a": "东", "ipa": "dōng", "alt": ["dōng", "东边", "dōngbian"]},
+  {"no": 51, "vi": "Phía đông", "pos": "danh từ phương vị", "a": "东边", "ipa": "dōngbian", "alt": ["dōngbian", "东", "dōng"]},
+  {"no": 52, "vi": "Đồ vật", "pos": "danh từ", "a": "东西", "ipa": "dōngxi", "alt": ["dōngxi"]},
+  {"no": 53, "vi": "Đều", "pos": "phó từ", "a": "都", "ipa": "dōu", "alt": ["dōu"]},
+  {"no": 54, "vi": "Đọc", "pos": "động từ", "a": "读", "ipa": "dú", "alt": ["dú"]},
+  {"no": 55, "vi": "Đọc sách, đi học", "pos": "động từ ly hợp", "a": "读书", "ipa": "dúshū", "alt": ["dúshū"]},
+  {"no": 56, "vi": "Đúng", "pos": "tính từ", "a": "对", "ipa": "duì", "alt": ["duì"]},
+  {"no": 57, "vi": "Xin lỗi", "pos": "cụm từ", "a": "对不起", "ipa": "duìbuqǐ", "alt": ["duìbuqǐ"]},
+  {"no": 58, "vi": "Nhiều", "pos": "tính từ", "a": "多", "ipa": "duō", "alt": ["duō"]},
+  {"no": 59, "vi": "Bao nhiêu", "pos": "đại từ nghi vấn", "a": "多少", "ipa": "duōshao", "alt": ["duōshao"]},
+  {"no": 60, "vi": "Đói", "pos": "tính từ", "a": "饿", "ipa": "è", "alt": ["è"]},
+  {"no": 61, "vi": "Con trai", "pos": "danh từ", "a": "儿子", "ipa": "érzi", "alt": ["érzi"]},
+  {"no": 62, "vi": "Số 2", "pos": "số từ", "a": "二", "ipa": "èr", "alt": ["èr"]},
+  {"no": 63, "vi": "Cơm, bữa ăn", "pos": "danh từ", "a": "饭", "ipa": "fàn", "alt": ["fàn"]},
+  {"no": 64, "vi": "Nhà hàng, khách sạn", "pos": "danh từ", "a": "饭店", "ipa": "fàndiàn", "alt": ["fàndiàn"]},
+  {"no": 65, "vi": "Phòng", "pos": "danh từ", "a": "房间", "ipa": "fángjiān", "alt": ["fángjiān"]},
+  {"no": 66, "vi": "Nhà, căn nhà", "pos": "danh từ", "a": "房子", "ipa": "fángzi", "alt": ["fángzi"]},
+  {"no": 67, "vi": "Đặt, để", "pos": "động từ", "a": "放", "ipa": "fàng", "alt": ["fàng"]},
+  {"no": 68, "vi": "Nghỉ lễ, nghỉ học", "pos": "động từ ly hợp", "a": "放假", "ipa": "fàngjià", "alt": ["fàngjià"]},
+  {"no": 69, "vi": "Tan học", "pos": "động từ ly hợp", "a": "放学", "ipa": "fàngxué", "alt": ["fàngxué"]},
+  {"no": 70, "vi": "Máy bay", "pos": "danh từ", "a": "飞机", "ipa": "fēijī", "alt": ["fēijī"]},
+  {"no": 71, "vi": "Vô cùng, rất", "pos": "phó từ", "a": "非常", "ipa": "fēicháng", "alt": ["fēicháng"]},
+  {"no": 72, "vi": "Phút; điểm", "pos": "lượng từ", "a": "分", "ipa": "fēn", "alt": ["fēn"]},
+  {"no": 73, "vi": "Gió", "pos": "danh từ", "a": "风", "ipa": "fēng", "alt": ["fēng"]},
+  {"no": 74, "vi": "Sạch sẽ", "pos": "tính từ", "a": "干净", "ipa": "gānjìng", "alt": ["gānjìng"]},
+  {"no": 75, "vi": "Vui mừng", "pos": "tính từ", "a": "高兴", "ipa": "gāoxìng", "alt": ["gāoxìng"]},
+  {"no": 76, "vi": "Anh trai", "pos": "danh từ", "a": "哥哥", "ipa": "gēge", "alt": ["gēge"]},
+  {"no": 77, "vi": "Bài hát", "pos": "danh từ", "a": "歌", "ipa": "gē", "alt": ["gē"]},
+  {"no": 78, "vi": "Cái, chiếc (lượng từ chung)", "pos": "lượng từ", "a": "个", "ipa": "gè", "alt": ["gè"]},
+  {"no": 79, "vi": "Cho, đưa", "pos": "động từ / giới từ", "a": "给", "ipa": "gěi", "alt": ["gěi"]},
+  {"no": 80, "vi": "Làm việc; công việc", "pos": "động từ / danh từ", "a": "工作", "ipa": "gōngzuò", "alt": ["gōngzuò"]},
+  {"no": 81, "vi": "Đóng, tắt", "pos": "động từ", "a": "关", "ipa": "guān", "alt": ["guān"]},
+  {"no": 82, "vi": "Đắt", "pos": "tính từ", "a": "贵", "ipa": "guì", "alt": ["guì"]},
+  {"no": 83, "vi": "Nước, quốc gia", "pos": "danh từ", "a": "国", "ipa": "guó", "alt": ["guó"]},
+  {"no": 84, "vi": "Quốc gia, đất nước", "pos": "danh từ", "a": "国家", "ipa": "guójiā", "alt": ["guójiā"]},
+  {"no": 85, "vi": "Còn, vẫn", "pos": "phó từ", "a": "还", "ipa": "hái", "alt": ["hái"]},
+  {"no": 86, "vi": "Đứa trẻ, con cái", "pos": "danh từ", "a": "孩子", "ipa": "háizi", "alt": ["háizi"]},
+  {"no": 87, "vi": "Tiếng Hán", "pos": "danh từ", "a": "汉语", "ipa": "Hànyǔ", "alt": ["Hànyǔ"]},
+  {"no": 88, "vi": "Chữ Hán", "pos": "danh từ", "a": "汉字", "ipa": "Hànzì", "alt": ["Hànzì"]},
+  {"no": 89, "vi": "Tốt, hay", "pos": "tính từ", "a": "好", "ipa": "hǎo", "alt": ["hǎo"]},
+  {"no": 90, "vi": "Ngon", "pos": "tính từ", "a": "好吃", "ipa": "hǎochī", "alt": ["hǎochī"]},
+  {"no": 91, "vi": "Đẹp, hay (xem)", "pos": "tính từ", "a": "好看", "ipa": "hǎokàn", "alt": ["hǎokàn"]},
+  {"no": 92, "vi": "Hay (nghe)", "pos": "tính từ", "a": "好听", "ipa": "hǎotīng", "alt": ["hǎotīng"]},
+  {"no": 93, "vi": "Ngày; số", "pos": "danh từ", "a": "号", "ipa": "hào", "alt": ["hào"]},
+  {"no": 94, "vi": "Uống", "pos": "động từ", "a": "喝", "ipa": "hē", "alt": ["hē"]},
+  {"no": 95, "vi": "Và, với", "pos": "liên từ / giới từ", "a": "和", "ipa": "hé", "alt": ["hé"]},
+  {"no": 96, "vi": "Rất", "pos": "phó từ", "a": "很", "ipa": "hěn", "alt": ["hěn"]},
+  {"no": 97, "vi": "Ngày kia", "pos": "danh từ", "a": "后天", "ipa": "hòutiān", "alt": ["hòutiān"]},
+  {"no": 98, "vi": "Lời nói", "pos": "danh từ", "a": "话", "ipa": "huà", "alt": ["huà"]},
+  {"no": 99, "vi": "Về, trở về", "pos": "động từ", "a": "回", "ipa": "huí", "alt": ["huí"]},
+  {"no": 100, "vi": "Trả lời", "pos": "động từ", "a": "回答", "ipa": "huídá", "alt": ["huídá"]},
+  {"no": 101, "vi": "Về nhà", "pos": "động từ ly hợp", "a": "回家", "ipa": "huíjiā", "alt": ["huíjiā"]},
+  {"no": 102, "vi": "Biết (làm gì); sẽ", "pos": "động từ năng nguyện", "a": "会", "ipa": "huì", "alt": ["huì"]},
+  {"no": 103, "vi": "Tàu hỏa", "pos": "danh từ", "a": "火车", "ipa": "huǒchē", "alt": ["huǒchē"]},
+  {"no": 104, "vi": "Trứng gà", "pos": "danh từ", "a": "鸡蛋", "ipa": "jīdàn", "alt": ["jīdàn"]},
+  {"no": 105, "vi": "Mấy", "pos": "đại từ nghi vấn", "a": "几", "ipa": "jǐ", "alt": ["jǐ"]},
+  {"no": 106, "vi": "Nhớ kỹ", "pos": "động từ", "a": "记住", "ipa": "jìzhù", "alt": ["jìzhù"]},
+  {"no": 107, "vi": "Nhà, gia đình", "pos": "danh từ", "a": "家", "ipa": "jiā", "alt": ["jiā"]},
+  {"no": 108, "vi": "Người nhà", "pos": "danh từ", "a": "家人", "ipa": "jiārén", "alt": ["jiārén"]},
+  {"no": 109, "vi": "Gặp, thấy", "pos": "động từ", "a": "见", "ipa": "jiàn", "alt": ["jiàn"]},
+  {"no": 110, "vi": "Gặp mặt", "pos": "động từ ly hợp", "a": "见面", "ipa": "jiànmiàn", "alt": ["jiànmiàn"]},
+  {"no": 111, "vi": "Gọi, tên là", "pos": "động từ", "a": "叫", "ipa": "jiào", "alt": ["jiào"]},
+  {"no": 112, "vi": "Cảm thấy", "pos": "động từ", "a": "觉得", "ipa": "juéde", "alt": ["juéde"]},
+  {"no": 113, "vi": "Chị gái", "pos": "danh từ", "a": "姐姐", "ipa": "jiějie", "alt": ["jiějie"]},
+  {"no": 114, "vi": "Năm nay", "pos": "danh từ", "a": "今年", "ipa": "jīnnián", "alt": ["jīnnián"]},
+  {"no": 115, "vi": "Hôm nay", "pos": "danh từ", "a": "今天", "ipa": "jīntiān", "alt": ["jīntiān"]},
+  {"no": 116, "vi": "Số 9", "pos": "số từ", "a": "九", "ipa": "jiǔ", "alt": ["jiǔ"]},
+  {"no": 117, "vi": "Mở, lái", "pos": "động từ", "a": "开", "ipa": "kāi", "alt": ["kāi"]},
+  {"no": 118, "vi": "Lái xe", "pos": "động từ ly hợp", "a": "开车", "ipa": "kāichē", "alt": ["kāichē"]},
+  {"no": 119, "vi": "Xem, nhìn", "pos": "động từ", "a": "看", "ipa": "kàn", "alt": ["kàn"]},
+  {"no": 120, "vi": "Khám bệnh", "pos": "động từ ly hợp", "a": "看病", "ipa": "kànbìng", "alt": ["kànbìng"]},
+  {"no": 121, "vi": "Nhìn thấy", "pos": "động từ", "a": "看见", "ipa": "kànjiàn", "alt": ["kànjiàn"]},
+  {"no": 122, "vi": "Khát", "pos": "tính từ", "a": "渴", "ipa": "kě", "alt": ["kě"]},
+  {"no": 123, "vi": "Bài học, tiết học", "pos": "danh từ", "a": "课", "ipa": "kè", "alt": ["kè"]},
+  {"no": 124, "vi": "Sách giáo khoa", "pos": "danh từ", "a": "课本", "ipa": "kèběn", "alt": ["kèběn"]},
+  {"no": 125, "vi": "Miệng; khẩu (người)", "pos": "danh từ / lượng từ", "a": "口", "ipa": "kǒu", "alt": ["kǒu"]},
+  {"no": 126, "vi": "Đồng (tệ); miếng", "pos": "lượng từ", "a": "块", "ipa": "kuài", "alt": ["kuài"]},
+  {"no": 127, "vi": "Đến", "pos": "động từ", "a": "来", "ipa": "lái", "alt": ["lái", "到", "dào"]},
+  {"no": 128, "vi": "Già, cũ", "pos": "tính từ", "a": "老", "ipa": "lǎo", "alt": ["lǎo"]},
+  {"no": 129, "vi": "Người già", "pos": "danh từ", "a": "老人", "ipa": "lǎorén", "alt": ["lǎorén"]},
+  {"no": 130, "vi": "Giáo viên", "pos": "danh từ", "a": "老师", "ipa": "lǎoshī", "alt": ["lǎoshī"]},
+  {"no": 131, "vi": "Rồi (trợ từ)", "pos": "trợ từ", "a": "了", "ipa": "le", "alt": ["le"]},
+  {"no": 132, "vi": "Lạnh", "pos": "tính từ", "a": "冷", "ipa": "lěng", "alt": ["lěng"]},
+  {"no": 133, "vi": "Trong, bên trong", "pos": "danh từ phương vị", "a": "里", "ipa": "lǐ", "alt": ["lǐ"]},
+  {"no": 134, "vi": "Hai", "pos": "số từ", "a": "两", "ipa": "liǎng", "alt": ["liǎng"]},
+  {"no": 135, "vi": "Số 0", "pos": "số từ", "a": "零", "ipa": "líng", "alt": ["líng"]},
+  {"no": 136, "vi": "Số 6", "pos": "số từ", "a": "六", "ipa": "liù", "alt": ["liù"]},
+  {"no": 137, "vi": "Mẹ", "pos": "danh từ", "a": "妈妈", "ipa": "māma", "alt": ["māma"]},
+  {"no": 138, "vi": "Ngay lập tức", "pos": "phó từ", "a": "马上", "ipa": "mǎshàng", "alt": ["mǎshàng"]},
+  {"no": 139, "vi": "Không? (câu hỏi)", "pos": "trợ từ ngữ khí", "a": "吗", "ipa": "ma", "alt": ["ma"]},
+  {"no": 140, "vi": "Mua", "pos": "động từ", "a": "买", "ipa": "mǎi", "alt": ["mǎi"]},
+  {"no": 141, "vi": "Bán", "pos": "động từ", "a": "卖", "ipa": "mài", "alt": ["mài"]},
+  {"no": 142, "vi": "Bận", "pos": "tính từ", "a": "忙", "ipa": "máng", "alt": ["máng"]},
+  {"no": 143, "vi": "Con mèo", "pos": "danh từ", "a": "猫", "ipa": "māo", "alt": ["māo"]},
+  {"no": 144, "vi": "Không, chưa", "pos": "phó từ", "a": "没", "ipa": "méi", "alt": ["méi"]},
+  {"no": 145, "vi": "Không sao", "pos": "cụm từ", "a": "没关系", "ipa": "méi guānxi", "alt": ["méi guānxi"]},
+  {"no": 146, "vi": "Không có", "pos": "động từ", "a": "没有", "ipa": "méiyǒu", "alt": ["méiyǒu"]},
+  {"no": 147, "vi": "Em gái", "pos": "danh từ", "a": "妹妹", "ipa": "mèimei", "alt": ["mèimei"]},
+  {"no": 148, "vi": "Cơm", "pos": "danh từ", "a": "米饭", "ipa": "mǐfàn", "alt": ["mǐfàn"]},
+  {"no": 149, "vi": "Bánh mì", "pos": "danh từ", "a": "面包", "ipa": "miànbāo", "alt": ["miànbāo"]},
+  {"no": 150, "vi": "Mì sợi", "pos": "danh từ", "a": "面条儿", "ipa": "miàntiáor", "alt": ["miàntiáor"]},
+  {"no": 151, "vi": "Tên", "pos": "danh từ", "a": "名字", "ipa": "míngzi", "alt": ["míngzi"]},
+  {"no": 152, "vi": "Hiểu rõ", "pos": "động từ", "a": "明白", "ipa": "míngbai", "alt": ["míngbai"]},
+  {"no": 153, "vi": "Năm sau", "pos": "danh từ", "a": "明年", "ipa": "míngnián", "alt": ["míngnián"]},
+  {"no": 154, "vi": "Ngày mai", "pos": "danh từ", "a": "明天", "ipa": "míngtiān", "alt": ["míngtiān"]},
+  {"no": 155, "vi": "Nào", "pos": "đại từ nghi vấn", "a": "哪", "ipa": "nǎ", "alt": ["nǎ"]},
+  {"no": 156, "vi": "Ở đâu", "pos": "đại từ nghi vấn", "a": "哪儿", "ipa": "nǎr", "alt": ["nǎr"]},
+  {"no": 157, "vi": "Kia, đó", "pos": "đại từ", "a": "那", "ipa": "nà", "alt": ["nà"]},
+  {"no": 158, "vi": "Ở đó", "pos": "đại từ", "a": "那儿", "ipa": "nàr", "alt": ["nàr"]},
+  {"no": 159, "vi": "Những cái kia", "pos": "đại từ", "a": "那些", "ipa": "nàxiē", "alt": ["nàxiē"]},
+  {"no": 160, "vi": "Nam", "pos": "tính từ", "a": "男", "ipa": "nán", "alt": ["nán"]},
+  {"no": 161, "vi": "Đàn ông", "pos": "danh từ", "a": "男人", "ipa": "nánrén", "alt": ["nánrén"]},
+  {"no": 162, "vi": "Phía nam", "pos": "danh từ phương vị", "a": "南", "ipa": "nán", "alt": ["nán"]},
+  {"no": 163, "vi": "Khó", "pos": "tính từ", "a": "难", "ipa": "nán", "alt": ["nán"]},
+  {"no": 164, "vi": "Thì sao? (trợ từ hỏi)", "pos": "trợ từ ngữ khí", "a": "呢", "ipa": "ne", "alt": ["ne"]},
+  {"no": 165, "vi": "Có thể", "pos": "động từ năng nguyện", "a": "能", "ipa": "néng", "alt": ["néng"]},
+  {"no": 166, "vi": "Bạn", "pos": "đại từ", "a": "你", "ipa": "nǐ", "alt": ["nǐ"]},
+  {"no": 167, "vi": "Các bạn", "pos": "đại từ", "a": "你们", "ipa": "nǐmen", "alt": ["nǐmen"]},
+  {"no": 168, "vi": "Năm", "pos": "danh từ", "a": "年", "ipa": "nián", "alt": ["nián"]},
+  {"no": 169, "vi": "Ngài, ông/bà (kính trọng)", "pos": "đại từ", "a": "您", "ipa": "nín", "alt": ["nín"]},
+  {"no": 170, "vi": "Sữa bò", "pos": "danh từ", "a": "牛奶", "ipa": "niúnǎi", "alt": ["niúnǎi"]},
+  {"no": 171, "vi": "Nữ", "pos": "tính từ", "a": "女", "ipa": "nǚ", "alt": ["nǚ"]},
+  {"no": 172, "vi": "Con gái", "pos": "danh từ", "a": "女儿", "ipa": "nǚ'ér", "alt": ["nǚ'ér"]},
+  {"no": 173, "vi": "Phụ nữ", "pos": "danh từ", "a": "女人", "ipa": "nǚrén", "alt": ["nǚrén"]},
+  {"no": 174, "vi": "Bạn bè", "pos": "danh từ", "a": "朋友", "ipa": "péngyou", "alt": ["péngyou"]},
+  {"no": 175, "vi": "Rẻ", "pos": "tính từ", "a": "便宜", "ipa": "piányi", "alt": ["piányi"]},
+  {"no": 176, "vi": "Xinh đẹp", "pos": "tính từ", "a": "漂亮", "ipa": "piàoliang", "alt": ["piàoliang"]},
+  {"no": 177, "vi": "Quả táo", "pos": "danh từ", "a": "苹果", "ipa": "píngguǒ", "alt": ["píngguǒ"]},
+  {"no": 178, "vi": "Số 7", "pos": "số từ", "a": "七", "ipa": "qī", "alt": ["qī"]},
+  {"no": 179, "vi": "Thức dậy", "pos": "động từ ly hợp", "a": "起床", "ipa": "qǐchuáng", "alt": ["qǐchuáng"]},
+  {"no": 180, "vi": "Ô tô", "pos": "danh từ", "a": "汽车", "ipa": "qìchē", "alt": ["qìchē"]},
+  {"no": 181, "vi": "Hôm kia", "pos": "danh từ", "a": "前天", "ipa": "qiántiān", "alt": ["qiántiān"]},
+  {"no": 182, "vi": "Tiền", "pos": "danh từ", "a": "钱", "ipa": "qián", "alt": ["qián"]},
+  {"no": 183, "vi": "Mời; xin vui lòng", "pos": "động từ", "a": "请", "ipa": "qǐng", "alt": ["qǐng"]},
+  {"no": 184, "vi": "Xin nghỉ", "pos": "động từ ly hợp", "a": "请假", "ipa": "qǐngjià", "alt": ["qǐngjià"]},
+  {"no": 185, "vi": "Xin hỏi", "pos": "cụm từ", "a": "请问", "ipa": "qǐngwèn", "alt": ["qǐngwèn"]},
+  {"no": 186, "vi": "Đi", "pos": "động từ", "a": "去", "ipa": "qù", "alt": ["qù", "走", "zǒu"]},
+  {"no": 187, "vi": "Năm ngoái", "pos": "danh từ", "a": "去年", "ipa": "qùnián", "alt": ["qùnián"]},
+  {"no": 188, "vi": "Nóng", "pos": "tính từ", "a": "热", "ipa": "rè", "alt": ["rè"]},
+  {"no": 189, "vi": "Người", "pos": "danh từ", "a": "人", "ipa": "rén", "alt": ["rén"]},
+  {"no": 190, "vi": "Quen biết", "pos": "động từ", "a": "认识", "ipa": "rènshi", "alt": ["rènshi"]},
+  {"no": 191, "vi": "Chăm chỉ, nghiêm túc", "pos": "tính từ", "a": "认真", "ipa": "rènzhēn", "alt": ["rènzhēn"]},
+  {"no": 192, "vi": "Ngày", "pos": "danh từ", "a": "日", "ipa": "rì", "alt": ["rì"]},
+  {"no": 193, "vi": "Số 3", "pos": "số từ", "a": "三", "ipa": "sān", "alt": ["sān"]},
+  {"no": 194, "vi": "Núi", "pos": "danh từ", "a": "山", "ipa": "shān", "alt": ["shān"]},
+  {"no": 195, "vi": "Cửa hàng", "pos": "danh từ", "a": "商店", "ipa": "shāngdiàn", "alt": ["shāngdiàn"]},
+  {"no": 196, "vi": "Trên; lên", "pos": "danh từ phương vị / động từ", "a": "上", "ipa": "shàng", "alt": ["shàng"]},
+  {"no": 197, "vi": "Đi làm", "pos": "động từ ly hợp", "a": "上班", "ipa": "shàngbān", "alt": ["shàngbān"]},
+  {"no": 198, "vi": "Lên lớp, vào học", "pos": "động từ ly hợp", "a": "上课", "ipa": "shàngkè", "alt": ["shàngkè"]},
+  {"no": 199, "vi": "Buổi sáng", "pos": "danh từ", "a": "上午", "ipa": "shàngwǔ", "alt": ["shàngwǔ", "早上", "zǎoshang"]},
+  {"no": 200, "vi": "Đi học", "pos": "động từ ly hợp", "a": "上学", "ipa": "shàngxué", "alt": ["shàngxué"]},
+  {"no": 201, "vi": "Ít", "pos": "tính từ", "a": "少", "ipa": "shǎo", "alt": ["shǎo"]},
+  {"no": 202, "vi": "Ai", "pos": "đại từ nghi vấn", "a": "谁", "ipa": "shéi", "alt": ["shéi"]},
+  {"no": 203, "vi": "Cái gì", "pos": "đại từ nghi vấn", "a": "什么", "ipa": "shénme", "alt": ["shénme"]},
+  {"no": 204, "vi": "Bị bệnh", "pos": "động từ ly hợp", "a": "生病", "ipa": "shēngbìng", "alt": ["shēngbìng"]},
+  {"no": 205, "vi": "Tức giận", "pos": "động từ ly hợp", "a": "生气", "ipa": "shēngqì", "alt": ["shēngqì"]},
+  {"no": 206, "vi": "Số 10", "pos": "số từ", "a": "十", "ipa": "shí", "alt": ["shí"]},
+  {"no": 207, "vi": "Lúc, khi", "pos": "danh từ", "a": "时候", "ipa": "shíhou", "alt": ["shíhou"]},
+  {"no": 208, "vi": "Thời gian", "pos": "danh từ", "a": "时间", "ipa": "shíjiān", "alt": ["shíjiān"]},
+  {"no": 209, "vi": "Việc", "pos": "danh từ", "a": "事", "ipa": "shì", "alt": ["shì"]},
+  {"no": 210, "vi": "Là", "pos": "động từ", "a": "是", "ipa": "shì", "alt": ["shì"]},
+  {"no": 211, "vi": "Điện thoại di động", "pos": "danh từ", "a": "手机", "ipa": "shǒujī", "alt": ["shǒujī"]},
+  {"no": 212, "vi": "Sách", "pos": "danh từ", "a": "书", "ipa": "shū", "alt": ["shū"]},
+  {"no": 213, "vi": "Hiệu sách", "pos": "danh từ", "a": "书店", "ipa": "shūdiàn", "alt": ["shūdiàn"]},
+  {"no": 214, "vi": "Cây", "pos": "danh từ", "a": "树", "ipa": "shù", "alt": ["shù"]},
+  {"no": 215, "vi": "Nước", "pos": "danh từ", "a": "水", "ipa": "shuǐ", "alt": ["shuǐ"]},
+  {"no": 216, "vi": "Hoa quả", "pos": "danh từ", "a": "水果", "ipa": "shuǐguǒ", "alt": ["shuǐguǒ"]},
+  {"no": 217, "vi": "Đi ngủ", "pos": "động từ ly hợp", "a": "睡觉", "ipa": "shuìjiào", "alt": ["shuìjiào"]},
+  {"no": 218, "vi": "Nói", "pos": "động từ", "a": "说", "ipa": "shuō", "alt": ["shuō"]},
+  {"no": 219, "vi": "Nói chuyện", "pos": "động từ ly hợp", "a": "说话", "ipa": "shuōhuà", "alt": ["shuōhuà"]},
+  {"no": 220, "vi": "Số 4", "pos": "số từ", "a": "四", "ipa": "sì", "alt": ["sì"]},
+  {"no": 221, "vi": "Tuổi", "pos": "lượng từ", "a": "岁", "ipa": "suì", "alt": ["suì"]},
+  {"no": 222, "vi": "Anh ấy", "pos": "đại từ", "a": "他", "ipa": "tā", "alt": ["tā"]},
+  {"no": 223, "vi": "Họ", "pos": "đại từ", "a": "他们", "ipa": "tāmen", "alt": ["tāmen"]},
+  {"no": 224, "vi": "Cô ấy", "pos": "đại từ", "a": "她", "ipa": "tā", "alt": ["tā"]},
+  {"no": 225, "vi": "Quá", "pos": "phó từ", "a": "太", "ipa": "tài", "alt": ["tài"]},
+  {"no": 226, "vi": "Ngày; trời", "pos": "danh từ", "a": "天", "ipa": "tiān", "alt": ["tiān"]},
+  {"no": 227, "vi": "Thời tiết", "pos": "danh từ", "a": "天气", "ipa": "tiānqì", "alt": ["tiānqì"]},
+  {"no": 228, "vi": "Nghe", "pos": "động từ", "a": "听", "ipa": "tīng", "alt": ["tīng"]},
+  {"no": 229, "vi": "Nghe thấy", "pos": "động từ", "a": "听见", "ipa": "tīngjiàn", "alt": ["tīngjiàn"]},
+  {"no": 230, "vi": "Bạn học", "pos": "danh từ", "a": "同学", "ipa": "tóngxué", "alt": ["tóngxué"]},
+  {"no": 231, "vi": "Thư viện", "pos": "danh từ", "a": "图书馆", "ipa": "túshūguǎn", "alt": ["túshūguǎn"]},
+  {"no": 232, "vi": "Ngoại ngữ", "pos": "danh từ", "a": "外语", "ipa": "wàiyǔ", "alt": ["wàiyǔ"]},
+  {"no": 233, "vi": "Chơi", "pos": "động từ", "a": "玩儿", "ipa": "wánr", "alt": ["wánr"]},
+  {"no": 234, "vi": "Muộn", "pos": "tính từ", "a": "晚", "ipa": "wǎn", "alt": ["wǎn"]},
+  {"no": 235, "vi": "Bữa tối", "pos": "danh từ", "a": "晚饭", "ipa": "wǎnfàn", "alt": ["wǎnfàn"]},
+  {"no": 236, "vi": "Buổi tối", "pos": "danh từ", "a": "晚上", "ipa": "wǎnshang", "alt": ["wǎnshang"]},
+  {"no": 237, "vi": "Hỏi", "pos": "động từ", "a": "问", "ipa": "wèn", "alt": ["wèn"]},
+  {"no": 238, "vi": "Tôi", "pos": "đại từ", "a": "我", "ipa": "wǒ", "alt": ["wǒ"]},
+  {"no": 239, "vi": "Chúng tôi, chúng ta", "pos": "đại từ", "a": "我们", "ipa": "wǒmen", "alt": ["wǒmen"]},
+  {"no": 240, "vi": "Số 5", "pos": "số từ", "a": "五", "ipa": "wǔ", "alt": ["wǔ"]},
+  {"no": 241, "vi": "Bữa trưa", "pos": "danh từ", "a": "午饭", "ipa": "wǔfàn", "alt": ["wǔfàn"]},
+  {"no": 242, "vi": "Phía tây", "pos": "danh từ phương vị", "a": "西", "ipa": "xī", "alt": ["xī"]},
+  {"no": 243, "vi": "Dưa hấu", "pos": "danh từ", "a": "西瓜", "ipa": "xīguā", "alt": ["xīguā"]},
+  {"no": 244, "vi": "Thích", "pos": "động từ", "a": "喜欢", "ipa": "xǐhuan", "alt": ["xǐhuan"]},
+  {"no": 245, "vi": "Dưới; xuống", "pos": "danh từ phương vị / động từ", "a": "下", "ipa": "xià", "alt": ["xià"]},
+  {"no": 246, "vi": "Tan lớp", "pos": "động từ ly hợp", "a": "下课", "ipa": "xiàkè", "alt": ["xiàkè"]},
+  {"no": 247, "vi": "Buổi chiều", "pos": "danh từ", "a": "下午", "ipa": "xiàwǔ", "alt": ["xiàwǔ"]},
+  {"no": 248, "vi": "Mưa", "pos": "động từ ly hợp", "a": "下雨", "ipa": "xiàyǔ", "alt": ["xiàyǔ"]},
+  {"no": 249, "vi": "Ông, ngài; chồng", "pos": "danh từ", "a": "先生", "ipa": "xiānsheng", "alt": ["xiānsheng"]},
+  {"no": 250, "vi": "Bây giờ", "pos": "danh từ", "a": "现在", "ipa": "xiànzài", "alt": ["xiànzài"]},
+  {"no": 251, "vi": "Muốn; nhớ", "pos": "động từ năng nguyện / động từ", "a": "想", "ipa": "xiǎng", "alt": ["xiǎng"]},
+  {"no": 252, "vi": "Nhỏ", "pos": "tính từ", "a": "小", "ipa": "xiǎo", "alt": ["xiǎo"]},
+  {"no": 253, "vi": "Cô (xưng hô)", "pos": "danh từ", "a": "小姐", "ipa": "xiǎojiě", "alt": ["xiǎojiě"]},
+  {"no": 254, "vi": "Tiếng đồng hồ", "pos": "danh từ", "a": "小时", "ipa": "xiǎoshí", "alt": ["xiǎoshí"]},
+  {"no": 255, "vi": "Tiểu học", "pos": "danh từ", "a": "小学", "ipa": "xiǎoxué", "alt": ["xiǎoxué"]},
+  {"no": 256, "vi": "Viết", "pos": "động từ", "a": "写", "ipa": "xiě", "alt": ["xiě"]},
+  {"no": 257, "vi": "Cảm ơn", "pos": "động từ", "a": "谢谢", "ipa": "xièxie", "alt": ["xièxie"]},
+  {"no": 258, "vi": "Mới", "pos": "tính từ", "a": "新", "ipa": "xīn", "alt": ["xīn"]},
+  {"no": 259, "vi": "Tuần; thứ", "pos": "danh từ", "a": "星期", "ipa": "xīngqī", "alt": ["xīngqī"]},
+  {"no": 260, "vi": "Được, ổn", "pos": "tính từ", "a": "行", "ipa": "xíng", "alt": ["xíng"]},
+  {"no": 261, "vi": "Nghỉ ngơi", "pos": "động từ", "a": "休息", "ipa": "xiūxi", "alt": ["xiūxi"]},
+  {"no": 262, "vi": "Học", "pos": "động từ", "a": "学", "ipa": "xué", "alt": ["xué"]},
+  {"no": 263, "vi": "Học sinh", "pos": "danh từ", "a": "学生", "ipa": "xuésheng", "alt": ["xuésheng"]},
+  {"no": 264, "vi": "Học tập", "pos": "động từ", "a": "学习", "ipa": "xuéxí", "alt": ["xuéxí"]},
+  {"no": 265, "vi": "Trường học", "pos": "danh từ", "a": "学校", "ipa": "xuéxiào", "alt": ["xuéxiào"]},
+  {"no": 266, "vi": "Muốn; cần; phải", "pos": "động từ năng nguyện / động từ", "a": "要", "ipa": "yào", "alt": ["yào"]},
+  {"no": 267, "vi": "Cũng", "pos": "phó từ", "a": "也", "ipa": "yě", "alt": ["yě"]},
+  {"no": 268, "vi": "Số 1", "pos": "số từ", "a": "一", "ipa": "yī", "alt": ["yī"]},
+  {"no": 269, "vi": "Quần áo", "pos": "danh từ", "a": "衣服", "ipa": "yīfu", "alt": ["yīfu"]},
+  {"no": 270, "vi": "Bác sĩ", "pos": "danh từ", "a": "医生", "ipa": "yīshēng", "alt": ["yīshēng"]},
+  {"no": 271, "vi": "Bệnh viện", "pos": "danh từ", "a": "医院", "ipa": "yīyuàn", "alt": ["yīyuàn"]},
+  {"no": 272, "vi": "Cái ghế", "pos": "danh từ", "a": "椅子", "ipa": "yǐzi", "alt": ["yǐzi"]},
+  {"no": 273, "vi": "Một chút", "pos": "số lượng từ", "a": "一点儿", "ipa": "yìdiǎnr", "alt": ["yìdiǎnr"]},
+  {"no": 274, "vi": "Một chút, một lát", "pos": "số lượng từ", "a": "一下儿", "ipa": "yíxiàr", "alt": ["yíxiàr"]},
+  {"no": 275, "vi": "Giống nhau", "pos": "tính từ", "a": "一样", "ipa": "yíyàng", "alt": ["yíyàng"]},
+  {"no": 276, "vi": "Có", "pos": "động từ", "a": "有", "ipa": "yǒu", "alt": ["yǒu"]},
+  {"no": 277, "vi": "Nổi tiếng", "pos": "tính từ", "a": "有名", "ipa": "yǒumíng", "alt": ["yǒumíng"]},
+  {"no": 278, "vi": "Mưa", "pos": "danh từ", "a": "雨", "ipa": "yǔ", "alt": ["yǔ"]},
+  {"no": 279, "vi": "Đồng (tệ)", "pos": "lượng từ", "a": "元", "ipa": "yuán", "alt": ["yuán"]},
+  {"no": 280, "vi": "Tháng", "pos": "danh từ", "a": "月", "ipa": "yuè", "alt": ["yuè"]},
+  {"no": 281, "vi": "Lại, nữa", "pos": "phó từ", "a": "再", "ipa": "zài", "alt": ["zài"]},
+  {"no": 282, "vi": "Tạm biệt", "pos": "động từ", "a": "再见", "ipa": "zàijiàn", "alt": ["zàijiàn"]},
+  {"no": 283, "vi": "Ở; đang", "pos": "động từ / giới từ / phó từ", "a": "在", "ipa": "zài", "alt": ["zài"]},
+  {"no": 284, "vi": "Buổi sáng", "pos": "danh từ", "a": "早上", "ipa": "zǎoshang", "alt": ["zǎoshang", "上午", "shàngwǔ"]},
+  {"no": 285, "vi": "Thế nào, sao", "pos": "đại từ nghi vấn", "a": "怎么", "ipa": "zěnme", "alt": ["zěnme"]},
+  {"no": 286, "vi": "Thế nào (hỏi ý kiến)", "pos": "đại từ nghi vấn", "a": "怎么样", "ipa": "zěnmeyàng", "alt": ["zěnmeyàng"]},
+  {"no": 287, "vi": "Tìm", "pos": "động từ", "a": "找", "ipa": "zhǎo", "alt": ["zhǎo"]},
+  {"no": 288, "vi": "Này, đây", "pos": "đại từ", "a": "这", "ipa": "zhè", "alt": ["zhè"]},
+  {"no": 289, "vi": "Ở đây", "pos": "đại từ", "a": "这儿", "ipa": "zhèr", "alt": ["zhèr"]},
+  {"no": 290, "vi": "Thật, thực sự", "pos": "phó từ", "a": "真", "ipa": "zhēn", "alt": ["zhēn"]},
+  {"no": 291, "vi": "Đang", "pos": "phó từ", "a": "正在", "ipa": "zhèngzài", "alt": ["zhèngzài", "正", "zhèng"]},
+  {"no": 292, "vi": "Biết", "pos": "động từ", "a": "知道", "ipa": "zhīdào", "alt": ["zhīdào"]},
+  {"no": 293, "vi": "Trung Quốc", "pos": "danh từ riêng", "a": "中国", "ipa": "Zhōngguó", "alt": ["Zhōngguó"]},
+  {"no": 294, "vi": "Buổi trưa", "pos": "danh từ", "a": "中午", "ipa": "zhōngwǔ", "alt": ["zhōngwǔ"]},
+  {"no": 295, "vi": "Ở, sống", "pos": "động từ", "a": "住", "ipa": "zhù", "alt": ["zhù"]},
+  {"no": 296, "vi": "Cái bàn", "pos": "danh từ", "a": "桌子", "ipa": "zhuōzi", "alt": ["zhuōzi"]},
+  {"no": 297, "vi": "Chữ", "pos": "danh từ", "a": "字", "ipa": "zì", "alt": ["zì"]},
+  {"no": 298, "vi": "Hôm qua", "pos": "danh từ", "a": "昨天", "ipa": "zuótiān", "alt": ["zuótiān"]},
+  {"no": 299, "vi": "Ngồi; đi (xe)", "pos": "động từ", "a": "坐", "ipa": "zuò", "alt": ["zuò"]},
+  {"no": 300, "vi": "Làm", "pos": "động từ", "a": "做", "ipa": "zuò", "alt": ["zuò"]},
+  {"no": 301, "vi": "à, nhé, thôi", "pos": "trợ từ ngữ khí", "a": "啊", "ipa": "a", "alt": ["a"]},
+  {"no": 302, "vi": "Sở thích", "pos": "danh từ", "a": "爱好", "ipa": "àihào", "alt": ["àihào"]},
+  {"no": 303, "vi": "Màu trắng", "pos": "danh từ", "a": "白色", "ipa": "báisè", "alt": ["báisè"]},
+  {"no": 304, "vi": "Lớp", "pos": "danh từ", "a": "班", "ipa": "bān", "alt": ["bān"]},
+  {"no": 305, "vi": "Giúp", "pos": "động từ", "a": "帮", "ipa": "bāng", "alt": ["bāng"]},
+  {"no": 306, "vi": "Giúp đỡ", "pos": "động từ ly hợp", "a": "帮忙", "ipa": "bāngmáng", "alt": ["bāngmáng"]},
+  {"no": 307, "vi": "Túi/Gói", "pos": "danh từ", "a": "包", "ipa": "bāo", "alt": ["bāo"]},
+  {"no": 308, "vi": "Quyển vở", "pos": "danh từ", "a": "本子", "ipa": "běnzi", "alt": ["běnzi"]},
+  {"no": 309, "vi": "So với", "pos": "giới từ", "a": "比", "ipa": "bǐ", "alt": ["bǐ"]},
+  {"no": 310, "vi": "Bút", "pos": "danh từ", "a": "笔", "ipa": "bǐ", "alt": ["bǐ"]},
+  {"no": 311, "vi": "Đừng", "pos": "phó từ", "a": "别", "ipa": "bié", "alt": ["bié"]},
+  {"no": 312, "vi": "Ngại/Xin lỗi", "pos": "cụm từ", "a": "不好意思", "ipa": "bùhǎoyìsi", "alt": ["bùhǎoyìsi"]},
+  {"no": 313, "vi": "Tốt/Ổn", "pos": "tính từ", "a": "不错", "ipa": "bùcuò", "alt": ["bùcuò"]},
+  {"no": 314, "vi": "Dài", "pos": "tính từ", "a": "长", "ipa": "cháng", "alt": ["cháng"]},
+  {"no": 315, "vi": "Bến xe", "pos": "danh từ", "a": "车站", "ipa": "chēzhàn", "alt": ["chēzhàn"]},
+  {"no": 316, "vi": "Ra", "pos": "động từ", "a": "出", "ipa": "chū", "alt": ["chū"]},
+  {"no": 317, "vi": "Giường", "pos": "danh từ", "a": "床", "ipa": "chuáng", "alt": ["chuáng"]},
+  {"no": 318, "vi": "Đi nước ngoài", "pos": "động từ ly hợp", "a": "出国", "ipa": "chūguó", "alt": ["chūguó"]},
+  {"no": 319, "vi": "Ra đây", "pos": "động từ xu hướng", "a": "出来", "ipa": "chūlái", "alt": ["chūlái"]},
+  {"no": 320, "vi": "Ra ngoài", "pos": "động từ ly hợp", "a": "出门", "ipa": "chūmén", "alt": ["chūmén"]},
+  {"no": 321, "vi": "Ra ngoài kia", "pos": "động từ xu hướng", "a": "出去", "ipa": "chūqù", "alt": ["chūqù"]},
+  {"no": 322, "vi": "Từ", "pos": "danh từ", "a": "词", "ipa": "cí", "alt": ["cí"]},
+  {"no": 323, "vi": "Lần", "pos": "lượng từ", "a": "次", "ipa": "cì", "alt": ["cì"]},
+  {"no": 324, "vi": "Từ (địa điểm)", "pos": "giới từ", "a": "从", "ipa": "cóng", "alt": ["cóng"]},
+  {"no": 325, "vi": "Từ nhỏ", "pos": "phó từ", "a": "从小", "ipa": "cóngxiǎo", "alt": ["cóngxiǎo"]},
+  {"no": 326, "vi": "Sai", "pos": "tính từ", "a": "错", "ipa": "cuò", "alt": ["cuò"]},
+  {"no": 327, "vi": "Đánh/Chơi", "pos": "động từ", "a": "打", "ipa": "dǎ", "alt": ["dǎ"]},
+  {"no": 328, "vi": "Bắt taxi", "pos": "động từ ly hợp", "a": "打车", "ipa": "dǎchē", "alt": ["dǎchē"]},
+  {"no": 329, "vi": "Mở ra", "pos": "động từ", "a": "打开", "ipa": "dǎkāi", "alt": ["dǎkāi"]},
+  {"no": 330, "vi": "Nhưng", "pos": "liên từ", "a": "但是", "ipa": "dànshì", "alt": ["dànshì"]},
+  {"no": 331, "vi": "Đến", "pos": "động từ", "a": "到", "ipa": "dào", "alt": ["dào", "来", "lái"]},
+  {"no": 332, "vi": "nối động từ với bổ ngữ trạng thái", "pos": "trợ từ kết cấu", "a": "得", "ipa": "de", "alt": ["de"]},
+  {"no": 333, "vi": "nối trạng ngữ với động từ (một cách…)", "pos": "trợ từ kết cấu", "a": "地", "ipa": "de", "alt": ["de"]},
+  {"no": 334, "vi": "Đợi", "pos": "động từ", "a": "等", "ipa": "děng", "alt": ["děng"]},
+  {"no": 335, "vi": "Gọi món", "pos": "động từ", "a": "点", "ipa": "diǎn", "alt": ["diǎn"]},
+  {"no": 336, "vi": "Tàu điện ngầm", "pos": "danh từ", "a": "地铁", "ipa": "dìtiě", "alt": ["dìtiě"]},
+  {"no": 337, "vi": "Cử động", "pos": "động từ", "a": "动", "ipa": "dòng", "alt": ["dòng"]},
+  {"no": 338, "vi": "Hiểu", "pos": "động từ", "a": "懂", "ipa": "dǒng", "alt": ["dǒng"]},
+  {"no": 339, "vi": "Quán ăn", "pos": "danh từ", "a": "饭馆", "ipa": "fànguǎn", "alt": ["fànguǎn"]},
+  {"no": 340, "vi": "Bay", "pos": "động từ", "a": "飞", "ipa": "fēi", "alt": ["fēi"]},
+  {"no": 341, "vi": "Cao", "pos": "tính từ", "a": "高", "ipa": "gāo", "alt": ["gāo"]},
+  {"no": 342, "vi": "Cho biết", "pos": "động từ", "a": "告诉", "ipa": "gàosu", "alt": ["gàosu"]},
+  {"no": 343, "vi": "Cấp 3", "pos": "danh từ", "a": "高中", "ipa": "gāozhōng", "alt": ["gāozhōng"]},
+  {"no": 344, "vi": "Với/Cùng", "pos": "giới từ", "a": "跟", "ipa": "gēn", "alt": ["gēn"]},
+  {"no": 345, "vi": "Vóc dáng", "pos": "danh từ", "a": "个子", "ipa": "gèzi", "alt": ["gèzi"]},
+  {"no": 346, "vi": "Xe buýt", "pos": "danh từ", "a": "公交车", "ipa": "gōngjiāochē", "alt": ["gōngjiāochē"]},
+  {"no": 347, "vi": "đã từng", "pos": "trợ từ động thái", "a": "过", "ipa": "guo", "alt": ["guo"]},
+  {"no": 348, "vi": "Qua/Đón", "pos": "động từ", "a": "过", "ipa": "guò", "alt": ["guò"]},
+  {"no": 349, "vi": "Qua đây", "pos": "động từ xu hướng", "a": "过来", "ipa": "guòlái", "alt": ["guòlái"]},
+  {"no": 350, "vi": "Đón Tết", "pos": "động từ ly hợp", "a": "过年", "ipa": "guònián", "alt": ["guònián"]},
+  {"no": 351, "vi": "Đi qua/Trước kia", "pos": "động từ xu hướng / danh từ", "a": "过去", "ipa": "guòqù", "alt": ["guòqù"]},
+  {"no": 352, "vi": "Hay là/Vẫn", "pos": "liên từ / phó từ", "a": "还是", "ipa": "háishi", "alt": ["háishi"]},
+  {"no": 353, "vi": "Màu đen", "pos": "danh từ", "a": "黑色", "ipa": "hēisè", "alt": ["hēisè"]},
+  {"no": 354, "vi": "Trà đen", "pos": "danh từ", "a": "红茶", "ipa": "hóngchá", "alt": ["hóngchá"]},
+  {"no": 355, "vi": "Màu đỏ", "pos": "danh từ", "a": "红色", "ipa": "hóngsè", "alt": ["hóngsè"]},
+  {"no": 356, "vi": "Phía sau", "pos": "danh từ phương vị", "a": "后面", "ipa": "hòumiàn", "alt": ["hòumiàn"]},
+  {"no": 357, "vi": "Vẽ/Tranh", "pos": "động từ / danh từ", "a": "画", "ipa": "huà", "alt": ["huà"]},
+  {"no": 358, "vi": "Tiêu/Tốn", "pos": "động từ", "a": "花", "ipa": "huā", "alt": ["huā"]},
+  {"no": 359, "vi": "Hoa", "pos": "danh từ", "a": "花", "ipa": "huā", "alt": ["huā"]},
+  {"no": 360, "vi": "Hỏng/Xấu", "pos": "tính từ", "a": "坏", "ipa": "huài", "alt": ["huài"]},
+  {"no": 361, "vi": "Quay lại đây", "pos": "động từ xu hướng", "a": "回来", "ipa": "huílái", "alt": ["huílái"]},
+  {"no": 362, "vi": "Quay về kia", "pos": "động từ xu hướng", "a": "回去", "ipa": "huíqù", "alt": ["huíqù"]},
+  {"no": 363, "vi": "gian, căn – dùng cho phòng", "pos": "lượng từ", "a": "间", "ipa": "jiān", "alt": ["jiān"]},
+  {"no": 364, "vi": "Dạy", "pos": "động từ", "a": "教", "ipa": "jiāo", "alt": ["jiāo"]},
+  {"no": 365, "vi": "Lớp học", "pos": "danh từ", "a": "教室", "ipa": "jiàoshì", "alt": ["jiàoshì"]},
+  {"no": 366, "vi": "Sân bay", "pos": "danh từ", "a": "机场", "ipa": "jīchǎng", "alt": ["jīchǎng"]},
+  {"no": 367, "vi": "Nhớ", "pos": "động từ", "a": "记得", "ipa": "jìde", "alt": ["jìde"]},
+  {"no": 368, "vi": "Giới thiệu", "pos": "động từ", "a": "介绍", "ipa": "jièshào", "alt": ["jièshào"]},
+  {"no": 369, "vi": "Vào", "pos": "động từ", "a": "进", "ipa": "jìn", "alt": ["jìn"]},
+  {"no": 370, "vi": "Gần", "pos": "tính từ", "a": "近", "ipa": "jìn", "alt": ["jìn"]},
+  {"no": 371, "vi": "Thường xuyên", "pos": "phó từ", "a": "经常", "ipa": "jīngcháng", "alt": ["jīngcháng"]},
+  {"no": 372, "vi": "Vào đây", "pos": "động từ xu hướng", "a": "进来", "ipa": "jìnlái", "alt": ["jìnlái"]},
+  {"no": 373, "vi": "Vào đó", "pos": "động từ xu hướng", "a": "进去", "ipa": "jìnqù", "alt": ["jìnqù"]},
+  {"no": 374, "vi": "Vé máy bay", "pos": "danh từ", "a": "机票", "ipa": "jīpiào", "alt": ["jīpiào"]},
+  {"no": 375, "vi": "Chính/Thì", "pos": "phó từ", "a": "就", "ipa": "jiù", "alt": ["jiù"]},
+  {"no": 376, "vi": "Khách sạn", "pos": "danh từ", "a": "酒店", "ipa": "jiǔdiàn", "alt": ["jiǔdiàn"]},
+  {"no": 377, "vi": "Cà phê", "pos": "danh từ", "a": "咖啡", "ipa": "kāfēi", "alt": ["kāfēi"]},
+  {"no": 378, "vi": "Bắt đầu", "pos": "động từ", "a": "开始", "ipa": "kāishǐ", "alt": ["kāishǐ"]},
+  {"no": 379, "vi": "Khai giảng", "pos": "động từ ly hợp", "a": "开学", "ipa": "kāixué", "alt": ["kāixué"]},
+  {"no": 380, "vi": "Thi", "pos": "động từ", "a": "考", "ipa": "kǎo", "alt": ["kǎo"]},
+  {"no": 381, "vi": "Kỳ thi", "pos": "danh từ / động từ", "a": "考试", "ipa": "kǎoshì", "alt": ["kǎoshì"]},
+  {"no": 382, "vi": "Có thể", "pos": "phó từ", "a": "可能", "ipa": "kěnéng", "alt": ["kěnéng"]},
+  {"no": 383, "vi": "Nhanh", "pos": "tính từ", "a": "快", "ipa": "kuài", "alt": ["kuài"]},
+  {"no": 384, "vi": "Hạnh phúc", "pos": "tính từ", "a": "快乐", "ipa": "kuàilè", "alt": ["kuàilè"]},
+  {"no": 385, "vi": "Sắp", "pos": "phó từ", "a": "快要", "ipa": "kuàiyào", "alt": ["kuàiyào"]},
+  {"no": 386, "vi": "Quần", "pos": "danh từ", "a": "裤子", "ipa": "kùzi", "alt": ["kùzi"]},
+  {"no": 387, "vi": "Bóng rổ", "pos": "danh từ", "a": "篮球", "ipa": "lánqiú", "alt": ["lánqiú"]},
+  {"no": 388, "vi": "Mệt", "pos": "tính từ", "a": "累", "ipa": "lèi", "alt": ["lèi"]},
+  {"no": 389, "vi": "Cách", "pos": "giới từ", "a": "离", "ipa": "lí", "alt": ["lí"]},
+  {"no": 390, "vi": "Bên trong", "pos": "danh từ phương vị", "a": "里面", "ipa": "lǐmiàn", "alt": ["lǐmiàn"]},
+  {"no": 391, "vi": "Tầng/Tòa nhà", "pos": "danh từ", "a": "楼", "ipa": "lóu", "alt": ["lóu"]},
+  {"no": 392, "vi": "Đường", "pos": "danh từ", "a": "路", "ipa": "lù", "alt": ["lù"]},
+  {"no": 393, "vi": "Trà xanh", "pos": "danh từ", "a": "绿茶", "ipa": "lǜchá", "alt": ["lǜchá"]},
+  {"no": 394, "vi": "Màu xanh lá", "pos": "danh từ", "a": "绿色", "ipa": "lǜsè", "alt": ["lǜsè"]},
+  {"no": 395, "vi": "Trên đường", "pos": "danh từ", "a": "路上", "ipa": "lùshang", "alt": ["lùshang"]},
+  {"no": 396, "vi": "Du lịch", "pos": "động từ", "a": "旅游", "ipa": "lǚyóu", "alt": ["lǚyóu"]},
+  {"no": 397, "vi": "Chậm", "pos": "tính từ", "a": "慢", "ipa": "màn", "alt": ["màn"]},
+  {"no": 398, "vi": "Mỗi", "pos": "đại từ", "a": "每", "ipa": "měi", "alt": ["měi"]},
+  {"no": 399, "vi": "Vô vị", "pos": "tính từ", "a": "没意思", "ipa": "méi yìsi", "alt": ["méi yìsi"]},
+  {"no": 400, "vi": "Cửa", "pos": "danh từ", "a": "门", "ipa": "mén", "alt": ["mén"]},
+  {"no": 401, "vi": "Cổng", "pos": "danh từ", "a": "门口", "ipa": "ménkǒu", "alt": ["ménkǒu"]},
+  {"no": 402, "vi": "Vé vào cổng", "pos": "danh từ", "a": "门票", "ipa": "ménpiào", "alt": ["ménpiào"]},
+  {"no": 403, "vi": "Mì/Bề mặt", "pos": "danh từ", "a": "面", "ipa": "miàn", "alt": ["miàn"]},
+  {"no": 404, "vi": "người – dùng cho người", "pos": "lượng từ", "a": "名", "ipa": "míng", "alt": ["míng"]},
+  {"no": 405, "vi": "Cầm/Lấy", "pos": "động từ", "a": "拿", "ipa": "ná", "alt": ["ná"]},
+  {"no": 406, "vi": "Trà sữa", "pos": "danh từ", "a": "奶茶", "ipa": "nǎichá", "alt": ["nǎichá"]},
+  {"no": 407, "vi": "Bà nội", "pos": "danh từ", "a": "奶奶", "ipa": "nǎinai", "alt": ["nǎinai"]},
+  {"no": 408, "vi": "Như thế/Vậy thì", "pos": "đại từ", "a": "那么", "ipa": "nàme", "alt": ["nàme"]},
+  {"no": 409, "vi": "Bé trai", "pos": "danh từ", "a": "男孩儿", "ipa": "nánháir", "alt": ["nánháir"]},
+  {"no": 410, "vi": "Như vậy", "pos": "đại từ", "a": "那样", "ipa": "nàyàng", "alt": ["nàyàng"]},
+  {"no": 411, "vi": "Chim", "pos": "danh từ", "a": "鸟", "ipa": "niǎo", "alt": ["niǎo"]},
+  {"no": 412, "vi": "Bé gái", "pos": "danh từ", "a": "女孩儿", "ipa": "nǚháir", "alt": ["nǚháir"]},
+  {"no": 413, "vi": "Bên cạnh", "pos": "danh từ phương vị", "a": "旁边", "ipa": "pángbiān", "alt": ["pángbiān"]},
+  {"no": 414, "vi": "Chạy", "pos": "động từ", "a": "跑", "ipa": "pǎo", "alt": ["pǎo"]},
+  {"no": 415, "vi": "Chạy bộ", "pos": "động từ ly hợp", "a": "跑步", "ipa": "pǎobù", "alt": ["pǎobù"]},
+  {"no": 416, "vi": "Vé", "pos": "danh từ", "a": "票", "ipa": "piào", "alt": ["piào"]},
+  {"no": 417, "vi": "Phía trước", "pos": "danh từ phương vị", "a": "前面", "ipa": "qiánmiàn", "alt": ["qiánmiàn"]},
+  {"no": 418, "vi": "Đứng dậy/Lên", "pos": "động từ xu hướng", "a": "起来", "ipa": "qǐlái", "alt": ["qǐlái"]},
+  {"no": 419, "vi": "Nắng", "pos": "tính từ", "a": "晴", "ipa": "qíng", "alt": ["qíng"]},
+  {"no": 420, "vi": "Bóng", "pos": "danh từ", "a": "球", "ipa": "qiú", "alt": ["qiú"]},
+  {"no": 421, "vi": "Vợ", "pos": "danh từ", "a": "妻子", "ipa": "qīzi", "alt": ["qīzi"]},
+  {"no": 422, "vi": "Cho phép/Bảo", "pos": "động từ", "a": "让", "ipa": "ràng", "alt": ["ràng"]},
+  {"no": 423, "vi": "Thịt", "pos": "danh từ", "a": "肉", "ipa": "ròu", "alt": ["ròu"]},
+  {"no": 424, "vi": "Trung tâm thương mại", "pos": "danh từ", "a": "商场", "ipa": "shāngchǎng", "alt": ["shāngchǎng"]},
+  {"no": 425, "vi": "Lên đây", "pos": "động từ xu hướng", "a": "上来", "ipa": "shànglái", "alt": ["shànglái"]},
+  {"no": 426, "vi": "Phía trên", "pos": "danh từ phương vị", "a": "上面", "ipa": "shàngmiàn", "alt": ["shàngmiàn"]},
+  {"no": 427, "vi": "Lên đó", "pos": "động từ xu hướng", "a": "上去", "ipa": "shàngqù", "alt": ["shàngqù"]},
+  {"no": 428, "vi": "Lên mạng", "pos": "động từ ly hợp", "a": "上网", "ipa": "shàngwǎng", "alt": ["shàngwǎng"]},
+  {"no": 429, "vi": "Sinh nhật", "pos": "danh từ", "a": "生日", "ipa": "shēngrì", "alt": ["shēngrì"]},
+  {"no": 430, "vi": "Sức khỏe", "pos": "danh từ", "a": "身体", "ipa": "shēntǐ", "alt": ["shēntǐ"]},
+  {"no": 431, "vi": "Lúc/Khi", "pos": "danh từ", "a": "时", "ipa": "shí", "alt": ["shí"]},
+  {"no": 432, "vi": "Sự việc", "pos": "danh từ", "a": "事情", "ipa": "shìqing", "alt": ["shìqing"]},
+  {"no": 433, "vi": "Tay", "pos": "danh từ", "a": "手", "ipa": "shǒu", "alt": ["shǒu"]},
+  {"no": 434, "vi": "Đồng hồ", "pos": "danh từ", "a": "手表", "ipa": "shǒubiǎo", "alt": ["shǒubiǎo"]},
+  {"no": 435, "vi": "Cặp sách", "pos": "danh từ", "a": "书包", "ipa": "shūbāo", "alt": ["shūbāo"]},
+  {"no": 436, "vi": "Thoải mái", "pos": "tính từ", "a": "舒服", "ipa": "shūfu", "alt": ["shūfu"]},
+  {"no": 437, "vi": "Tặng/Tiễn", "pos": "động từ", "a": "送", "ipa": "sòng", "alt": ["sòng"]},
+  {"no": 438, "vi": "Mặc dù", "pos": "liên từ", "a": "虽然", "ipa": "suīrán", "alt": ["suīrán"]},
+  {"no": 439, "vi": "Cho nên", "pos": "liên từ", "a": "所以", "ipa": "suǒyǐ", "alt": ["suǒyǐ"]},
+  {"no": 440, "vi": "Đau", "pos": "tính từ", "a": "疼", "ipa": "téng", "alt": ["téng"]},
+  {"no": 441, "vi": "Đề bài", "pos": "danh từ", "a": "题", "ipa": "tí", "alt": ["tí"]},
+  {"no": 442, "vi": "Đá", "pos": "động từ", "a": "踢", "ipa": "tī", "alt": ["tī"]},
+  {"no": 443, "vi": "con, chiếc, cái – dùng cho vật dài", "pos": "lượng từ", "a": "条", "ipa": "tiáo", "alt": ["tiáo"]},
+  {"no": 444, "vi": "Nhảy múa", "pos": "động từ ly hợp", "a": "跳舞", "ipa": "tiàowǔ", "alt": ["tiàowǔ"]},
+  {"no": 445, "vi": "Đầu", "pos": "danh từ", "a": "头", "ipa": "tóu", "alt": ["tóu"]},
+  {"no": 446, "vi": "Nước ngoài", "pos": "danh từ", "a": "外国", "ipa": "wàiguó", "alt": ["wàiguó"]},
+  {"no": 447, "vi": "Bên ngoài", "pos": "danh từ phương vị", "a": "外面", "ipa": "wàimiàn", "alt": ["wàimiàn"]},
+  {"no": 448, "vi": "Xong/Hết", "pos": "động từ", "a": "完", "ipa": "wán", "alt": ["wán"]},
+  {"no": 449, "vi": "Mười nghìn", "pos": "số từ", "a": "万", "ipa": "wàn", "alt": ["wàn"]},
+  {"no": 450, "vi": "Quên", "pos": "động từ", "a": "忘", "ipa": "wàng", "alt": ["wàng"]},
+  {"no": 451, "vi": "Hướng về", "pos": "giới từ", "a": "往", "ipa": "wǎng", "alt": ["wǎng"]},
+  {"no": 452, "vi": "Trên mạng", "pos": "danh từ", "a": "网上", "ipa": "wǎngshang", "alt": ["wǎngshang"]},
+  {"no": 453, "vi": "vị – dùng cho người (lịch sự)", "pos": "lượng từ", "a": "位", "ipa": "wèi", "alt": ["wèi"]},
+  {"no": 454, "vi": "Tại sao", "pos": "đại từ nghi vấn", "a": "为什么", "ipa": "wèi shénme", "alt": ["wèi shénme"]},
+  {"no": 455, "vi": "Rửa/Giặt", "pos": "động từ", "a": "洗", "ipa": "xǐ", "alt": ["xǐ"]},
+  {"no": 456, "vi": "Xuống đây", "pos": "động từ xu hướng", "a": "下来", "ipa": "xiàlái", "alt": ["xiàlái"]},
+  {"no": 457, "vi": "Phía dưới", "pos": "danh từ phương vị", "a": "下面", "ipa": "xiàmiàn", "alt": ["xiàmiàn"]},
+  {"no": 458, "vi": "Cười", "pos": "động từ", "a": "笑", "ipa": "xiào", "alt": ["xiào"]},
+  {"no": 459, "vi": "Trẻ con", "pos": "danh từ", "a": "小孩儿", "ipa": "xiǎoháir", "alt": ["xiǎoháir"]},
+  {"no": 460, "vi": "Lúc nhỏ", "pos": "danh từ", "a": "小时候", "ipa": "xiǎoshíhou", "alt": ["xiǎoshíhou"]},
+  {"no": 461, "vi": "Xuống đó", "pos": "động từ xu hướng", "a": "下去", "ipa": "xiàqù", "alt": ["xiàqù"]},
+  {"no": 462, "vi": "Họ", "pos": "động từ / danh từ", "a": "姓", "ipa": "xìng", "alt": ["xìng"]},
+  {"no": 463, "vi": "Họ và tên", "pos": "danh từ", "a": "姓名", "ipa": "xìngmíng", "alt": ["xìngmíng"]},
+  {"no": 464, "vi": "Nhà vệ sinh", "pos": "danh từ", "a": "洗手间", "ipa": "xǐshǒujiān", "alt": ["xǐshǒujiān"]},
+  {"no": 465, "vi": "Hy vọng", "pos": "động từ", "a": "希望", "ipa": "xīwàng", "alt": ["xīwàng"]},
+  {"no": 466, "vi": "Mắt", "pos": "danh từ", "a": "眼睛", "ipa": "yǎnjing", "alt": ["yǎnjing"]},
+  {"no": 467, "vi": "Màu sắc", "pos": "danh từ", "a": "颜色", "ipa": "yánsè", "alt": ["yánsè"]},
+  {"no": 468, "vi": "Thuốc", "pos": "danh từ", "a": "药", "ipa": "yào", "alt": ["yào"]},
+  {"no": 469, "vi": "Hiệu thuốc", "pos": "danh từ", "a": "药店", "ipa": "yàodiàn", "alt": ["yàodiàn"]},
+  {"no": 470, "vi": "Ông nội", "pos": "danh từ", "a": "爷爷", "ipa": "yéye", "alt": ["yéye"]},
+  {"no": 471, "vi": "Một lát (danh từ", "pos": "thời gian)", "a": "一会儿", "ipa": "yíhuìr", "alt": ["yíhuìr"]},
+  {"no": 472, "vi": "Đã", "pos": "phó từ", "a": "已经", "ipa": "yǐjīng", "alt": ["yǐjīng"]},
+  {"no": 473, "vi": "Âm u/Mây", "pos": "tính từ", "a": "阴", "ipa": "yīn", "alt": ["yīn"]},
+  {"no": 474, "vi": "Bởi vì", "pos": "liên từ", "a": "因为", "ipa": "yīnwèi", "alt": ["yīnwèi"]},
+  {"no": 475, "vi": "Cùng nhau", "pos": "phó từ", "a": "一起", "ipa": "yìqǐ", "alt": ["yìqǐ"]},
+  {"no": 476, "vi": "Ý nghĩa", "pos": "danh từ", "a": "意思", "ipa": "yìsi", "alt": ["yìsi"]},
+  {"no": 477, "vi": "Bơi", "pos": "động từ", "a": "游", "ipa": "yóu", "alt": ["yóu"]},
+  {"no": 478, "vi": "Phải (bên phải)", "pos": "danh từ phương vị", "a": "右", "ipa": "yòu", "alt": ["yòu"]},
+  {"no": 479, "vi": "Thú vị", "pos": "tính từ", "a": "有意思", "ipa": "yǒuyìsi", "alt": ["yǒuyìsi"]},
+  {"no": 480, "vi": "Bên phải", "pos": "danh từ phương vị", "a": "右边", "ipa": "yòubian", "alt": ["yòubian"]},
+  {"no": 481, "vi": "Có lúc", "pos": "phó từ", "a": "有时", "ipa": "yǒushí", "alt": ["yǒushí"]},
+  {"no": 482, "vi": "Bơi lội", "pos": "động từ ly hợp", "a": "游泳", "ipa": "yóuyǒng", "alt": ["yóuyǒng"]},
+  {"no": 483, "vi": "Cá", "pos": "danh từ", "a": "鱼", "ipa": "yú", "alt": ["yú"]},
+  {"no": 484, "vi": "Xa", "pos": "tính từ", "a": "远", "ipa": "yuǎn", "alt": ["yuǎn"]},
+  {"no": 485, "vi": "Thể thao", "pos": "danh từ / động từ", "a": "运动", "ipa": "yùndòng", "alt": ["yùndòng"]},
+  {"no": 486, "vi": "Trạm/Đứng", "pos": "danh từ / động từ", "a": "站", "ipa": "zhàn", "alt": ["zhàn"]},
+  {"no": 487, "vi": "Chồng", "pos": "danh từ", "a": "丈夫", "ipa": "zhàngfu", "alt": ["zhàngfu"]},
+  {"no": 488, "vi": "đang – biểu thị trạng thái tiếp diễn", "pos": "trợ từ động thái", "a": "着", "ipa": "zhe", "alt": ["zhe"]},
+  {"no": 489, "vi": "Thế này", "pos": "đại từ", "a": "这么", "ipa": "zhème", "alt": ["zhème"]},
+  {"no": 490, "vi": "Đang", "pos": "phó từ", "a": "正", "ipa": "zhèng", "alt": ["zhèng", "正在", "zhèngzài"]},
+  {"no": 491, "vi": "Như thế này", "pos": "đại từ", "a": "这样", "ipa": "zhèyàng", "alt": ["zhèyàng"]},
+  {"no": 492, "vi": "Tuần", "pos": "danh từ", "a": "周", "ipa": "zhōu", "alt": ["zhōu"]},
+  {"no": 493, "vi": "Chuẩn bị", "pos": "động từ", "a": "准备", "ipa": "zhǔnbèi", "alt": ["zhǔnbèi"]},
+  {"no": 494, "vi": "Tự mình", "pos": "đại từ", "a": "自己", "ipa": "zìjǐ", "alt": ["zìjǐ"]},
+  {"no": 495, "vi": "Đi", "pos": "động từ", "a": "走", "ipa": "zǒu", "alt": ["zǒu", "去", "qù"]},
+  {"no": 496, "vi": "Đi bộ", "pos": "động từ ly hợp", "a": "走路", "ipa": "zǒulù", "alt": ["zǒulù"]},
+  {"no": 497, "vi": "Nhất", "pos": "phó từ", "a": "最", "ipa": "zuì", "alt": ["zuì"]},
+  {"no": 498, "vi": "Trái (bên trái)", "pos": "danh từ phương vị", "a": "左", "ipa": "zuǒ", "alt": ["zuǒ"]},
+  {"no": 499, "vi": "Bên trái", "pos": "danh từ phương vị", "a": "左边", "ipa": "zuǒbian", "alt": ["zuǒbian"]},
+  {"no": 500, "vi": "Bóng đá", "pos": "danh từ", "a": "足球", "ipa": "zúqiú", "alt": ["zúqiú"]}
+];
+const LIMIT=10*60;
+const SCRIPT_URL='';
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const POOL=ITEMS;const order=shuffle(POOL.slice()).slice(0,20);
+order.forEach((it,i)=>{it.no=i+1;});
+ITEMS.length=0;order.forEach(it=>ITEMS.push(it));
+const norm=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f\u200b]/g,'').toLowerCase().replace(/v/g,'u').replace(/[\s'’`·.,，。!！?？\-0-9]/g,'');
+const fmtTime=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+
+const quiz=document.getElementById('quiz');
+order.forEach((it,i)=>{
+  const q=document.createElement('div');q.className='q';
+  q.innerHTML=`<div class="qnum">${i+1}.</div>
+    <div class="prompt"><span class="vi">${it.vi}</span><span class="pos">${it.pos}</span></div>
+    <div class="ans"><input class="gap" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Câu ${i+1}" placeholder="chữ Hán / pinyin" disabled>
+    <span class="key">✔ ${it.a}<span class="ipa">${it.ipa}</span></span></div>`;
+  it.el=q.querySelector('input');it.keyEl=q.querySelector('.key');
+  it.el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const n=order[i+1];if(n)n.el.focus();else document.getElementById('submitBtn').focus();}});
+  quiz.appendChild(q);
+});
+
+let started=false,done=false,t0=0,tick=null,confirmBlank=false;
+const timerEl=document.getElementById('timer');
+document.getElementById('startBtn').addEventListener('click',()=>{
+  const name=document.getElementById('studentName').value.trim();
+  if(!name){document.getElementById('nameWarn').style.display='block';document.getElementById('studentName').focus();return;}
+  document.getElementById('nameWarn').style.display='none';
+  started=true;t0=Date.now();
+  document.getElementById('studentName').disabled=true;
+  document.getElementById('startBtn').disabled=true;
+  quiz.classList.remove('locked');
+  order.forEach(it=>it.el.disabled=false);
+  document.getElementById('submitBtn').disabled=false;
+  order[0].el.focus();
+  tick=setInterval(()=>{
+    const left=LIMIT-Math.floor((Date.now()-t0)/1000);
+    timerEl.textContent=fmtTime(Math.max(0,left));
+    if(left<=60)timerEl.classList.add('low');
+    if(left<=0)finish(true);
+  },250);
+});
+document.getElementById('submitBtn').addEventListener('click',()=>{
+  const blanks=order.filter(it=>!it.el.value.trim()).length;
+  const w=document.getElementById('blankWarn');
+  if(blanks&&!confirmBlank){
+    confirmBlank=true;
+    w.textContent=`⚠️ Còn ${blanks} câu bỏ trống. Bấm "Nộp bài" lần nữa để nộp luôn.`;w.style.display='inline';return;
+  }
+  w.style.display='none';finish(false);
+});
+window.addEventListener('beforeunload',e=>{if(started&&!done){e.preventDefault();e.returnValue='';}});
+
+function finish(timeUp){
+  if(done)return;done=true;clearInterval(tick);
+  const sec=Math.min(LIMIT,Math.round((Date.now()-t0)/1000));
+  timerEl.classList.remove('low');timerEl.textContent=timeUp?'Hết giờ':fmtTime(LIMIT-sec);
+  let correct=0;const details=[];
+  order.forEach(it=>{
+    const g=it.el.value,ok=[it.a].concat(it.alt||[]).map(norm).includes(norm(g));
+    it.el.disabled=true;
+    it.el.classList.add(!g.trim()?'unanswered':(ok?'correct':'incorrect'));
+    if(!ok)it.keyEl.classList.add('show');
+    if(ok)correct++;
+    details[it.no-1]={no:it.no,label:`${it.vi} (${it.pos})`,given:g.trim()||'(bỏ trống)',answer:it.a,correct:ok?1:0};
+  });
+  document.getElementById('submitBtn').disabled=true;
+  const ten=Math.round(correct/ITEMS.length*100)/10;
+  document.getElementById('scoreBig').textContent=`${correct}/${ITEMS.length} câu · ${ten.toString().replace('.',',')} điểm`;
+  document.getElementById('scoreSub').textContent=(timeUp?'Hết giờ — bài đã tự nộp. ':'')+`Thời gian làm: ${fmtTime(sec)}. Câu sai/bỏ trống có hiện đáp án đúng màu xanh bên cạnh.`;
+  const r=document.getElementById('result');r.classList.add('show');r.scrollIntoView({behavior:'smooth',block:'center'});
+  send(document.getElementById('studentName').value.trim(),correct,ITEMS.length,sec,details);
+}
+function send(name,score,total,sec,details){
+  if(!SCRIPT_URL)return;
+  const st=document.getElementById('submitStatus');
+  st.textContent='📤 Đang gửi kết quả...';st.className='submit-status sending';
+  const payload=new URLSearchParams({
+    kind:'test',name:name,class:'hsk-500',
+    unit:'HSK 500 từ — Kiểm tra ngẫu nhiên',
+    level:'HSK',score:String(score),total:String(total),
+    timeSeconds:String(sec),timeFormatted:fmtTime(sec),
+    timestamp:new Date().toISOString(),detailsJson:JSON.stringify(details)
+  });
+  fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:payload})
+    .then(()=>{st.textContent='✅ Đã gửi kết quả về giáo viên.';st.className='submit-status ok';})
+    .catch(()=>{st.textContent='⚠️ Gửi kết quả thất bại (kiểm tra mạng). Hãy chụp màn hình điểm gửi cô.';st.className='submit-status fail';});
+}
+</script>
+
+<!--NAV-START--><style>
+.nav-fab{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:'Plus Jakarta Sans','Outfit',system-ui,sans-serif}
+.nav-fab>button{width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;font-size:26px;color:#fff;
+ background:linear-gradient(135deg,#f59e0b,#ea580c);box-shadow:0 8px 22px rgba(234,88,12,.4)}
+.nav-fab>button:active{transform:scale(.94)}
+.nav-menu{display:none;position:absolute;right:0;bottom:70px;min-width:230px;background:#fff;border:2px solid #fde68a;
+ border-radius:18px;padding:8px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.nav-fab.open .nav-menu{display:block}
+.nav-menu a{display:block;padding:12px 14px;border-radius:12px;color:#c2410c;font-weight:800;font-size:19px;text-decoration:none}
+.nav-menu a:hover{background:#fef3c7}
+.nav-menu .cap{padding:6px 14px 2px;color:#9ca3af;font-size:14px;font-weight:700}
+@media (prefers-color-scheme:dark){.nav-menu{background:#292524;border-color:#44403c}.nav-menu a{color:#fdba74}.nav-menu a:hover{background:#3a2f1c}}
+body{padding-bottom:84px}
+</style><div class="nav-fab" id="navFab"><div class="nav-menu"><div class="cap">Đi tới</div><a href="index.html">🏠 Mục lục tổng</a></div><button type="button" aria-label="Mục lục" title="Mục lục" onclick="event.stopPropagation();this.parentNode.classList.toggle('open')">☰</button></div><script>document.addEventListener("click",function(e){var f=document.getElementById("navFab");if(f&&!f.contains(e.target))f.classList.remove("open")});</script><!--NAV-END-->
+</body>
+</html>
+

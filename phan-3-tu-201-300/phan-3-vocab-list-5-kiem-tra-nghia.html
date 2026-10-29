@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK Phần 3 — List 5 (từ 281–300)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#ea580c; --primary-dark:#c2410c; --primary-light:#fef3c7;
+  --blue:#1e40af; --green:#059669;
+  --bg:#fffbeb; --card-bg:#ffffff; --text:#1f2937; --text-muted:#64748b;
+  --border:#e2e8f0; --correct:#10b981; --incorrect:#ef4444; --warn:#d97706;
+  --font:'Outfit','Noto Sans SC','Segoe UI',Arial,sans-serif;
+  --shadow:0 10px 25px -5px rgba(0,0,0,.05),0 8px 10px -6px rgba(0,0,0,.05);
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0f172a;--card-bg:#1e293b;--text:#f8fafc;--text-muted:#94a3b8;--border:#334155;--primary-light:rgba(245,158,11,.18);}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:21px}
+.vi{font-size:1.08rem}
+.back{display:inline-block;margin-bottom:12px;color:var(--primary);font-weight:700;text-decoration:none}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;}
+.site-header{background:linear-gradient(120deg,#facc15,#f59e0b 55%,#ea580c);color:#3b1d00;color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.unit-byline{font-size:.75rem;opacity:.85;margin-bottom:3px;}
+.unit-title{font-size:1.2rem;font-weight:700;line-height:1.2;}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:1.35rem;background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.7);border-radius:9999px;padding:4px 16px;min-width:104px;text-align:center;}
+.timer.low{background:#ef4444;border-color:#ef4444;animation:pulse 1s infinite;}
+@keyframes pulse{50%{opacity:.7}}
+main{max-width:760px;margin:0 auto;padding:24px 16px 120px;}
+.intro{color:var(--text-muted);font-size:.93rem;margin-bottom:18px;line-height:1.6;}
+.intro b{color:var(--text);}
+.student-bar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:18px;box-shadow:var(--shadow);}
+.student-bar label{font-weight:700;font-size:.9rem;white-space:nowrap;}
+.student-bar input{font-family:var(--font);font-size:.95rem;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;flex:1;min-width:180px;background:var(--bg);color:var(--text);}
+.student-bar input:focus{outline:none;border-color:var(--primary);}
+.warn{display:none;color:var(--incorrect);font-size:.86rem;font-weight:700;width:100%;}
+.btn{font-family:var(--font);font-weight:700;font-size:.95rem;border:none;border-radius:12px;padding:11px 22px;cursor:pointer;background:var(--primary);color:#fff;transition:.2s;}
+.btn:hover{background:var(--primary-dark);}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:6px 20px;box-shadow:var(--shadow);}
+.card.locked{opacity:.45;pointer-events:none;filter:blur(3px);user-select:none;}
+.q{display:grid;grid-template-columns:34px 1fr;gap:4px 10px;padding:14px 0;border-top:1px dashed var(--border);align-items:center;}
+.q:first-child{border-top:none;}
+.qnum{font-weight:800;color:var(--primary);}
+.prompt{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:1rem;}
+.vi{font-weight:600;}
+.pos{font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:9999px;background:var(--primary-light);color:var(--primary-dark);font-style:italic;}
+@media (prefers-color-scheme: dark){.pos{color:#fdba74;}}
+.ans{grid-column:2;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;}
+input.gap{font-family:var(--font);font-size:1.15rem;font-weight:600;color:var(--primary-dark);background:transparent;border:none;border-bottom:2px solid var(--primary);width:220px;max-width:100%;padding:4px 6px;}
+@media (prefers-color-scheme: dark){input.gap{color:#fdba74;}}
+input.gap:focus{outline:none;background:var(--primary-light);}
+input.gap.correct{border-color:var(--correct);color:var(--correct);}
+input.gap.incorrect{border-color:var(--incorrect);color:var(--incorrect);text-decoration:line-through;}
+input.gap.unanswered{border-color:var(--warn);background:rgba(217,119,6,.08);}
+.key{display:none;font-size:.9rem;color:var(--green);font-weight:700;}
+.key .ipa{font-weight:400;color:var(--text-muted);margin-left:4px;}
+.key.show{display:inline;}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px;}
+.result{display:none;margin-top:20px;background:var(--card-bg);border:2px solid var(--primary);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);}
+.result.show{display:block;}
+.big{font-size:1.9rem;font-weight:800;color:var(--primary);}
+.sub{color:var(--text-muted);font-size:.92rem;margin-top:4px;}
+.submit-status{margin-top:10px;font-size:.88rem;font-weight:600;}
+.submit-status.ok{color:var(--green);} .submit-status.fail{color:var(--incorrect);} .submit-status.sending{color:var(--text-muted);}
+footer{text-align:center;color:var(--text-muted);font-size:.78rem;margin-top:30px;}
+@media (max-width:520px){.unit-title{font-size:1.02rem;} .timer{font-size:1.15rem;min-width:88px;} input.gap{width:100%;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="unit-byline">HSK 3.0 · Phần 3 · Từ vựng · Kiểm tra nghĩa</div>
+    <div class="unit-title">List 5/5 — Nghĩa → Từ</div>
+  </div>
+  <div class="timer" id="timer">10:00</div>
+</header>
+
+<main>
+  <a class="back" href="index.html">← Về Phần 3</a>
+  <p class="intro">Đọc <b>nghĩa tiếng Việt</b> và <b>từ loại</b>, rồi gõ <b>từ tiếng Trung</b> tương ứng (từ 281–300).
+  Gõ <b>chữ Hán</b> hoặc <b>pinyin</b> đều được — pinyin <b>không cần dấu thanh</b>, không cần dấu cách (vd: <i>àihào</i> = <i>aihao</i>).
+  Có <b>20 câu</b>, làm trong <b>10 phút</b>. Hết giờ bài tự nộp.</p>
+
+  <div class="student-bar">
+    <label for="studentName">👤 Họ tên học sinh:</label>
+    <input type="text" id="studentName" placeholder="Nhập họ tên của em..." autocomplete="off">
+    <button class="btn" id="startBtn" type="button">▶ Bắt đầu làm bài</button>
+    <span class="warn" id="nameWarn">⚠️ Vui lòng nhập họ tên trước khi bắt đầu.</span>
+  </div>
+
+  <div class="card locked" id="quiz"></div>
+
+  <div class="actions">
+    <button class="btn" id="submitBtn" type="button" disabled>📤 Nộp bài</button>
+    <span class="warn" id="blankWarn"></span>
+  </div>
+
+  <div class="result" id="result">
+    <div class="big" id="scoreBig"></div>
+    <div class="sub" id="scoreSub"></div>
+    <div class="submit-status" id="submitStatus"></div>
+  </div>
+
+  <footer>© Ms. Thủy Tiên · 0388929741</footer>
+</main>
+
+<script>
+/* Các từ cố định (no = STT gốc, dùng cho thống kê theo câu); thứ tự hiển thị xáo mỗi lần mở */
+const ITEMS=[
+  {"no": 1, "vi": "Lại, nữa", "pos": "phó từ", "a": "再", "ipa": "zài", "alt": ["zài"]},
+  {"no": 2, "vi": "Tạm biệt", "pos": "động từ", "a": "再见", "ipa": "zàijiàn", "alt": ["zàijiàn"]},
+  {"no": 3, "vi": "Ở; đang", "pos": "động từ / giới từ / phó từ", "a": "在", "ipa": "zài", "alt": ["zài"]},
+  {"no": 4, "vi": "Buổi sáng", "pos": "danh từ", "a": "早上", "ipa": "zǎoshang", "alt": ["zǎoshang", "上午", "shàngwǔ"]},
+  {"no": 5, "vi": "Thế nào, sao", "pos": "đại từ nghi vấn", "a": "怎么", "ipa": "zěnme", "alt": ["zěnme"]},
+  {"no": 6, "vi": "Thế nào (hỏi ý kiến)", "pos": "đại từ nghi vấn", "a": "怎么样", "ipa": "zěnmeyàng", "alt": ["zěnmeyàng"]},
+  {"no": 7, "vi": "Tìm", "pos": "động từ", "a": "找", "ipa": "zhǎo", "alt": ["zhǎo"]},
+  {"no": 8, "vi": "Này, đây", "pos": "đại từ", "a": "这", "ipa": "zhè", "alt": ["zhè"]},
+  {"no": 9, "vi": "Ở đây", "pos": "đại từ", "a": "这儿", "ipa": "zhèr", "alt": ["zhèr"]},
+  {"no": 10, "vi": "Thật, thực sự", "pos": "phó từ", "a": "真", "ipa": "zhēn", "alt": ["zhēn"]},
+  {"no": 11, "vi": "Đang", "pos": "phó từ", "a": "正在", "ipa": "zhèngzài", "alt": ["zhèngzài", "正", "zhèng"]},
+  {"no": 12, "vi": "Biết", "pos": "động từ", "a": "知道", "ipa": "zhīdào", "alt": ["zhīdào"]},
+  {"no": 13, "vi": "Trung Quốc", "pos": "danh từ riêng", "a": "中国", "ipa": "Zhōngguó", "alt": ["Zhōngguó"]},
+  {"no": 14, "vi": "Buổi trưa", "pos": "danh từ", "a": "中午", "ipa": "zhōngwǔ", "alt": ["zhōngwǔ"]},
+  {"no": 15, "vi": "Ở, sống", "pos": "động từ", "a": "住", "ipa": "zhù", "alt": ["zhù"]},
+  {"no": 16, "vi": "Cái bàn", "pos": "danh từ", "a": "桌子", "ipa": "zhuōzi", "alt": ["zhuōzi"]},
+  {"no": 17, "vi": "Chữ", "pos": "danh từ", "a": "字", "ipa": "zì", "alt": ["zì"]},
+  {"no": 18, "vi": "Hôm qua", "pos": "danh từ", "a": "昨天", "ipa": "zuótiān", "alt": ["zuótiān"]},
+  {"no": 19, "vi": "Ngồi; đi (xe)", "pos": "động từ", "a": "坐", "ipa": "zuò", "alt": ["zuò"]},
+  {"no": 20, "vi": "Làm", "pos": "động từ", "a": "做", "ipa": "zuò", "alt": ["zuò"]}
+];
+const LIMIT=10*60;
+const SCRIPT_URL='';
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const order=shuffle(ITEMS.slice());
+const norm=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f\u200b]/g,'').toLowerCase().replace(/v/g,'u').replace(/[\s'’`·.,，。!！?？\-0-9]/g,'');
+const fmtTime=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+
+const quiz=document.getElementById('quiz');
+order.forEach((it,i)=>{
+  const q=document.createElement('div');q.className='q';
+  q.innerHTML=`<div class="qnum">${i+1}.</div>
+    <div class="prompt"><span class="vi">${it.vi}</span><span class="pos">${it.pos}</span></div>
+    <div class="ans"><input class="gap" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Câu ${i+1}" placeholder="chữ Hán / pinyin" disabled>
+    <span class="key">✔ ${it.a}<span class="ipa">${it.ipa}</span></span></div>`;
+  it.el=q.querySelector('input');it.keyEl=q.querySelector('.key');
+  it.el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const n=order[i+1];if(n)n.el.focus();else document.getElementById('submitBtn').focus();}});
+  quiz.appendChild(q);
+});
+
+let started=false,done=false,t0=0,tick=null,confirmBlank=false;
+const timerEl=document.getElementById('timer');
+document.getElementById('startBtn').addEventListener('click',()=>{
+  const name=document.getElementById('studentName').value.trim();
+  if(!name){document.getElementById('nameWarn').style.display='block';document.getElementById('studentName').focus();return;}
+  document.getElementById('nameWarn').style.display='none';
+  started=true;t0=Date.now();
+  document.getElementById('studentName').disabled=true;
+  document.getElementById('startBtn').disabled=true;
+  quiz.classList.remove('locked');
+  order.forEach(it=>it.el.disabled=false);
+  document.getElementById('submitBtn').disabled=false;
+  order[0].el.focus();
+  tick=setInterval(()=>{
+    const left=LIMIT-Math.floor((Date.now()-t0)/1000);
+    timerEl.textContent=fmtTime(Math.max(0,left));
+    if(left<=60)timerEl.classList.add('low');
+    if(left<=0)finish(true);
+  },250);
+});
+document.getElementById('submitBtn').addEventListener('click',()=>{
+  const blanks=order.filter(it=>!it.el.value.trim()).length;
+  const w=document.getElementById('blankWarn');
+  if(blanks&&!confirmBlank){
+    confirmBlank=true;
+    w.textContent=`⚠️ Còn ${blanks} câu bỏ trống. Bấm "Nộp bài" lần nữa để nộp luôn.`;w.style.display='inline';return;
+  }
+  w.style.display='none';finish(false);
+});
+window.addEventListener('beforeunload',e=>{if(started&&!done){e.preventDefault();e.returnValue='';}});
+
+function finish(timeUp){
+  if(done)return;done=true;clearInterval(tick);
+  const sec=Math.min(LIMIT,Math.round((Date.now()-t0)/1000));
+  timerEl.classList.remove('low');timerEl.textContent=timeUp?'Hết giờ':fmtTime(LIMIT-sec);
+  let correct=0;const details=[];
+  order.forEach(it=>{
+    const g=it.el.value,ok=[it.a].concat(it.alt||[]).map(norm).includes(norm(g));
+    it.el.disabled=true;
+    it.el.classList.add(!g.trim()?'unanswered':(ok?'correct':'incorrect'));
+    if(!ok)it.keyEl.classList.add('show');
+    if(ok)correct++;
+    details[it.no-1]={no:it.no,label:`${it.vi} (${it.pos})`,given:g.trim()||'(bỏ trống)',answer:it.a,correct:ok?1:0};
+  });
+  document.getElementById('submitBtn').disabled=true;
+  const ten=Math.round(correct/ITEMS.length*100)/10;
+  document.getElementById('scoreBig').textContent=`${correct}/${ITEMS.length} câu · ${ten.toString().replace('.',',')} điểm`;
+  document.getElementById('scoreSub').textContent=(timeUp?'Hết giờ — bài đã tự nộp. ':'')+`Thời gian làm: ${fmtTime(sec)}. Câu sai/bỏ trống có hiện đáp án đúng màu xanh bên cạnh.`;
+  const r=document.getElementById('result');r.classList.add('show');r.scrollIntoView({behavior:'smooth',block:'center'});
+  send(document.getElementById('studentName').value.trim(),correct,ITEMS.length,sec,details);
+}
+function send(name,score,total,sec,details){
+  if(!SCRIPT_URL)return;
+  const st=document.getElementById('submitStatus');
+  st.textContent='📤 Đang gửi kết quả...';st.className='submit-status sending';
+  const payload=new URLSearchParams({
+    kind:'test',name:name,class:'hsk-500',
+    unit:'HSK Phần 3 — List 5 (từ 281–300)',
+    level:'HSK',score:String(score),total:String(total),
+    timeSeconds:String(sec),timeFormatted:fmtTime(sec),
+    timestamp:new Date().toISOString(),detailsJson:JSON.stringify(details)
+  });
+  fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:payload})
+    .then(()=>{st.textContent='✅ Đã gửi kết quả về giáo viên.';st.className='submit-status ok';})
+    .catch(()=>{st.textContent='⚠️ Gửi kết quả thất bại (kiểm tra mạng). Hãy chụp màn hình điểm gửi cô.';st.className='submit-status fail';});
+}
+</script>
+
+<!--NAV-START--><style>
+.nav-fab{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:'Plus Jakarta Sans','Outfit',system-ui,sans-serif}
+.nav-fab>button{width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;font-size:26px;color:#fff;
+ background:linear-gradient(135deg,#f59e0b,#ea580c);box-shadow:0 8px 22px rgba(234,88,12,.4)}
+.nav-fab>button:active{transform:scale(.94)}
+.nav-menu{display:none;position:absolute;right:0;bottom:70px;min-width:230px;background:#fff;border:2px solid #fde68a;
+ border-radius:18px;padding:8px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.nav-fab.open .nav-menu{display:block}
+.nav-menu a{display:block;padding:12px 14px;border-radius:12px;color:#c2410c;font-weight:800;font-size:19px;text-decoration:none}
+.nav-menu a:hover{background:#fef3c7}
+.nav-menu .cap{padding:6px 14px 2px;color:#9ca3af;font-size:14px;font-weight:700}
+@media (prefers-color-scheme:dark){.nav-menu{background:#292524;border-color:#44403c}.nav-menu a{color:#fdba74}.nav-menu a:hover{background:#3a2f1c}}
+body{padding-bottom:84px}
+</style><div class="nav-fab" id="navFab"><div class="nav-menu"><div class="cap">Đi tới</div><a href="index.html">📖 Mục lục Phần 3</a><a href="../index.html">🏠 Mục lục tổng</a></div><button type="button" aria-label="Mục lục" title="Mục lục" onclick="event.stopPropagation();this.parentNode.classList.toggle('open')">☰</button></div><script>document.addEventListener("click",function(e){var f=document.getElementById("navFab");if(f&&!f.contains(e.target))f.classList.remove("open")});</script><!--NAV-END-->
+</body>
+</html>
+

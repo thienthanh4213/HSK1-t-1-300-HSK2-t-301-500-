@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK Phần 5 — Kiểm tra ngẫu nhiên (từ 401–500)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#ea580c; --primary-dark:#c2410c; --primary-light:#fef3c7;
+  --blue:#1e40af; --green:#059669;
+  --bg:#fffbeb; --card-bg:#ffffff; --text:#1f2937; --text-muted:#64748b;
+  --border:#e2e8f0; --correct:#10b981; --incorrect:#ef4444; --warn:#d97706;
+  --font:'Outfit','Noto Sans SC','Segoe UI',Arial,sans-serif;
+  --shadow:0 10px 25px -5px rgba(0,0,0,.05),0 8px 10px -6px rgba(0,0,0,.05);
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0f172a;--card-bg:#1e293b;--text:#f8fafc;--text-muted:#94a3b8;--border:#334155;--primary-light:rgba(245,158,11,.18);}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:21px}
+.vi{font-size:1.08rem}
+.back{display:inline-block;margin-bottom:12px;color:var(--primary);font-weight:700;text-decoration:none}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;}
+.site-header{background:linear-gradient(120deg,#facc15,#f59e0b 55%,#ea580c);color:#3b1d00;color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.unit-byline{font-size:.75rem;opacity:.85;margin-bottom:3px;}
+.unit-title{font-size:1.2rem;font-weight:700;line-height:1.2;}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:1.35rem;background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.7);border-radius:9999px;padding:4px 16px;min-width:104px;text-align:center;}
+.timer.low{background:#ef4444;border-color:#ef4444;animation:pulse 1s infinite;}
+@keyframes pulse{50%{opacity:.7}}
+main{max-width:760px;margin:0 auto;padding:24px 16px 120px;}
+.intro{color:var(--text-muted);font-size:.93rem;margin-bottom:18px;line-height:1.6;}
+.intro b{color:var(--text);}
+.student-bar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:18px;box-shadow:var(--shadow);}
+.student-bar label{font-weight:700;font-size:.9rem;white-space:nowrap;}
+.student-bar input{font-family:var(--font);font-size:.95rem;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;flex:1;min-width:180px;background:var(--bg);color:var(--text);}
+.student-bar input:focus{outline:none;border-color:var(--primary);}
+.warn{display:none;color:var(--incorrect);font-size:.86rem;font-weight:700;width:100%;}
+.btn{font-family:var(--font);font-weight:700;font-size:.95rem;border:none;border-radius:12px;padding:11px 22px;cursor:pointer;background:var(--primary);color:#fff;transition:.2s;}
+.btn:hover{background:var(--primary-dark);}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:6px 20px;box-shadow:var(--shadow);}
+.card.locked{opacity:.45;pointer-events:none;filter:blur(3px);user-select:none;}
+.q{display:grid;grid-template-columns:34px 1fr;gap:4px 10px;padding:14px 0;border-top:1px dashed var(--border);align-items:center;}
+.q:first-child{border-top:none;}
+.qnum{font-weight:800;color:var(--primary);}
+.prompt{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:1rem;}
+.vi{font-weight:600;}
+.pos{font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:9999px;background:var(--primary-light);color:var(--primary-dark);font-style:italic;}
+@media (prefers-color-scheme: dark){.pos{color:#fdba74;}}
+.ans{grid-column:2;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;}
+input.gap{font-family:var(--font);font-size:1.15rem;font-weight:600;color:var(--primary-dark);background:transparent;border:none;border-bottom:2px solid var(--primary);width:220px;max-width:100%;padding:4px 6px;}
+@media (prefers-color-scheme: dark){input.gap{color:#fdba74;}}
+input.gap:focus{outline:none;background:var(--primary-light);}
+input.gap.correct{border-color:var(--correct);color:var(--correct);}
+input.gap.incorrect{border-color:var(--incorrect);color:var(--incorrect);text-decoration:line-through;}
+input.gap.unanswered{border-color:var(--warn);background:rgba(217,119,6,.08);}
+.key{display:none;font-size:.9rem;color:var(--green);font-weight:700;}
+.key .ipa{font-weight:400;color:var(--text-muted);margin-left:4px;}
+.key.show{display:inline;}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px;}
+.result{display:none;margin-top:20px;background:var(--card-bg);border:2px solid var(--primary);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);}
+.result.show{display:block;}
+.big{font-size:1.9rem;font-weight:800;color:var(--primary);}
+.sub{color:var(--text-muted);font-size:.92rem;margin-top:4px;}
+.submit-status{margin-top:10px;font-size:.88rem;font-weight:600;}
+.submit-status.ok{color:var(--green);} .submit-status.fail{color:var(--incorrect);} .submit-status.sending{color:var(--text-muted);}
+footer{text-align:center;color:var(--text-muted);font-size:.78rem;margin-top:30px;}
+@media (max-width:520px){.unit-title{font-size:1.02rem;} .timer{font-size:1.15rem;min-width:88px;} input.gap{width:100%;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div>
+    <div class="unit-byline">HSK 3.0 · Phần 5 · Từ vựng · Kiểm tra ngẫu nhiên</div>
+    <div class="unit-title">🎲 Ngẫu nhiên 20/100 — Nghĩa → Từ</div>
+  </div>
+  <div class="timer" id="timer">10:00</div>
+</header>
+
+<main>
+  <a class="back" href="index.html">← Về Phần 5</a>
+  <p class="intro">Đọc <b>nghĩa tiếng Việt</b> và <b>từ loại</b>, rồi gõ <b>từ tiếng Trung</b> tương ứng (bốc ngẫu nhiên 20 từ trong 100 từ 401–500, mỗi lần mở là một đề mới).
+  Gõ <b>chữ Hán</b> hoặc <b>pinyin</b> đều được — pinyin <b>không cần dấu thanh</b>, không cần dấu cách (vd: <i>àihào</i> = <i>aihao</i>).
+  Có <b>20 câu</b>, làm trong <b>10 phút</b>. Hết giờ bài tự nộp.</p>
+
+  <div class="student-bar">
+    <label for="studentName">👤 Họ tên học sinh:</label>
+    <input type="text" id="studentName" placeholder="Nhập họ tên của em..." autocomplete="off">
+    <button class="btn" id="startBtn" type="button">▶ Bắt đầu làm bài</button>
+    <span class="warn" id="nameWarn">⚠️ Vui lòng nhập họ tên trước khi bắt đầu.</span>
+  </div>
+
+  <div class="card locked" id="quiz"></div>
+
+  <div class="actions">
+    <button class="btn" id="submitBtn" type="button" disabled>📤 Nộp bài</button>
+    <span class="warn" id="blankWarn"></span>
+  </div>
+
+  <div class="result" id="result">
+    <div class="big" id="scoreBig"></div>
+    <div class="sub" id="scoreSub"></div>
+    <div class="submit-status" id="submitStatus"></div>
+    <button class="btn" type="button" style="margin-top:14px" onclick="location.reload()">🔄 Làm đề ngẫu nhiên khác</button>
+  </div>
+
+  <footer>© Ms. Thủy Tiên · 0388929741</footer>
+</main>
+
+<script>
+/* Các từ cố định (no = STT gốc, dùng cho thống kê theo câu); thứ tự hiển thị xáo mỗi lần mở */
+const ITEMS=[
+  {"no": 1, "vi": "Cổng", "pos": "danh từ", "a": "门口", "ipa": "ménkǒu", "alt": ["ménkǒu"]},
+  {"no": 2, "vi": "Vé vào cổng", "pos": "danh từ", "a": "门票", "ipa": "ménpiào", "alt": ["ménpiào"]},
+  {"no": 3, "vi": "Mì/Bề mặt", "pos": "danh từ", "a": "面", "ipa": "miàn", "alt": ["miàn"]},
+  {"no": 4, "vi": "người – dùng cho người", "pos": "lượng từ", "a": "名", "ipa": "míng", "alt": ["míng"]},
+  {"no": 5, "vi": "Cầm/Lấy", "pos": "động từ", "a": "拿", "ipa": "ná", "alt": ["ná"]},
+  {"no": 6, "vi": "Trà sữa", "pos": "danh từ", "a": "奶茶", "ipa": "nǎichá", "alt": ["nǎichá"]},
+  {"no": 7, "vi": "Bà nội", "pos": "danh từ", "a": "奶奶", "ipa": "nǎinai", "alt": ["nǎinai"]},
+  {"no": 8, "vi": "Như thế/Vậy thì", "pos": "đại từ", "a": "那么", "ipa": "nàme", "alt": ["nàme"]},
+  {"no": 9, "vi": "Bé trai", "pos": "danh từ", "a": "男孩儿", "ipa": "nánháir", "alt": ["nánháir"]},
+  {"no": 10, "vi": "Như vậy", "pos": "đại từ", "a": "那样", "ipa": "nàyàng", "alt": ["nàyàng"]},
+  {"no": 11, "vi": "Chim", "pos": "danh từ", "a": "鸟", "ipa": "niǎo", "alt": ["niǎo"]},
+  {"no": 12, "vi": "Bé gái", "pos": "danh từ", "a": "女孩儿", "ipa": "nǚháir", "alt": ["nǚháir"]},
+  {"no": 13, "vi": "Bên cạnh", "pos": "danh từ phương vị", "a": "旁边", "ipa": "pángbiān", "alt": ["pángbiān"]},
+  {"no": 14, "vi": "Chạy", "pos": "động từ", "a": "跑", "ipa": "pǎo", "alt": ["pǎo"]},
+  {"no": 15, "vi": "Chạy bộ", "pos": "động từ ly hợp", "a": "跑步", "ipa": "pǎobù", "alt": ["pǎobù"]},
+  {"no": 16, "vi": "Vé", "pos": "danh từ", "a": "票", "ipa": "piào", "alt": ["piào"]},
+  {"no": 17, "vi": "Phía trước", "pos": "danh từ phương vị", "a": "前面", "ipa": "qiánmiàn", "alt": ["qiánmiàn"]},
+  {"no": 18, "vi": "Đứng dậy/Lên", "pos": "động từ xu hướng", "a": "起来", "ipa": "qǐlái", "alt": ["qǐlái"]},
+  {"no": 19, "vi": "Nắng", "pos": "tính từ", "a": "晴", "ipa": "qíng", "alt": ["qíng"]},
+  {"no": 20, "vi": "Bóng", "pos": "danh từ", "a": "球", "ipa": "qiú", "alt": ["qiú"]},
+  {"no": 21, "vi": "Vợ", "pos": "danh từ", "a": "妻子", "ipa": "qīzi", "alt": ["qīzi"]},
+  {"no": 22, "vi": "Cho phép/Bảo", "pos": "động từ", "a": "让", "ipa": "ràng", "alt": ["ràng"]},
+  {"no": 23, "vi": "Thịt", "pos": "danh từ", "a": "肉", "ipa": "ròu", "alt": ["ròu"]},
+  {"no": 24, "vi": "Trung tâm thương mại", "pos": "danh từ", "a": "商场", "ipa": "shāngchǎng", "alt": ["shāngchǎng"]},
+  {"no": 25, "vi": "Lên đây", "pos": "động từ xu hướng", "a": "上来", "ipa": "shànglái", "alt": ["shànglái"]},
+  {"no": 26, "vi": "Phía trên", "pos": "danh từ phương vị", "a": "上面", "ipa": "shàngmiàn", "alt": ["shàngmiàn"]},
+  {"no": 27, "vi": "Lên đó", "pos": "động từ xu hướng", "a": "上去", "ipa": "shàngqù", "alt": ["shàngqù"]},
+  {"no": 28, "vi": "Lên mạng", "pos": "động từ ly hợp", "a": "上网", "ipa": "shàngwǎng", "alt": ["shàngwǎng"]},
+  {"no": 29, "vi": "Sinh nhật", "pos": "danh từ", "a": "生日", "ipa": "shēngrì", "alt": ["shēngrì"]},
+  {"no": 30, "vi": "Sức khỏe", "pos": "danh từ", "a": "身体", "ipa": "shēntǐ", "alt": ["shēntǐ"]},
+  {"no": 31, "vi": "Lúc/Khi", "pos": "danh từ", "a": "时", "ipa": "shí", "alt": ["shí"]},
+  {"no": 32, "vi": "Sự việc", "pos": "danh từ", "a": "事情", "ipa": "shìqing", "alt": ["shìqing"]},
+  {"no": 33, "vi": "Tay", "pos": "danh từ", "a": "手", "ipa": "shǒu", "alt": ["shǒu"]},
+  {"no": 34, "vi": "Đồng hồ", "pos": "danh từ", "a": "手表", "ipa": "shǒubiǎo", "alt": ["shǒubiǎo"]},
+  {"no": 35, "vi": "Cặp sách", "pos": "danh từ", "a": "书包", "ipa": "shūbāo", "alt": ["shūbāo"]},
+  {"no": 36, "vi": "Thoải mái", "pos": "tính từ", "a": "舒服", "ipa": "shūfu", "alt": ["shūfu"]},
+  {"no": 37, "vi": "Tặng/Tiễn", "pos": "động từ", "a": "送", "ipa": "sòng", "alt": ["sòng"]},
+  {"no": 38, "vi": "Mặc dù", "pos": "liên từ", "a": "虽然", "ipa": "suīrán", "alt": ["suīrán"]},
+  {"no": 39, "vi": "Cho nên", "pos": "liên từ", "a": "所以", "ipa": "suǒyǐ", "alt": ["suǒyǐ"]},
+  {"no": 40, "vi": "Đau", "pos": "tính từ", "a": "疼", "ipa": "téng", "alt": ["téng"]},
+  {"no": 41, "vi": "Đề bài", "pos": "danh từ", "a": "题", "ipa": "tí", "alt": ["tí"]},
+  {"no": 42, "vi": "Đá", "pos": "động từ", "a": "踢", "ipa": "tī", "alt": ["tī"]},
+  {"no": 43, "vi": "con, chiếc, cái – dùng cho vật dài", "pos": "lượng từ", "a": "条", "ipa": "tiáo", "alt": ["tiáo"]},
+  {"no": 44, "vi": "Nhảy múa", "pos": "động từ ly hợp", "a": "跳舞", "ipa": "tiàowǔ", "alt": ["tiàowǔ"]},
+  {"no": 45, "vi": "Đầu", "pos": "danh từ", "a": "头", "ipa": "tóu", "alt": ["tóu"]},
+  {"no": 46, "vi": "Nước ngoài", "pos": "danh từ", "a": "外国", "ipa": "wàiguó", "alt": ["wàiguó"]},
+  {"no": 47, "vi": "Bên ngoài", "pos": "danh từ phương vị", "a": "外面", "ipa": "wàimiàn", "alt": ["wàimiàn"]},
+  {"no": 48, "vi": "Xong/Hết", "pos": "động từ", "a": "完", "ipa": "wán", "alt": ["wán"]},
+  {"no": 49, "vi": "Mười nghìn", "pos": "số từ", "a": "万", "ipa": "wàn", "alt": ["wàn"]},
+  {"no": 50, "vi": "Quên", "pos": "động từ", "a": "忘", "ipa": "wàng", "alt": ["wàng"]},
+  {"no": 51, "vi": "Hướng về", "pos": "giới từ", "a": "往", "ipa": "wǎng", "alt": ["wǎng"]},
+  {"no": 52, "vi": "Trên mạng", "pos": "danh từ", "a": "网上", "ipa": "wǎngshang", "alt": ["wǎngshang"]},
+  {"no": 53, "vi": "vị – dùng cho người (lịch sự)", "pos": "lượng từ", "a": "位", "ipa": "wèi", "alt": ["wèi"]},
+  {"no": 54, "vi": "Tại sao", "pos": "đại từ nghi vấn", "a": "为什么", "ipa": "wèi shénme", "alt": ["wèi shénme"]},
+  {"no": 55, "vi": "Rửa/Giặt", "pos": "động từ", "a": "洗", "ipa": "xǐ", "alt": ["xǐ"]},
+  {"no": 56, "vi": "Xuống đây", "pos": "động từ xu hướng", "a": "下来", "ipa": "xiàlái", "alt": ["xiàlái"]},
+  {"no": 57, "vi": "Phía dưới", "pos": "danh từ phương vị", "a": "下面", "ipa": "xiàmiàn", "alt": ["xiàmiàn"]},
+  {"no": 58, "vi": "Cười", "pos": "động từ", "a": "笑", "ipa": "xiào", "alt": ["xiào"]},
+  {"no": 59, "vi": "Trẻ con", "pos": "danh từ", "a": "小孩儿", "ipa": "xiǎoháir", "alt": ["xiǎoháir"]},
+  {"no": 60, "vi": "Lúc nhỏ", "pos": "danh từ", "a": "小时候", "ipa": "xiǎoshíhou", "alt": ["xiǎoshíhou"]},
+  {"no": 61, "vi": "Xuống đó", "pos": "động từ xu hướng", "a": "下去", "ipa": "xiàqù", "alt": ["xiàqù"]},
+  {"no": 62, "vi": "Họ", "pos": "động từ / danh từ", "a": "姓", "ipa": "xìng", "alt": ["xìng"]},
+  {"no": 63, "vi": "Họ và tên", "pos": "danh từ", "a": "姓名", "ipa": "xìngmíng", "alt": ["xìngmíng"]},
+  {"no": 64, "vi": "Nhà vệ sinh", "pos": "danh từ", "a": "洗手间", "ipa": "xǐshǒujiān", "alt": ["xǐshǒujiān"]},
+  {"no": 65, "vi": "Hy vọng", "pos": "động từ", "a": "希望", "ipa": "xīwàng", "alt": ["xīwàng"]},
+  {"no": 66, "vi": "Mắt", "pos": "danh từ", "a": "眼睛", "ipa": "yǎnjing", "alt": ["yǎnjing"]},
+  {"no": 67, "vi": "Màu sắc", "pos": "danh từ", "a": "颜色", "ipa": "yánsè", "alt": ["yánsè"]},
+  {"no": 68, "vi": "Thuốc", "pos": "danh từ", "a": "药", "ipa": "yào", "alt": ["yào"]},
+  {"no": 69, "vi": "Hiệu thuốc", "pos": "danh từ", "a": "药店", "ipa": "yàodiàn", "alt": ["yàodiàn"]},
+  {"no": 70, "vi": "Ông nội", "pos": "danh từ", "a": "爷爷", "ipa": "yéye", "alt": ["yéye"]},
+  {"no": 71, "vi": "Một lát (danh từ", "pos": "thời gian)", "a": "一会儿", "ipa": "yíhuìr", "alt": ["yíhuìr"]},
+  {"no": 72, "vi": "Đã", "pos": "phó từ", "a": "已经", "ipa": "yǐjīng", "alt": ["yǐjīng"]},
+  {"no": 73, "vi": "Âm u/Mây", "pos": "tính từ", "a": "阴", "ipa": "yīn", "alt": ["yīn"]},
+  {"no": 74, "vi": "Bởi vì", "pos": "liên từ", "a": "因为", "ipa": "yīnwèi", "alt": ["yīnwèi"]},
+  {"no": 75, "vi": "Cùng nhau", "pos": "phó từ", "a": "一起", "ipa": "yìqǐ", "alt": ["yìqǐ"]},
+  {"no": 76, "vi": "Ý nghĩa", "pos": "danh từ", "a": "意思", "ipa": "yìsi", "alt": ["yìsi"]},
+  {"no": 77, "vi": "Bơi", "pos": "động từ", "a": "游", "ipa": "yóu", "alt": ["yóu"]},
+  {"no": 78, "vi": "Phải (bên phải)", "pos": "danh từ phương vị", "a": "右", "ipa": "yòu", "alt": ["yòu"]},
+  {"no": 79, "vi": "Thú vị", "pos": "tính từ", "a": "有意思", "ipa": "yǒuyìsi", "alt": ["yǒuyìsi"]},
+  {"no": 80, "vi": "Bên phải", "pos": "danh từ phương vị", "a": "右边", "ipa": "yòubian", "alt": ["yòubian"]},
+  {"no": 81, "vi": "Có lúc", "pos": "phó từ", "a": "有时", "ipa": "yǒushí", "alt": ["yǒushí"]},
+  {"no": 82, "vi": "Bơi lội", "pos": "động từ ly hợp", "a": "游泳", "ipa": "yóuyǒng", "alt": ["yóuyǒng"]},
+  {"no": 83, "vi": "Cá", "pos": "danh từ", "a": "鱼", "ipa": "yú", "alt": ["yú"]},
+  {"no": 84, "vi": "Xa", "pos": "tính từ", "a": "远", "ipa": "yuǎn", "alt": ["yuǎn"]},
+  {"no": 85, "vi": "Thể thao", "pos": "danh từ / động từ", "a": "运动", "ipa": "yùndòng", "alt": ["yùndòng"]},
+  {"no": 86, "vi": "Trạm/Đứng", "pos": "danh từ / động từ", "a": "站", "ipa": "zhàn", "alt": ["zhàn"]},
+  {"no": 87, "vi": "Chồng", "pos": "danh từ", "a": "丈夫", "ipa": "zhàngfu", "alt": ["zhàngfu"]},
+  {"no": 88, "vi": "đang – biểu thị trạng thái tiếp diễn", "pos": "trợ từ động thái", "a": "着", "ipa": "zhe", "alt": ["zhe"]},
+  {"no": 89, "vi": "Thế này", "pos": "đại từ", "a": "这么", "ipa": "zhème", "alt": ["zhème"]},
+  {"no": 90, "vi": "Đang", "pos": "phó từ", "a": "正", "ipa": "zhèng", "alt": ["zhèng", "正在", "zhèngzài"]},
+  {"no": 91, "vi": "Như thế này", "pos": "đại từ", "a": "这样", "ipa": "zhèyàng", "alt": ["zhèyàng"]},
+  {"no": 92, "vi": "Tuần", "pos": "danh từ", "a": "周", "ipa": "zhōu", "alt": ["zhōu"]},
+  {"no": 93, "vi": "Chuẩn bị", "pos": "động từ", "a": "准备", "ipa": "zhǔnbèi", "alt": ["zhǔnbèi"]},
+  {"no": 94, "vi": "Tự mình", "pos": "đại từ", "a": "自己", "ipa": "zìjǐ", "alt": ["zìjǐ"]},
+  {"no": 95, "vi": "Đi", "pos": "động từ", "a": "走", "ipa": "zǒu", "alt": ["zǒu", "去", "qù"]},
+  {"no": 96, "vi": "Đi bộ", "pos": "động từ ly hợp", "a": "走路", "ipa": "zǒulù", "alt": ["zǒulù"]},
+  {"no": 97, "vi": "Nhất", "pos": "phó từ", "a": "最", "ipa": "zuì", "alt": ["zuì"]},
+  {"no": 98, "vi": "Trái (bên trái)", "pos": "danh từ phương vị", "a": "左", "ipa": "zuǒ", "alt": ["zuǒ"]},
+  {"no": 99, "vi": "Bên trái", "pos": "danh từ phương vị", "a": "左边", "ipa": "zuǒbian", "alt": ["zuǒbian"]},
+  {"no": 100, "vi": "Bóng đá", "pos": "danh từ", "a": "足球", "ipa": "zúqiú", "alt": ["zúqiú"]}
+];
+const LIMIT=10*60;
+const SCRIPT_URL='';
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const POOL=ITEMS;const order=shuffle(POOL.slice()).slice(0,20);
+order.forEach((it,i)=>{it.no=i+1;});
+ITEMS.length=0;order.forEach(it=>ITEMS.push(it));
+const norm=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f\u200b]/g,'').toLowerCase().replace(/v/g,'u').replace(/[\s'’`·.,，。!！?？\-0-9]/g,'');
+const fmtTime=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+
+const quiz=document.getElementById('quiz');
+order.forEach((it,i)=>{
+  const q=document.createElement('div');q.className='q';
+  q.innerHTML=`<div class="qnum">${i+1}.</div>
+    <div class="prompt"><span class="vi">${it.vi}</span><span class="pos">${it.pos}</span></div>
+    <div class="ans"><input class="gap" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Câu ${i+1}" placeholder="chữ Hán / pinyin" disabled>
+    <span class="key">✔ ${it.a}<span class="ipa">${it.ipa}</span></span></div>`;
+  it.el=q.querySelector('input');it.keyEl=q.querySelector('.key');
+  it.el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const n=order[i+1];if(n)n.el.focus();else document.getElementById('submitBtn').focus();}});
+  quiz.appendChild(q);
+});
+
+let started=false,done=false,t0=0,tick=null,confirmBlank=false;
+const timerEl=document.getElementById('timer');
+document.getElementById('startBtn').addEventListener('click',()=>{
+  const name=document.getElementById('studentName').value.trim();
+  if(!name){document.getElementById('nameWarn').style.display='block';document.getElementById('studentName').focus();return;}
+  document.getElementById('nameWarn').style.display='none';
+  started=true;t0=Date.now();
+  document.getElementById('studentName').disabled=true;
+  document.getElementById('startBtn').disabled=true;
+  quiz.classList.remove('locked');
+  order.forEach(it=>it.el.disabled=false);
+  document.getElementById('submitBtn').disabled=false;
+  order[0].el.focus();
+  tick=setInterval(()=>{
+    const left=LIMIT-Math.floor((Date.now()-t0)/1000);
+    timerEl.textContent=fmtTime(Math.max(0,left));
+    if(left<=60)timerEl.classList.add('low');
+    if(left<=0)finish(true);
+  },250);
+});
+document.getElementById('submitBtn').addEventListener('click',()=>{
+  const blanks=order.filter(it=>!it.el.value.trim()).length;
+  const w=document.getElementById('blankWarn');
+  if(blanks&&!confirmBlank){
+    confirmBlank=true;
+    w.textContent=`⚠️ Còn ${blanks} câu bỏ trống. Bấm "Nộp bài" lần nữa để nộp luôn.`;w.style.display='inline';return;
+  }
+  w.style.display='none';finish(false);
+});
+window.addEventListener('beforeunload',e=>{if(started&&!done){e.preventDefault();e.returnValue='';}});
+
+function finish(timeUp){
+  if(done)return;done=true;clearInterval(tick);
+  const sec=Math.min(LIMIT,Math.round((Date.now()-t0)/1000));
+  timerEl.classList.remove('low');timerEl.textContent=timeUp?'Hết giờ':fmtTime(LIMIT-sec);
+  let correct=0;const details=[];
+  order.forEach(it=>{
+    const g=it.el.value,ok=[it.a].concat(it.alt||[]).map(norm).includes(norm(g));
+    it.el.disabled=true;
+    it.el.classList.add(!g.trim()?'unanswered':(ok?'correct':'incorrect'));
+    if(!ok)it.keyEl.classList.add('show');
+    if(ok)correct++;
+    details[it.no-1]={no:it.no,label:`${it.vi} (${it.pos})`,given:g.trim()||'(bỏ trống)',answer:it.a,correct:ok?1:0};
+  });
+  document.getElementById('submitBtn').disabled=true;
+  const ten=Math.round(correct/ITEMS.length*100)/10;
+  document.getElementById('scoreBig').textContent=`${correct}/${ITEMS.length} câu · ${ten.toString().replace('.',',')} điểm`;
+  document.getElementById('scoreSub').textContent=(timeUp?'Hết giờ — bài đã tự nộp. ':'')+`Thời gian làm: ${fmtTime(sec)}. Câu sai/bỏ trống có hiện đáp án đúng màu xanh bên cạnh.`;
+  const r=document.getElementById('result');r.classList.add('show');r.scrollIntoView({behavior:'smooth',block:'center'});
+  send(document.getElementById('studentName').value.trim(),correct,ITEMS.length,sec,details);
+}
+function send(name,score,total,sec,details){
+  if(!SCRIPT_URL)return;
+  const st=document.getElementById('submitStatus');
+  st.textContent='📤 Đang gửi kết quả...';st.className='submit-status sending';
+  const payload=new URLSearchParams({
+    kind:'test',name:name,class:'hsk-500',
+    unit:'HSK Phần 5 — Kiểm tra ngẫu nhiên (từ 401–500)',
+    level:'HSK',score:String(score),total:String(total),
+    timeSeconds:String(sec),timeFormatted:fmtTime(sec),
+    timestamp:new Date().toISOString(),detailsJson:JSON.stringify(details)
+  });
+  fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:payload})
+    .then(()=>{st.textContent='✅ Đã gửi kết quả về giáo viên.';st.className='submit-status ok';})
+    .catch(()=>{st.textContent='⚠️ Gửi kết quả thất bại (kiểm tra mạng). Hãy chụp màn hình điểm gửi cô.';st.className='submit-status fail';});
+}
+</script>
+
+<!--NAV-START--><style>
+.nav-fab{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:'Plus Jakarta Sans','Outfit',system-ui,sans-serif}
+.nav-fab>button{width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;font-size:26px;color:#fff;
+ background:linear-gradient(135deg,#f59e0b,#ea580c);box-shadow:0 8px 22px rgba(234,88,12,.4)}
+.nav-fab>button:active{transform:scale(.94)}
+.nav-menu{display:none;position:absolute;right:0;bottom:70px;min-width:230px;background:#fff;border:2px solid #fde68a;
+ border-radius:18px;padding:8px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.nav-fab.open .nav-menu{display:block}
+.nav-menu a{display:block;padding:12px 14px;border-radius:12px;color:#c2410c;font-weight:800;font-size:19px;text-decoration:none}
+.nav-menu a:hover{background:#fef3c7}
+.nav-menu .cap{padding:6px 14px 2px;color:#9ca3af;font-size:14px;font-weight:700}
+@media (prefers-color-scheme:dark){.nav-menu{background:#292524;border-color:#44403c}.nav-menu a{color:#fdba74}.nav-menu a:hover{background:#3a2f1c}}
+body{padding-bottom:84px}
+</style><div class="nav-fab" id="navFab"><div class="nav-menu"><div class="cap">Đi tới</div><a href="index.html">📖 Mục lục Phần 5</a><a href="../index.html">🏠 Mục lục tổng</a></div><button type="button" aria-label="Mục lục" title="Mục lục" onclick="event.stopPropagation();this.parentNode.classList.toggle('open')">☰</button></div><script>document.addEventListener("click",function(e){var f=document.getElementById("navFab");if(f&&!f.contains(e.target))f.classList.remove("open")});</script><!--NAV-END-->
+</body>
+</html>
+

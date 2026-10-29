@@ -1,0 +1,911 @@
+{
+ "title": "🎯 HSK · Phần 1 – Câu ví dụ 1–100",
+ "lang": "vi-VN",
+ "progressKey": "hsk500-p1-cau-vi-du",
+ "themePrimary": "#f59e0b",
+ "themePrimaryDark": "#ea580c",
+ "themePrimaryLight": "#fef9c3",
+ "scoreSheetUrl": "",
+ "cards": [
+  {
+   "front": "Tôi yêu gia đình tôi.",
+   "back": "我爱我的家。",
+   "ex": "Wǒ ài wǒ de jiā.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "❤️",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Nhà tôi có 8 người.",
+   "back": "我家有八口人。",
+   "ex": "Wǒ jiā yǒu bā kǒu rén.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "8️⃣",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Bố tôi là bác sĩ.",
+   "back": "我爸爸是医生。",
+   "ex": "Wǒ bàba shì yīshēng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👨",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Chúng ta đi thôi.",
+   "back": "我们走吧。",
+   "ex": "Wǒmen zǒu ba.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💬",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Quần áo của cô ấy rất trắng.",
+   "back": "她的衣服很白。",
+   "ex": "Tā de yīfu hěn bái.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🤍",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Tôi làm việc vào ban ngày.",
+   "back": "我白天工作。",
+   "ex": "Wǒ báitiān gōngzuò.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🌞",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Cuốn sách này 100 tệ.",
+   "back": "这本书一百块。",
+   "ex": "Zhè běn shū yìbǎi kuài.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💯",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Bây giờ là 3 giờ rưỡi.",
+   "back": "现在三点半。",
+   "ex": "Xiànzài sān diǎn bàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🌓",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Buổi sáng tôi ăn bánh bao.",
+   "back": "我早上吃包子。",
+   "ex": "Wǒ zǎoshang chī bāozi.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥟",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Tôi muốn một cốc nước.",
+   "back": "我要一杯水。",
+   "ex": "Wǒ yào yì bēi shuǐ.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥛",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Cái cốc ở trên bàn.",
+   "back": "杯子在桌子上。",
+   "ex": "Bēizi zài zhuōzi shàng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥤",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Cửa hàng ở phía bắc.",
+   "back": "商店在北边。",
+   "ex": "Shāngdiàn zài běibian.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⬆️",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Tôi muốn đi Bắc Kinh.",
+   "back": "我想去北京。",
+   "ex": "Wǒ xiǎng qù Běijīng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏯",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Tôi có 3 quyển sách.",
+   "back": "我有三本书。",
+   "ex": "Wǒ yǒu sān běn shū.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📚",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Bạn còn cần gì khác không?",
+   "back": "你还要别的吗？",
+   "ex": "Nǐ hái yào biéde ma?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔀",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Những người khác đều đi rồi.",
+   "back": "别人都走了。",
+   "ex": "Biérén dōu zǒu le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👥",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Anh ấy ốm rồi.",
+   "back": "他病了。",
+   "ex": "Tā bìng le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🤒",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Trong bệnh viện có rất nhiều bệnh nhân.",
+   "back": "医院里有很多病人。",
+   "ex": "Yīyuàn lǐ yǒu hěn duō bìngrén.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🛌",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Tôi không uống trà.",
+   "back": "我不喝茶。",
+   "ex": "Wǒ bù hē chá.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🚫",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Không có gì, đây là việc tôi nên làm.",
+   "back": "不客气，这是我应该做的。",
+   "ex": "Bú kèqi, zhè shì wǒ yīnggāi zuò de.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "😊",
+   "group": "Từ 1–20"
+  },
+  {
+   "front": "Không cần cảm ơn!",
+   "back": "不用谢！",
+   "ex": "Búyòng xiè!",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🙅",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Món này rất ngon.",
+   "back": "这个菜很好吃。",
+   "ex": "Zhège cài hěn hǎochī.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥬",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Bố thích uống trà.",
+   "back": "爸爸喜欢喝茶。",
+   "ex": "Bàba xǐhuan hē chá.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🍵",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Bây giờ là 8 giờ kém 5 phút.",
+   "back": "现在差五分八点。",
+   "ex": "Xiànzài chà wǔ fēn bā diǎn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "➖",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Tôi thường đến thư viện.",
+   "back": "我常常去图书馆。",
+   "ex": "Wǒ chángcháng qù túshūguǎn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔁",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Cô ấy hát rất hay.",
+   "back": "她唱得很好。",
+   "ex": "Tā chàng de hěn hǎo.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎤",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Chúng ta cùng hát nhé.",
+   "back": "我们一起唱歌吧。",
+   "ex": "Wǒmen yìqǐ chànggē ba.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎶",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Đây là xe của tôi.",
+   "back": "这是我的车。",
+   "ex": "Zhè shì wǒ de chē.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🚗",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Vé xe bao nhiêu tiền?",
+   "back": "车票多少钱？",
+   "ex": "Chēpiào duōshao qián?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎫",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Bạn muốn ăn gì?",
+   "back": "你想吃什么？",
+   "ex": "Nǐ xiǎng chī shénme?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🍽️",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Chúng ta đi ăn cơm thôi.",
+   "back": "我们去吃饭吧。",
+   "ex": "Wǒmen qù chīfàn ba.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🍚",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Tôi đi taxi ra sân bay.",
+   "back": "我坐出租车去机场。",
+   "ex": "Wǒ zuò chūzūchē qù jīchǎng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🚕",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Hôm nay bạn mặc quần áo gì?",
+   "back": "今天你穿什么衣服？",
+   "ex": "Jīntiān nǐ chuān shénme yīfu?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👕",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Buổi tối tôi gọi điện cho mẹ.",
+   "back": "晚上我给妈妈打电话。",
+   "ex": "Wǎnshang wǒ gěi māma dǎ diànhuà.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📞",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Buổi chiều chúng tôi đi chơi bóng.",
+   "back": "下午我们去打球。",
+   "ex": "Xiàwǔ wǒmen qù dǎqiú.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏓",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Quả táo này rất to.",
+   "back": "这个苹果很大。",
+   "ex": "Zhège píngguǒ hěn dà.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🐘",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Anh trai học ở trường đại học.",
+   "back": "哥哥在大学学习。",
+   "ex": "Gēge zài dàxué xuéxí.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎓",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Cô ấy là sinh viên.",
+   "back": "她是大学生。",
+   "ex": "Tā shì dàxuéshēng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧑‍🎓",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Đây là sách của tôi.",
+   "back": "这是我的书。",
+   "ex": "Zhè shì wǒ de shū.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔗",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Anh ấy nhận được một món quà.",
+   "back": "他得到了一个礼物。",
+   "ex": "Tā dédào le yí ge lǐwù.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎁",
+   "group": "Từ 21–40"
+  },
+  {
+   "front": "Nơi này rất đẹp.",
+   "back": "这个地方很漂亮。",
+   "ex": "Zhège dìfang hěn piàoliang.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📍",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Tôi đã mua một tấm bản đồ.",
+   "back": "我买了一张地图。",
+   "ex": "Wǒ mǎi le yì zhāng dìtú.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🗺️",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Em trai tôi 8 tuổi.",
+   "back": "我弟弟八岁。",
+   "ex": "Wǒ dìdi bā suì.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👦",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Đây là lần đầu tiên tôi đến Trung Quốc.",
+   "back": "这是我第一次来中国。",
+   "ex": "Zhè shì wǒ dì yī cì lái Zhōngguó.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥇",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Số điện thoại của bạn là bao nhiêu?",
+   "back": "你的电话号是多少？",
+   "ex": "Nǐ de diànhuà hào shì duōshao?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "☎️",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Tôi làm việc bằng máy tính.",
+   "back": "我用电脑工作。",
+   "ex": "Wǒ yòng diànnǎo gōngzuò.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💻",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Buổi tối chúng tôi xem ti vi.",
+   "back": "我们晚上看电视。",
+   "ex": "Wǒmen wǎnshang kàn diànshì.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📺",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Bộ phim này rất hay.",
+   "back": "这个电影很好看。",
+   "ex": "Zhège diànyǐng hěn hǎokàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎬",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Chúng ta đến rạp xem phim nhé.",
+   "back": "我们去电影院看电影吧。",
+   "ex": "Wǒmen qù diànyǐngyuàn kàn diànyǐng ba.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎦",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Mặt trời mọc ở phía đông.",
+   "back": "太阳从东边出来。",
+   "ex": "Tàiyáng cóng dōngbian chūlái.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🌅",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Bệnh viện ở phía đông trường học.",
+   "back": "医院在学校东边。",
+   "ex": "Yīyuàn zài xuéxiào dōngbian.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "➡️",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Bạn mua đồ gì?",
+   "back": "你买什么东西？",
+   "ex": "Nǐ mǎi shénme dōngxi?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🛍️",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Chúng tôi đều là học sinh.",
+   "back": "我们都是学生。",
+   "ex": "Wǒmen dōu shì xuésheng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👨‍👩‍👧",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Mời đọc bài khóa một chút.",
+   "back": "请读一下课文。",
+   "ex": "Qǐng dú yíxià kèwén.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📖",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Anh ấy thích đọc sách.",
+   "back": "他喜欢读书。",
+   "ex": "Tā xǐhuan dúshū.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📗",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Bạn nói đúng.",
+   "back": "你说得对。",
+   "ex": "Nǐ shuō de duì.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "✅",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Xin lỗi, tôi đến muộn.",
+   "back": "对不起，我来晚了。",
+   "ex": "Duìbuqǐ, wǒ lái wǎn le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🙇",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Ở đây rất đông người.",
+   "back": "这里人很多。",
+   "ex": "Zhèlǐ rén hěn duō.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "➕",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Cái này bao nhiêu tiền?",
+   "back": "这个多少钱？",
+   "ex": "Zhège duōshao qián?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "❓",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Tôi đói rồi, muốn ăn cơm.",
+   "back": "我饿了，想吃饭。",
+   "ex": "Wǒ è le, xiǎng chīfàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "😋",
+   "group": "Từ 41–60"
+  },
+  {
+   "front": "Con trai anh ấy rất cao.",
+   "back": "他儿子很高。",
+   "ex": "Tā érzi hěn gāo.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👶",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Tôi có 20 tệ.",
+   "back": "我有二十块钱。",
+   "ex": "Wǒ yǒu èrshí kuài qián.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "2️⃣",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Cơm mẹ nấu rất ngon.",
+   "back": "妈妈做的饭很好吃。",
+   "ex": "Māma zuò de fàn hěn hǎochī.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🍚",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Nhà hàng này rất nổi tiếng.",
+   "back": "这家饭店很有名。",
+   "ex": "Zhè jiā fàndiàn hěn yǒumíng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏨",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Phòng của tôi rất nhỏ.",
+   "back": "我的房间很小。",
+   "ex": "Wǒ de fángjiān hěn xiǎo.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🛋️",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Họ đã mua nhà mới.",
+   "back": "他们买了新房子。",
+   "ex": "Tāmen mǎi le xīn fángzi.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏠",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Để sách lên bàn.",
+   "back": "把书放在桌子上。",
+   "ex": "Bǎ shū fàng zài zhuōzi shàng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📥",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Ngày mai chúng tôi được nghỉ.",
+   "back": "我们明天放假。",
+   "ex": "Wǒmen míngtiān fàngjià.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏖️",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "4 giờ chiều tan học.",
+   "back": "下午四点放学。",
+   "ex": "Xiàwǔ sì diǎn fàngxué.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔔",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Tôi đi máy bay đến Thượng Hải.",
+   "back": "我坐飞机去上海。",
+   "ex": "Wǒ zuò fēijī qù Shànghǎi.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "✈️",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Hôm nay cực kỳ nóng.",
+   "back": "今天非常热。",
+   "ex": "Jīntiān fēicháng rè.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "‼️",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Bây giờ là 8 giờ 10 phút.",
+   "back": "现在八点十分。",
+   "ex": "Xiànzài bā diǎn shí fēn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⏱️",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Hôm nay gió rất to.",
+   "back": "今天风很大。",
+   "ex": "Jīntiān fēng hěn dà.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🌬️",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Căn phòng rất sạch sẽ.",
+   "back": "房间很干净。",
+   "ex": "Fángjiān hěn gānjìng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧽",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Rất vui được làm quen với bạn.",
+   "back": "认识你很高兴。",
+   "ex": "Rènshi nǐ hěn gāoxìng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "😃",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Anh trai tôi làm việc ở Bắc Kinh.",
+   "back": "我哥哥在北京工作。",
+   "ex": "Wǒ gēge zài Běijīng gōngzuò.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧑",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Bài hát này rất hay.",
+   "back": "这首歌很好听。",
+   "ex": "Zhè shǒu gē hěn hǎotīng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎵",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Tôi có một em gái.",
+   "back": "我有一个妹妹。",
+   "ex": "Wǒ yǒu yí ge mèimei.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "☝️",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Làm ơn cho tôi một cốc trà.",
+   "back": "请给我一杯茶。",
+   "ex": "Qǐng gěi wǒ yì bēi chá.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🤲",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Bạn làm việc ở đâu?",
+   "back": "你在哪儿工作？",
+   "ex": "Nǐ zài nǎr gōngzuò?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💼",
+   "group": "Từ 61–80"
+  },
+  {
+   "front": "Làm ơn tắt ti vi.",
+   "back": "请关电视。",
+   "ex": "Qǐng guān diànshì.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔌",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Chiếc áo này đắt quá.",
+   "back": "这件衣服太贵了。",
+   "ex": "Zhè jiàn yīfu tài guì le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💰",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Bạn là người nước nào?",
+   "back": "你是哪国人？",
+   "ex": "Nǐ shì nǎ guó rén?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏳️",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Trung Quốc là một đất nước lớn.",
+   "back": "中国是一个大国家。",
+   "ex": "Zhōngguó shì yí ge dà guójiā.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🌏",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Anh ấy vẫn chưa đến.",
+   "back": "他还没来。",
+   "ex": "Tā hái méi lái.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⏳",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Bọn trẻ đang chơi bên ngoài.",
+   "back": "孩子们在外边玩儿。",
+   "ex": "Háizimen zài wàibian wánr.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧒",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Tôi đang học tiếng Trung.",
+   "back": "我在学习汉语。",
+   "ex": "Wǒ zài xuéxí Hànyǔ.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🀄",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Chữ Hán rất khó viết.",
+   "back": "汉字很难写。",
+   "ex": "Hànzì hěn nán xiě.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "✍️",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Hôm nay thời tiết rất đẹp.",
+   "back": "今天天气很好。",
+   "ex": "Jīntiān tiānqì hěn hǎo.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👍",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Món Trung Quốc rất ngon.",
+   "back": "中国菜很好吃。",
+   "ex": "Zhōngguó cài hěn hǎochī.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "😋",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Quần áo của bạn rất đẹp.",
+   "back": "你的衣服很好看。",
+   "ex": "Nǐ de yīfu hěn hǎokàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "😍",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Giọng của cô ấy rất hay.",
+   "back": "她的声音很好听。",
+   "ex": "Tā de shēngyīn hěn hǎotīng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎧",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Hôm nay là ngày mấy tháng mấy?",
+   "back": "今天几月几号？",
+   "ex": "Jīntiān jǐ yuè jǐ hào?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📆",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Bạn muốn uống gì?",
+   "back": "你想喝什么？",
+   "ex": "Nǐ xiǎng hē shénme?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥤",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Tôi và em gái đi cửa hàng.",
+   "back": "我和妹妹去商店。",
+   "ex": "Wǒ hé mèimei qù shāngdiàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🤝",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Cô ấy rất xinh.",
+   "back": "她很漂亮。",
+   "ex": "Tā hěn piàoliang.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⭐",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Ngày kia là thứ Bảy.",
+   "back": "后天是星期六。",
+   "ex": "Hòutiān shì xīngqīliù.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📅",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Tôi đã hiểu lời anh ấy nói.",
+   "back": "他的话我听懂了。",
+   "ex": "Tā de huà wǒ tīng dǒng le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🗨️",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Ngày mai tôi về nước.",
+   "back": "我明天回国。",
+   "ex": "Wǒ míngtiān huí guó.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "↩️",
+   "group": "Từ 81–100"
+  },
+  {
+   "front": "Hãy trả lời câu hỏi của tôi.",
+   "back": "请回答我的问题。",
+   "ex": "Qǐng huídá wǒ de wèntí.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🙋",
+   "group": "Từ 81–100"
+  }
+ ]
+}

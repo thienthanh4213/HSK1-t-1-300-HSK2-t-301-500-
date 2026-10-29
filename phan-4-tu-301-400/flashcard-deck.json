@@ -1,0 +1,911 @@
+{
+ "title": "🀄 HSK · Phần 4 – Từ 301–400",
+ "lang": "zh-CN",
+ "progressKey": "hsk500-p4",
+ "themePrimary": "#f59e0b",
+ "themePrimaryDark": "#ea580c",
+ "themePrimaryLight": "#fef9c3",
+ "scoreSheetUrl": "",
+ "cards": [
+  {
+   "front": "啊",
+   "back": "à, nhé, thôi (trợ từ ngữ khí)",
+   "ex": "好啊！",
+   "ex_vi": "Hǎo a! — Được thôi!",
+   "pron": "a",
+   "img": "💬",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "爱好",
+   "back": "Sở thích (danh từ)",
+   "ex": "我的爱好是画画儿。",
+   "ex_vi": "Wǒ de àihào shì huàhuàr. — Sở thích của tôi là vẽ tranh.",
+   "pron": "àihào",
+   "img": "🎨",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "白色",
+   "back": "Màu trắng (danh từ)",
+   "ex": "我有一件白色的衣服。",
+   "ex_vi": "Wǒ yǒu yí jiàn báisè de yīfu. — Tôi có một chiếc áo màu trắng.",
+   "pron": "báisè",
+   "img": "⚪",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "班",
+   "back": "Lớp (danh từ)",
+   "ex": "我们班有二十个学生。",
+   "ex_vi": "Wǒmen bān yǒu èrshí ge xuésheng. — Lớp chúng tôi có 20 học sinh.",
+   "pron": "bān",
+   "img": "🏫",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "帮",
+   "back": "Giúp (động từ)",
+   "ex": "请帮我拿一下。",
+   "ex_vi": "Qǐng bāng wǒ ná yíxià. — Làm ơn giúp tôi cầm một lát.",
+   "pron": "bāng",
+   "img": "🤝",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "帮忙",
+   "back": "Giúp đỡ (động từ ly hợp)",
+   "ex": "我想请你帮忙。",
+   "ex_vi": "Wǒ xiǎng qǐng nǐ bāngmáng. — Tôi muốn nhờ bạn giúp một tay.",
+   "pron": "bāngmáng",
+   "img": "🙋",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "包",
+   "back": "Túi/Gói (danh từ)",
+   "ex": "书包里有很多书。",
+   "ex_vi": "Shūbāo lǐ yǒu hěn duō shū. — Trong cặp sách có rất nhiều sách.",
+   "pron": "bāo",
+   "img": "👜",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "本子",
+   "back": "Quyển vở (danh từ)",
+   "ex": "本子在桌子上。",
+   "ex_vi": "Běnzi zài zhuōzi shàng. — Quyển vở ở trên bàn.",
+   "pron": "běnzi",
+   "img": "📓",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "比",
+   "back": "So với (giới từ)",
+   "ex": "今天比昨天热。",
+   "ex_vi": "Jīntiān bǐ zuótiān rè. — Hôm nay nóng hơn hôm qua.",
+   "pron": "bǐ",
+   "img": "⚖️",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "笔",
+   "back": "Bút (danh từ)",
+   "ex": "这支笔是你的吗？",
+   "ex_vi": "Zhè zhī bǐ shì nǐ de ma? — Chiếc bút này là của bạn phải không?",
+   "pron": "bǐ",
+   "img": "🖊️",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "别",
+   "back": "Đừng (phó từ)",
+   "ex": "别说话了。",
+   "ex_vi": "Bié shuōhuà le. — Đừng nói chuyện nữa.",
+   "pron": "bié",
+   "img": "🚫",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "不好意思",
+   "back": "Ngại/Xin lỗi (cụm từ)",
+   "ex": "不好意思，我晚了。",
+   "ex_vi": "Bùhǎoyìsi, wǒ wǎn le. — Xin lỗi, tôi đến muộn rồi.",
+   "pron": "bùhǎoyìsi",
+   "img": "😅",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "不错",
+   "back": "Tốt/Ổn (tính từ)",
+   "ex": "你的汉语很不错。",
+   "ex_vi": "Nǐ de Hànyǔ hěn bùcuò. — Tiếng Trung của bạn rất tốt.",
+   "pron": "bùcuò",
+   "img": "👍",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "长",
+   "back": "Dài (tính từ)",
+   "ex": "这条路很长。",
+   "ex_vi": "Zhè tiáo lù hěn cháng. — Con đường này rất dài.",
+   "pron": "cháng",
+   "img": "📏",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "车站",
+   "back": "Bến xe (danh từ)",
+   "ex": "车站就在前面。",
+   "ex_vi": "Chēzhàn jiù zài qiánmiàn. — Bến xe ở ngay phía trước.",
+   "pron": "chēzhàn",
+   "img": "🚏",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "出",
+   "back": "Ra (động từ)",
+   "ex": "他出了房间。",
+   "ex_vi": "Tā chū le fángjiān. — Anh ấy đã ra khỏi phòng.",
+   "pron": "chū",
+   "img": "🚪",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "床",
+   "back": "Giường (danh từ)",
+   "ex": "床上有一只猫。",
+   "ex_vi": "Chuáng shàng yǒu yì zhī māo. — Trên giường có một con mèo.",
+   "pron": "chuáng",
+   "img": "🛏️",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "出国",
+   "back": "Đi nước ngoài (động từ ly hợp)",
+   "ex": "他下个月出国。",
+   "ex_vi": "Tā xià gè yuè chūguó. — Tháng sau anh ấy đi nước ngoài.",
+   "pron": "chūguó",
+   "img": "✈️",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "出来",
+   "back": "Ra đây (động từ xu hướng)",
+   "ex": "你快出来吧！",
+   "ex_vi": "Nǐ kuài chūlái ba! — Bạn mau ra đây đi!",
+   "pron": "chūlái",
+   "img": "🏃",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "出门",
+   "back": "Ra ngoài (động từ ly hợp)",
+   "ex": "爸爸出门工作了。",
+   "ex_vi": "Bàba chūmén gōngzuò le. — Bố ra ngoài làm việc rồi.",
+   "pron": "chūmén",
+   "img": "🚶",
+   "group": "Từ 301–320"
+  },
+  {
+   "front": "出去",
+   "back": "Ra ngoài kia (động từ xu hướng)",
+   "ex": "大家出去了。",
+   "ex_vi": "Dàjiā chūqù le. — Mọi người ra ngoài rồi.",
+   "pron": "chūqù",
+   "img": "🚶",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "词",
+   "back": "Từ (danh từ)",
+   "ex": "我不认识这个词。",
+   "ex_vi": "Wǒ bù rènshi zhège cí. — Tôi không biết từ này.",
+   "pron": "cí",
+   "img": "🔤",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "次",
+   "back": "Lần (lượng từ)",
+   "ex": "我见过他三次。",
+   "ex_vi": "Wǒ jiànguo tā sān cì. — Tôi đã gặp anh ấy 3 lần.",
+   "pron": "cì",
+   "img": "🔁",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "从",
+   "back": "Từ (địa điểm) (giới từ)",
+   "ex": "从家到这里很远。",
+   "ex_vi": "Cóng jiā dào zhèlǐ hěn yuǎn. — Từ nhà đến đây rất xa.",
+   "pron": "cóng",
+   "img": "📍",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "从小",
+   "back": "Từ nhỏ (phó từ)",
+   "ex": "我从小就认识他。",
+   "ex_vi": "Wǒ cóngxiǎo jiù rènshi tā. — Tôi quen anh ấy từ nhỏ.",
+   "pron": "cóngxiǎo",
+   "img": "👶",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "错",
+   "back": "Sai (tính từ)",
+   "ex": "对不起，我错了。",
+   "ex_vi": "Duìbuqǐ, wǒ cuò le. — Xin lỗi, tôi sai rồi.",
+   "pron": "cuò",
+   "img": "❌",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "打",
+   "back": "Đánh/Chơi (động từ)",
+   "ex": "他喜欢打篮球。",
+   "ex_vi": "Tā xǐhuan dǎ lánqiú. — Anh ấy thích chơi bóng rổ.",
+   "pron": "dǎ",
+   "img": "🏀",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "打车",
+   "back": "Bắt taxi (động từ ly hợp)",
+   "ex": "我们打车去吧。",
+   "ex_vi": "Wǒmen dǎchē qù ba. — Chúng mình bắt taxi đi đi.",
+   "pron": "dǎchē",
+   "img": "🚕",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "打开",
+   "back": "Mở ra (động từ)",
+   "ex": "打开门吧。",
+   "ex_vi": "Dǎkāi mén ba. — Mở cửa ra đi.",
+   "pron": "dǎkāi",
+   "img": "📂",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "但是",
+   "back": "Nhưng (liên từ)",
+   "ex": "虽然累，但是很开心。",
+   "ex_vi": "Suīrán lèi, dànshì hěn kāixīn. — Tuy mệt nhưng rất vui.",
+   "pron": "dànshì",
+   "img": "↔️",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "到",
+   "back": "Đến (động từ)",
+   "ex": "我到家了。",
+   "ex_vi": "Wǒ dào jiā le. — Tôi về đến nhà rồi.",
+   "pron": "dào",
+   "img": "🏠",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "得",
+   "back": "nối động từ với bổ ngữ trạng thái (trợ từ kết cấu)",
+   "ex": "他跑得很快。",
+   "ex_vi": "Tā pǎo de hěn kuài. — Anh ấy chạy rất nhanh.",
+   "pron": "de",
+   "img": "🏃",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "地",
+   "back": "nối trạng ngữ với động từ (một cách…) (trợ từ kết cấu)",
+   "ex": "快快地走。",
+   "ex_vi": "Kuàikuài de zǒu. — Đi một cách nhanh chóng.",
+   "pron": "de",
+   "img": "🐢",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "等",
+   "back": "Đợi (động từ)",
+   "ex": "请等一下。",
+   "ex_vi": "Qǐng děng yíxià. — Vui lòng đợi một lát.",
+   "pron": "děng",
+   "img": "⏳",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "点",
+   "back": "Gọi món (động từ)",
+   "ex": "我想点这个菜。",
+   "ex_vi": "Wǒ xiǎng diǎn zhège cài. — Tôi muốn gọi món này.",
+   "pron": "diǎn",
+   "img": "🍽️",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "地铁",
+   "back": "Tàu điện ngầm (danh từ)",
+   "ex": "坐地铁很方便。",
+   "ex_vi": "Zuò dìtiě hěn fāngbiàn. — Đi tàu điện ngầm rất tiện lợi.",
+   "pron": "dìtiě",
+   "img": "🚇",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "动",
+   "back": "Cử động (động từ)",
+   "ex": "我的手不能动。",
+   "ex_vi": "Wǒ de shǒu bùnéng dòng. — Tay của tôi không cử động được.",
+   "pron": "dòng",
+   "img": "✋",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "懂",
+   "back": "Hiểu (động từ)",
+   "ex": "我听懂了。",
+   "ex_vi": "Wǒ tīng dǒng le. — Tôi nghe hiểu rồi.",
+   "pron": "dǒng",
+   "img": "💡",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "饭馆",
+   "back": "Quán ăn (danh từ)",
+   "ex": "这家饭馆很大。",
+   "ex_vi": "Zhè jiā fànguǎn hěn dà. — Quán ăn này rất lớn.",
+   "pron": "fànguǎn",
+   "img": "🍜",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "飞",
+   "back": "Bay (động từ)",
+   "ex": "鸟在天上飞。",
+   "ex_vi": "Niǎo zài tiānshàng fēi. — Chim bay trên trời.",
+   "pron": "fēi",
+   "img": "🐦",
+   "group": "Từ 321–340"
+  },
+  {
+   "front": "高",
+   "back": "Cao (tính từ)",
+   "ex": "我的个子很高。",
+   "ex_vi": "Wǒ de gèzi hěn gāo. — Dáng người tôi rất cao.",
+   "pron": "gāo",
+   "img": "📐",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "告诉",
+   "back": "Cho biết (động từ)",
+   "ex": "请告诉我你的名字。",
+   "ex_vi": "Qǐng gàosu wǒ nǐ de míngzi. — Vui lòng cho tôi biết tên bạn.",
+   "pron": "gàosu",
+   "img": "🗣️",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "高中",
+   "back": "Cấp 3 (danh từ)",
+   "ex": "他是高中生。",
+   "ex_vi": "Tā shì gāozhōngshēng. — Anh ấy là học sinh cấp 3.",
+   "pron": "gāozhōng",
+   "img": "🎓",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "跟",
+   "back": "Với/Cùng (giới từ)",
+   "ex": "我跟你一起去。",
+   "ex_vi": "Wǒ gēn nǐ yìqǐ qù. — Tôi đi cùng với bạn.",
+   "pron": "gēn",
+   "img": "👫",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "个子",
+   "back": "Vóc dáng (danh từ)",
+   "ex": "他的个子不矮。",
+   "ex_vi": "Tā de gèzi bù ǎi. — Vóc dáng anh ấy không thấp.",
+   "pron": "gèzi",
+   "img": "🧍",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "公交车",
+   "back": "Xe buýt (danh từ)",
+   "ex": "我在等公交车。",
+   "ex_vi": "Wǒ zài děng gōngjiāochē. — Tôi đang đợi xe buýt.",
+   "pron": "gōngjiāochē",
+   "img": "🚌",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "过",
+   "back": "đã từng (trợ từ động thái)",
+   "ex": "我学过汉语。",
+   "ex_vi": "Wǒ xuéguo Hànyǔ. — Tôi đã từng học tiếng Trung.",
+   "pron": "guo",
+   "img": "🕰️",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "过​",
+   "back": "Qua/Đón (động từ)",
+   "ex": "我们去过马路。",
+   "ex_vi": "Wǒmen qù guò mǎlù. — Chúng ta đi qua đường thôi.",
+   "pron": "guò",
+   "img": "🚸",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "过来",
+   "back": "Qua đây (động từ xu hướng)",
+   "ex": "快过来坐下。",
+   "ex_vi": "Kuài guòlái zuò xià. — Mau qua đây ngồi xuống.",
+   "pron": "guòlái",
+   "img": "👋",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "过年",
+   "back": "Đón Tết (động từ ly hợp)",
+   "ex": "过年我要回家。",
+   "ex_vi": "Guònián wǒ yào huí jiā. — Tết tôi phải về nhà.",
+   "pron": "guònián",
+   "img": "🧧",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "过去",
+   "back": "Đi qua/Trước kia (động từ xu hướng / danh từ)",
+   "ex": "他在前面走过去。",
+   "ex_vi": "Tā zài qiánmiàn zǒu guòqù. — Anh ấy đi bộ qua phía trước.",
+   "pron": "guòqù",
+   "img": "🔙",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "还是",
+   "back": "Hay là/Vẫn (liên từ / phó từ)",
+   "ex": "你是喝茶还是喝咖啡？",
+   "ex_vi": "Nǐ shì hē chá háishi hē kāfēi? — Bạn uống trà hay uống cà phê?",
+   "pron": "háishi",
+   "img": "🤔",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "黑色",
+   "back": "Màu đen (danh từ)",
+   "ex": "我买了一双黑色的鞋。",
+   "ex_vi": "Wǒ mǎi le yì shuāng hēisè de xié. — Tôi mua một đôi giày màu đen.",
+   "pron": "hēisè",
+   "img": "⚫",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "红茶",
+   "back": "Trà đen (danh từ)",
+   "ex": "红茶很好喝。",
+   "ex_vi": "Hóngchá hěn hǎohē. — Trà đen rất dễ uống.",
+   "pron": "hóngchá",
+   "img": "🍵",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "红色",
+   "back": "Màu đỏ (danh từ)",
+   "ex": "这朵花是红色的。",
+   "ex_vi": "Zhè duǒ huā shì hóngsè de. — Bông hoa này màu đỏ.",
+   "pron": "hóngsè",
+   "img": "🔴",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "后面",
+   "back": "Phía sau (danh từ phương vị)",
+   "ex": "我家后面有个公园。",
+   "ex_vi": "Wǒ jiā hòumiàn yǒu gè gōngyuán. — Sau nhà tôi có một công viên.",
+   "pron": "hòumiàn",
+   "img": "🔙",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "画",
+   "back": "Vẽ/Tranh (động từ / danh từ)",
+   "ex": "他在画画。",
+   "ex_vi": "Tā zài huà huà. — Anh ấy đang vẽ tranh.",
+   "pron": "huà",
+   "img": "🖼️",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "花",
+   "back": "Tiêu/Tốn (động từ)",
+   "ex": "花了很多钱。",
+   "ex_vi": "Huā le hěn duō qián. — Đã tiêu rất nhiều tiền.",
+   "pron": "huā",
+   "img": "💸",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "花​",
+   "back": "Hoa (danh từ)",
+   "ex": "这里的花真美。",
+   "ex_vi": "Zhèlǐ de huā zhēn měi. — Hoa ở đây thật đẹp.",
+   "pron": "huā",
+   "img": "🌸",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "坏",
+   "back": "Hỏng/Xấu (tính từ)",
+   "ex": "手机坏了。",
+   "ex_vi": "Shǒujī huài le. — Điện thoại hỏng rồi.",
+   "pron": "huài",
+   "img": "💔",
+   "group": "Từ 341–360"
+  },
+  {
+   "front": "回来",
+   "back": "Quay lại đây (động từ xu hướng)",
+   "ex": "妈妈几点回来？",
+   "ex_vi": "Māma jǐ diǎn huílái? — Mẹ mấy giờ quay về?",
+   "pron": "huílái",
+   "img": "↩️",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "回去",
+   "back": "Quay về kia (động từ xu hướng)",
+   "ex": "我们快回去吧。",
+   "ex_vi": "Wǒmen kuài huíqù ba. — Chúng ta mau quay về đi.",
+   "pron": "huíqù",
+   "img": "🏃",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "间",
+   "back": "gian, căn – dùng cho phòng (lượng từ)",
+   "ex": "这间屋子很亮。",
+   "ex_vi": "Zhè jiān wūzi hěn liàng. — Căn phòng này rất sáng.",
+   "pron": "jiān",
+   "img": "🚪",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "教",
+   "back": "Dạy (động từ)",
+   "ex": "他教我们英语。",
+   "ex_vi": "Tā jiāo wǒmen Yīngyǔ. — Anh ấy dạy chúng tôi tiếng Anh.",
+   "pron": "jiāo",
+   "img": "👩‍🏫",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "教室",
+   "back": "Lớp học (danh từ)",
+   "ex": "同学们都在教室。",
+   "ex_vi": "Tóngxuémen dōu zài jiàoshì. — Các bạn học sinh đều ở trong lớp.",
+   "pron": "jiàoshì",
+   "img": "🏫",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "机场",
+   "back": "Sân bay (danh từ)",
+   "ex": "机场离这儿不近。",
+   "ex_vi": "Jīchǎng lí zhèr bú jìn. — Sân bay cách đây không gần.",
+   "pron": "jīchǎng",
+   "img": "🛫",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "记得",
+   "back": "Nhớ (động từ)",
+   "ex": "我不记得他了。",
+   "ex_vi": "Wǒ bú jìde tā le. — Tôi không nhớ anh ấy nữa.",
+   "pron": "jìde",
+   "img": "🧠",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "介绍",
+   "back": "Giới thiệu (động từ)",
+   "ex": "请介绍一下你自己。",
+   "ex_vi": "Qǐng jièshào yíxià nǐ zìjǐ. — Hãy giới thiệu một chút về bản thân bạn.",
+   "pron": "jièshào",
+   "img": "🙋",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "进",
+   "back": "Vào (động từ)",
+   "ex": "请进教室吧。",
+   "ex_vi": "Qǐng jìn jiàoshì ba. — Mời vào lớp học.",
+   "pron": "jìn",
+   "img": "🚪",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "近",
+   "back": "Gần (tính từ)",
+   "ex": "我家离学校很近。",
+   "ex_vi": "Wǒ jiā lí xuéxiào hěn jìn. — Nhà tôi rất gần trường.",
+   "pron": "jìn",
+   "img": "📍",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "经常",
+   "back": "Thường xuyên (phó từ)",
+   "ex": "他经常去游泳。",
+   "ex_vi": "Tā jīngcháng qù yóuyǒng. — Anh ấy thường xuyên đi bơi.",
+   "pron": "jīngcháng",
+   "img": "🔄",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "进来",
+   "back": "Vào đây (động từ xu hướng)",
+   "ex": "他从外面进来。",
+   "ex_vi": "Tā cóng wàimiàn jìnlái. — Anh ấy từ bên ngoài đi vào đây.",
+   "pron": "jìnlái",
+   "img": "🚪",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "进去",
+   "back": "Vào đó (động từ xu hướng)",
+   "ex": "里面没人，进去吧。",
+   "ex_vi": "Lǐmiàn méi rén, jìnqù ba. — Bên trong không có ai, vào đi.",
+   "pron": "jìnqù",
+   "img": "🚪",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "机票",
+   "back": "Vé máy bay (danh từ)",
+   "ex": "机票很贵。",
+   "ex_vi": "Jīpiào hěn guì. — Vé máy bay rất đắt.",
+   "pron": "jīpiào",
+   "img": "🎫",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "就",
+   "back": "Chính/Thì (phó từ)",
+   "ex": "我就在这儿。",
+   "ex_vi": "Wǒ jiù zài zhèr. — Tôi chính là ở đây.",
+   "pron": "jiù",
+   "img": "👉",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "酒店",
+   "back": "Khách sạn (danh từ)",
+   "ex": "我们住在哪家酒店？",
+   "ex_vi": "Wǒmen zhù zài nǎ jiā jiǔdiàn? — Chúng ta ở khách sạn nào?",
+   "pron": "jiǔdiàn",
+   "img": "🏨",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "咖啡",
+   "back": "Cà phê (danh từ)",
+   "ex": "我要一杯热咖啡。",
+   "ex_vi": "Wǒ yào yì bēi rè kāfēi. — Tôi muốn một ly cà phê nóng.",
+   "pron": "kāfēi",
+   "img": "☕",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "开始",
+   "back": "Bắt đầu (động từ)",
+   "ex": "电影什么时候开始？",
+   "ex_vi": "Diànyǐng shénme shíhou kāishǐ? — Phim khi nào bắt đầu?",
+   "pron": "kāishǐ",
+   "img": "🏁",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "开学",
+   "back": "Khai giảng (động từ ly hợp)",
+   "ex": "九月一号开学。",
+   "ex_vi": "Jiǔyuè yī hào kāixué. — Ngày 1 tháng 9 khai giảng.",
+   "pron": "kāixué",
+   "img": "🎒",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "考",
+   "back": "Thi (động từ)",
+   "ex": "这次你考得好吗？",
+   "ex_vi": "Zhè cì nǐ kǎo de hǎo ma? — Lần này bạn thi tốt không?",
+   "pron": "kǎo",
+   "img": "📝",
+   "group": "Từ 361–380"
+  },
+  {
+   "front": "考试",
+   "back": "Kỳ thi (danh từ / động từ)",
+   "ex": "明天的考试不难。",
+   "ex_vi": "Míngtiān de kǎoshì bù nán. — Kỳ thi ngày mai không khó.",
+   "pron": "kǎoshì",
+   "img": "📝",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "可能",
+   "back": "Có thể (phó từ)",
+   "ex": "今天可能会下雪。",
+   "ex_vi": "Jīntiān kěnéng huì xiàxuě. — Hôm nay có thể sẽ có tuyết.",
+   "pron": "kěnéng",
+   "img": "🤷",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "快",
+   "back": "Nhanh (tính từ)",
+   "ex": "他跑得很快。",
+   "ex_vi": "Tā pǎo de hěn kuài. — Anh ấy chạy rất nhanh.",
+   "pron": "kuài",
+   "img": "⚡",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "快乐",
+   "back": "Hạnh phúc (tính từ)",
+   "ex": "祝你生日快乐！",
+   "ex_vi": "Zhù nǐ shēngrì kuàilè! — Chúc bạn sinh nhật vui vẻ!",
+   "pron": "kuàilè",
+   "img": "😊",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "快要",
+   "back": "Sắp (phó từ)",
+   "ex": "我们快要出发了。",
+   "ex_vi": "Wǒmen kuàiyào chūfā le. — Chúng tôi sắp xuất phát rồi.",
+   "pron": "kuàiyào",
+   "img": "⏰",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "裤子",
+   "back": "Quần (danh từ)",
+   "ex": "这条裤子有点旧。",
+   "ex_vi": "Zhè tiáo kùzi yǒudiǎn jiù. — Chiếc quần này hơi cũ.",
+   "pron": "kùzi",
+   "img": "👖",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "篮球",
+   "back": "Bóng rổ (danh từ)",
+   "ex": "你会打篮球吗？",
+   "ex_vi": "Nǐ huì dǎ lánqiú ma? — Bạn biết chơi bóng rổ không?",
+   "pron": "lánqiú",
+   "img": "🏀",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "累",
+   "back": "Mệt (tính từ)",
+   "ex": "我很累，想睡觉。",
+   "ex_vi": "Wǒ hěn lèi, xiǎng shuìjiào. — Tôi rất mệt, muốn đi ngủ.",
+   "pron": "lèi",
+   "img": "😩",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "离",
+   "back": "Cách (giới từ)",
+   "ex": "超市离家很远。",
+   "ex_vi": "Chāoshì lí jiā hěn yuǎn. — Siêu thị cách nhà rất xa.",
+   "pron": "lí",
+   "img": "📏",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "里面",
+   "back": "Bên trong (danh từ phương vị)",
+   "ex": "箱子里面是衣服。",
+   "ex_vi": "Xiāngzi lǐmiàn shì yīfu. — Trong thùng là quần áo.",
+   "pron": "lǐmiàn",
+   "img": "📦",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "楼",
+   "back": "Tầng/Tòa nhà (danh từ)",
+   "ex": "他在三楼。",
+   "ex_vi": "Tā zài sān lóu. — Anh ấy ở tầng 3.",
+   "pron": "lóu",
+   "img": "🏢",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "路",
+   "back": "Đường (danh từ)",
+   "ex": "这条路不好走。",
+   "ex_vi": "Zhè tiáo lù bù hǎo zǒu. — Con đường này không dễ đi.",
+   "pron": "lù",
+   "img": "🛣️",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "绿茶",
+   "back": "Trà xanh (danh từ)",
+   "ex": "请喝杯绿茶。",
+   "ex_vi": "Qǐng hē bēi lǜchá. — Mời uống ly trà xanh.",
+   "pron": "lǜchá",
+   "img": "🍵",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "绿色",
+   "back": "Màu xanh lá (danh từ)",
+   "ex": "树叶是绿色的。",
+   "ex_vi": "Shùyè shì lǜsè de. — Lá cây màu xanh.",
+   "pron": "lǜsè",
+   "img": "🟢",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "路上",
+   "back": "Trên đường (danh từ)",
+   "ex": "我在回家的路上。",
+   "ex_vi": "Wǒ zài huí jiā de lùshang. — Tôi đang trên đường về nhà.",
+   "pron": "lùshang",
+   "img": "🛣️",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "旅游",
+   "back": "Du lịch (động từ)",
+   "ex": "我喜欢去旅游。",
+   "ex_vi": "Wǒ xǐhuan qù lǚyóu. — Tôi thích đi du lịch.",
+   "pron": "lǚyóu",
+   "img": "🧳",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "慢",
+   "back": "Chậm (tính từ)",
+   "ex": "请说慢一点儿。",
+   "ex_vi": "Qǐng shuō màn yìdiǎnr. — Xin hãy nói chậm một chút.",
+   "pron": "màn",
+   "img": "🐌",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "每",
+   "back": "Mỗi (đại từ)",
+   "ex": "我每天看书。",
+   "ex_vi": "Wǒ měitiān kànshū. — Tôi đọc sách mỗi ngày.",
+   "pron": "měi",
+   "img": "📅",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "没意思",
+   "back": "Vô vị (tính từ)",
+   "ex": "这个电影没意思。",
+   "ex_vi": "Zhège diànyǐng méi yìsi. — Bộ phim này không thú vị.",
+   "pron": "méi yìsi",
+   "img": "😑",
+   "group": "Từ 381–400"
+  },
+  {
+   "front": "门",
+   "back": "Cửa (danh từ)",
+   "ex": "请关门。",
+   "ex_vi": "Qǐng guānmén. — Vui lòng đóng cửa.",
+   "pron": "mén",
+   "img": "🚪",
+   "group": "Từ 381–400"
+  }
+ ]
+}

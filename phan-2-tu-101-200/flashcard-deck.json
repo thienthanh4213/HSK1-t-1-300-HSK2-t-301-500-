@@ -1,0 +1,911 @@
+{
+ "title": "🀄 HSK · Phần 2 – Từ 101–200",
+ "lang": "zh-CN",
+ "progressKey": "hsk500-p2",
+ "themePrimary": "#f59e0b",
+ "themePrimaryDark": "#ea580c",
+ "themePrimaryLight": "#fef9c3",
+ "scoreSheetUrl": "",
+ "cards": [
+  {
+   "front": "回家",
+   "back": "Về nhà (động từ ly hợp)",
+   "ex": "我六点回家。",
+   "ex_vi": "Wǒ liù diǎn huíjiā. — Tôi về nhà lúc 6 giờ.",
+   "pron": "huíjiā",
+   "img": "🏡",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "会",
+   "back": "Biết (làm gì); sẽ (động từ năng nguyện)",
+   "ex": "我会说汉语。",
+   "ex_vi": "Wǒ huì shuō Hànyǔ. — Tôi biết nói tiếng Trung.",
+   "pron": "huì",
+   "img": "🧠",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "火车",
+   "back": "Tàu hỏa (danh từ)",
+   "ex": "我们坐火车去吧。",
+   "ex_vi": "Wǒmen zuò huǒchē qù ba. — Chúng ta đi tàu hỏa nhé.",
+   "pron": "huǒchē",
+   "img": "🚆",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "鸡蛋",
+   "back": "Trứng gà (danh từ)",
+   "ex": "我早上吃了两个鸡蛋。",
+   "ex_vi": "Wǒ zǎoshang chī le liǎng ge jīdàn. — Sáng nay tôi ăn 2 quả trứng.",
+   "pron": "jīdàn",
+   "img": "🥚",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "几",
+   "back": "Mấy (đại từ nghi vấn)",
+   "ex": "你家有几口人？",
+   "ex_vi": "Nǐ jiā yǒu jǐ kǒu rén? — Nhà bạn có mấy người?",
+   "pron": "jǐ",
+   "img": "🔢",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "记住",
+   "back": "Nhớ kỹ (động từ)",
+   "ex": "请记住我的名字。",
+   "ex_vi": "Qǐng jìzhù wǒ de míngzi. — Hãy nhớ tên tôi nhé.",
+   "pron": "jìzhù",
+   "img": "📌",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "家",
+   "back": "Nhà, gia đình (danh từ)",
+   "ex": "我家在河内。",
+   "ex_vi": "Wǒ jiā zài Hénèi. — Nhà tôi ở Hà Nội.",
+   "pron": "jiā",
+   "img": "🏠",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "家人",
+   "back": "Người nhà (danh từ)",
+   "ex": "我很想家人。",
+   "ex_vi": "Wǒ hěn xiǎng jiārén. — Tôi rất nhớ người nhà.",
+   "pron": "jiārén",
+   "img": "👪",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "见",
+   "back": "Gặp, thấy (động từ)",
+   "ex": "明天见！",
+   "ex_vi": "Míngtiān jiàn! — Mai gặp lại!",
+   "pron": "jiàn",
+   "img": "👀",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "见面",
+   "back": "Gặp mặt (động từ ly hợp)",
+   "ex": "我们在哪儿见面？",
+   "ex_vi": "Wǒmen zài nǎr jiànmiàn? — Chúng ta gặp nhau ở đâu?",
+   "pron": "jiànmiàn",
+   "img": "🤝",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "叫",
+   "back": "Gọi, tên là (động từ)",
+   "ex": "你叫什么名字？",
+   "ex_vi": "Nǐ jiào shénme míngzi? — Bạn tên là gì?",
+   "pron": "jiào",
+   "img": "📛",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "觉得",
+   "back": "Cảm thấy (động từ)",
+   "ex": "我觉得汉语不难。",
+   "ex_vi": "Wǒ juéde Hànyǔ bù nán. — Tôi thấy tiếng Trung không khó.",
+   "pron": "juéde",
+   "img": "💭",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "姐姐",
+   "back": "Chị gái (danh từ)",
+   "ex": "我姐姐是老师。",
+   "ex_vi": "Wǒ jiějie shì lǎoshī. — Chị gái tôi là giáo viên.",
+   "pron": "jiějie",
+   "img": "👩",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "今年",
+   "back": "Năm nay (danh từ)",
+   "ex": "你今年多大？",
+   "ex_vi": "Nǐ jīnnián duō dà? — Năm nay bạn bao nhiêu tuổi?",
+   "pron": "jīnnián",
+   "img": "🗓️",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "今天",
+   "back": "Hôm nay (danh từ)",
+   "ex": "今天是星期一。",
+   "ex_vi": "Jīntiān shì xīngqīyī. — Hôm nay là thứ Hai.",
+   "pron": "jīntiān",
+   "img": "📅",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "九",
+   "back": "Số 9 (số từ)",
+   "ex": "我九点上课。",
+   "ex_vi": "Wǒ jiǔ diǎn shàngkè. — Tôi vào học lúc 9 giờ.",
+   "pron": "jiǔ",
+   "img": "9️⃣",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "开",
+   "back": "Mở, lái (động từ)",
+   "ex": "请开门。",
+   "ex_vi": "Qǐng kāi mén. — Làm ơn mở cửa.",
+   "pron": "kāi",
+   "img": "🔓",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "开车",
+   "back": "Lái xe (động từ ly hợp)",
+   "ex": "爸爸开车去上班。",
+   "ex_vi": "Bàba kāichē qù shàngbān. — Bố lái xe đi làm.",
+   "pron": "kāichē",
+   "img": "🚙",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "看",
+   "back": "Xem, nhìn (động từ)",
+   "ex": "我喜欢看书。",
+   "ex_vi": "Wǒ xǐhuan kàn shū. — Tôi thích đọc sách.",
+   "pron": "kàn",
+   "img": "👁️",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "看病",
+   "back": "Khám bệnh (động từ ly hợp)",
+   "ex": "我去医院看病。",
+   "ex_vi": "Wǒ qù yīyuàn kànbìng. — Tôi đến bệnh viện khám bệnh.",
+   "pron": "kànbìng",
+   "img": "🩺",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "看见",
+   "back": "Nhìn thấy (động từ)",
+   "ex": "你看见我的手机了吗？",
+   "ex_vi": "Nǐ kànjiàn wǒ de shǒujī le ma? — Bạn có thấy điện thoại của tôi không?",
+   "pron": "kànjiàn",
+   "img": "🔍",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "渴",
+   "back": "Khát (tính từ)",
+   "ex": "我很渴，想喝水。",
+   "ex_vi": "Wǒ hěn kě, xiǎng hē shuǐ. — Tôi rất khát, muốn uống nước.",
+   "pron": "kě",
+   "img": "🥵",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "课",
+   "back": "Bài học, tiết học (danh từ)",
+   "ex": "今天有三节课。",
+   "ex_vi": "Jīntiān yǒu sān jié kè. — Hôm nay có 3 tiết học.",
+   "pron": "kè",
+   "img": "📘",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "课本",
+   "back": "Sách giáo khoa (danh từ)",
+   "ex": "请打开课本。",
+   "ex_vi": "Qǐng dǎkāi kèběn. — Mời mở sách giáo khoa ra.",
+   "pron": "kèběn",
+   "img": "📕",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "口",
+   "back": "Miệng; khẩu (người) (danh từ / lượng từ)",
+   "ex": "我家有四口人。",
+   "ex_vi": "Wǒ jiā yǒu sì kǒu rén. — Nhà tôi có 4 người.",
+   "pron": "kǒu",
+   "img": "👄",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "块",
+   "back": "Đồng (tệ); miếng (lượng từ)",
+   "ex": "一个苹果五块钱。",
+   "ex_vi": "Yí ge píngguǒ wǔ kuài qián. — Một quả táo 5 tệ.",
+   "pron": "kuài",
+   "img": "💴",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "来",
+   "back": "Đến (động từ)",
+   "ex": "你什么时候来？",
+   "ex_vi": "Nǐ shénme shíhou lái? — Khi nào bạn đến?",
+   "pron": "lái",
+   "img": "🚶",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "老",
+   "back": "Già, cũ (tính từ)",
+   "ex": "我的电脑很老了。",
+   "ex_vi": "Wǒ de diànnǎo hěn lǎo le. — Máy tính của tôi cũ lắm rồi.",
+   "pron": "lǎo",
+   "img": "👴",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "老人",
+   "back": "Người già (danh từ)",
+   "ex": "公园里有很多老人。",
+   "ex_vi": "Gōngyuán lǐ yǒu hěn duō lǎorén. — Trong công viên có nhiều người già.",
+   "pron": "lǎorén",
+   "img": "🧓",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "老师",
+   "back": "Giáo viên (danh từ)",
+   "ex": "王老师是我们的汉语老师。",
+   "ex_vi": "Wáng lǎoshī shì wǒmen de Hànyǔ lǎoshī. — Thầy Vương là giáo viên tiếng Trung của chúng tôi.",
+   "pron": "lǎoshī",
+   "img": "👩‍🏫",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "了",
+   "back": "Rồi (trợ từ) (trợ từ)",
+   "ex": "我吃饭了。",
+   "ex_vi": "Wǒ chīfàn le. — Tôi ăn cơm rồi.",
+   "pron": "le",
+   "img": "✔️",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "冷",
+   "back": "Lạnh (tính từ)",
+   "ex": "今天很冷。",
+   "ex_vi": "Jīntiān hěn lěng. — Hôm nay rất lạnh.",
+   "pron": "lěng",
+   "img": "🥶",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "里",
+   "back": "Trong, bên trong (danh từ phương vị)",
+   "ex": "书包里有什么？",
+   "ex_vi": "Shūbāo lǐ yǒu shénme? — Trong cặp có gì?",
+   "pron": "lǐ",
+   "img": "📥",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "两",
+   "back": "Hai (số từ)",
+   "ex": "我有两个哥哥。",
+   "ex_vi": "Wǒ yǒu liǎng ge gēge. — Tôi có hai anh trai.",
+   "pron": "liǎng",
+   "img": "✌️",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "零",
+   "back": "Số 0 (số từ)",
+   "ex": "我的号是零九八。",
+   "ex_vi": "Wǒ de hào shì líng jiǔ bā. — Số của tôi là 098.",
+   "pron": "líng",
+   "img": "0️⃣",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "六",
+   "back": "Số 6 (số từ)",
+   "ex": "我六点起床。",
+   "ex_vi": "Wǒ liù diǎn qǐchuáng. — Tôi dậy lúc 6 giờ.",
+   "pron": "liù",
+   "img": "6️⃣",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "妈妈",
+   "back": "Mẹ (danh từ)",
+   "ex": "妈妈在做饭。",
+   "ex_vi": "Māma zài zuò fàn. — Mẹ đang nấu cơm.",
+   "pron": "māma",
+   "img": "👩",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "马上",
+   "back": "Ngay lập tức (phó từ)",
+   "ex": "我马上来。",
+   "ex_vi": "Wǒ mǎshàng lái. — Tôi đến ngay.",
+   "pron": "mǎshàng",
+   "img": "⚡",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "吗",
+   "back": "Không? (câu hỏi) (trợ từ ngữ khí)",
+   "ex": "你是学生吗？",
+   "ex_vi": "Nǐ shì xuésheng ma? — Bạn là học sinh phải không?",
+   "pron": "ma",
+   "img": "❔",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "买",
+   "back": "Mua (động từ)",
+   "ex": "我想买一个手机。",
+   "ex_vi": "Wǒ xiǎng mǎi yí ge shǒujī. — Tôi muốn mua một cái điện thoại.",
+   "pron": "mǎi",
+   "img": "🛒",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "卖",
+   "back": "Bán (động từ)",
+   "ex": "这个商店卖水果。",
+   "ex_vi": "Zhège shāngdiàn mài shuǐguǒ. — Cửa hàng này bán hoa quả.",
+   "pron": "mài",
+   "img": "🏪",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "忙",
+   "back": "Bận (tính từ)",
+   "ex": "我最近很忙。",
+   "ex_vi": "Wǒ zuìjìn hěn máng. — Dạo này tôi rất bận.",
+   "pron": "máng",
+   "img": "🏃",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "猫",
+   "back": "Con mèo (danh từ)",
+   "ex": "我家有一只猫。",
+   "ex_vi": "Wǒ jiā yǒu yì zhī māo. — Nhà tôi có một con mèo.",
+   "pron": "māo",
+   "img": "🐱",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "没",
+   "back": "Không, chưa (phó từ)",
+   "ex": "我没去学校。",
+   "ex_vi": "Wǒ méi qù xuéxiào. — Tôi đã không đến trường.",
+   "pron": "méi",
+   "img": "⛔",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "没关系",
+   "back": "Không sao (cụm từ)",
+   "ex": "没关系，你别担心。",
+   "ex_vi": "Méi guānxi, nǐ bié dānxīn. — Không sao, bạn đừng lo.",
+   "pron": "méi guānxi",
+   "img": "🙂",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "没有",
+   "back": "Không có (động từ)",
+   "ex": "我没有钱。",
+   "ex_vi": "Wǒ méiyǒu qián. — Tôi không có tiền.",
+   "pron": "méiyǒu",
+   "img": "🈚",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "妹妹",
+   "back": "Em gái (danh từ)",
+   "ex": "我妹妹很可爱。",
+   "ex_vi": "Wǒ mèimei hěn kě'ài. — Em gái tôi rất đáng yêu.",
+   "pron": "mèimei",
+   "img": "👧",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "米饭",
+   "back": "Cơm (danh từ)",
+   "ex": "我要一碗米饭。",
+   "ex_vi": "Wǒ yào yì wǎn mǐfàn. — Tôi muốn một bát cơm.",
+   "pron": "mǐfàn",
+   "img": "🍚",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "面包",
+   "back": "Bánh mì (danh từ)",
+   "ex": "早上我吃面包。",
+   "ex_vi": "Zǎoshang wǒ chī miànbāo. — Buổi sáng tôi ăn bánh mì.",
+   "pron": "miànbāo",
+   "img": "🍞",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "面条儿",
+   "back": "Mì sợi (danh từ)",
+   "ex": "我喜欢吃面条儿。",
+   "ex_vi": "Wǒ xǐhuan chī miàntiáor. — Tôi thích ăn mì.",
+   "pron": "miàntiáor",
+   "img": "🍜",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "名字",
+   "back": "Tên (danh từ)",
+   "ex": "你的名字很好听。",
+   "ex_vi": "Nǐ de míngzi hěn hǎotīng. — Tên bạn rất hay.",
+   "pron": "míngzi",
+   "img": "🏷️",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "明白",
+   "back": "Hiểu rõ (động từ)",
+   "ex": "我明白你的意思。",
+   "ex_vi": "Wǒ míngbai nǐ de yìsi. — Tôi hiểu ý bạn.",
+   "pron": "míngbai",
+   "img": "💡",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "明年",
+   "back": "Năm sau (danh từ)",
+   "ex": "明年我去中国。",
+   "ex_vi": "Míngnián wǒ qù Zhōngguó. — Năm sau tôi đi Trung Quốc.",
+   "pron": "míngnián",
+   "img": "🗓️",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "明天",
+   "back": "Ngày mai (danh từ)",
+   "ex": "明天我们去公园。",
+   "ex_vi": "Míngtiān wǒmen qù gōngyuán. — Ngày mai chúng ta đi công viên.",
+   "pron": "míngtiān",
+   "img": "🌄",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "哪",
+   "back": "Nào (đại từ nghi vấn)",
+   "ex": "你喜欢哪个？",
+   "ex_vi": "Nǐ xǐhuan nǎge? — Bạn thích cái nào?",
+   "pron": "nǎ",
+   "img": "🤔",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "哪儿",
+   "back": "Ở đâu (đại từ nghi vấn)",
+   "ex": "你去哪儿？",
+   "ex_vi": "Nǐ qù nǎr? — Bạn đi đâu?",
+   "pron": "nǎr",
+   "img": "📍",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "那",
+   "back": "Kia, đó (đại từ)",
+   "ex": "那是我的老师。",
+   "ex_vi": "Nà shì wǒ de lǎoshī. — Kia là giáo viên của tôi.",
+   "pron": "nà",
+   "img": "👉",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "那儿",
+   "back": "Ở đó (đại từ)",
+   "ex": "那儿有一个商店。",
+   "ex_vi": "Nàr yǒu yí ge shāngdiàn. — Ở đó có một cửa hàng.",
+   "pron": "nàr",
+   "img": "📌",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "那些",
+   "back": "Những cái kia (đại từ)",
+   "ex": "那些书是谁的？",
+   "ex_vi": "Nàxiē shū shì shéi de? — Những quyển sách kia là của ai?",
+   "pron": "nàxiē",
+   "img": "📚",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "男",
+   "back": "Nam (tính từ)",
+   "ex": "我们班男学生很多。",
+   "ex_vi": "Wǒmen bān nán xuésheng hěn duō. — Lớp chúng tôi có nhiều học sinh nam.",
+   "pron": "nán",
+   "img": "♂️",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "男人",
+   "back": "Đàn ông (danh từ)",
+   "ex": "那个男人是谁？",
+   "ex_vi": "Nàge nánrén shì shéi? — Người đàn ông kia là ai?",
+   "pron": "nánrén",
+   "img": "👨",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "南",
+   "back": "Phía nam (danh từ phương vị)",
+   "ex": "越南在中国的南边。",
+   "ex_vi": "Yuènán zài Zhōngguó de nánbian. — Việt Nam ở phía nam Trung Quốc.",
+   "pron": "nán",
+   "img": "⬇️",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "难",
+   "back": "Khó (tính từ)",
+   "ex": "这个题很难。",
+   "ex_vi": "Zhège tí hěn nán. — Câu này rất khó.",
+   "pron": "nán",
+   "img": "😣",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "呢",
+   "back": "Thì sao? (trợ từ hỏi) (trợ từ ngữ khí)",
+   "ex": "我很好，你呢？",
+   "ex_vi": "Wǒ hěn hǎo, nǐ ne? — Tôi khỏe, còn bạn?",
+   "pron": "ne",
+   "img": "💬",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "能",
+   "back": "Có thể (động từ năng nguyện)",
+   "ex": "你能帮我吗？",
+   "ex_vi": "Nǐ néng bāng wǒ ma? — Bạn có thể giúp tôi không?",
+   "pron": "néng",
+   "img": "💪",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "你",
+   "back": "Bạn (đại từ)",
+   "ex": "你好！",
+   "ex_vi": "Nǐ hǎo! — Xin chào!",
+   "pron": "nǐ",
+   "img": "🫵",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "你们",
+   "back": "Các bạn (đại từ)",
+   "ex": "你们是哪国人？",
+   "ex_vi": "Nǐmen shì nǎ guó rén? — Các bạn là người nước nào?",
+   "pron": "nǐmen",
+   "img": "👥",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "年",
+   "back": "Năm (danh từ)",
+   "ex": "我学了一年汉语。",
+   "ex_vi": "Wǒ xué le yì nián Hànyǔ. — Tôi đã học tiếng Trung 1 năm.",
+   "pron": "nián",
+   "img": "📆",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "您",
+   "back": "Ngài, ông/bà (kính trọng) (đại từ)",
+   "ex": "您好，请坐。",
+   "ex_vi": "Nín hǎo, qǐng zuò. — Chào ông/bà, mời ngồi.",
+   "pron": "nín",
+   "img": "🙇",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "牛奶",
+   "back": "Sữa bò (danh từ)",
+   "ex": "我每天喝牛奶。",
+   "ex_vi": "Wǒ měitiān hē niúnǎi. — Ngày nào tôi cũng uống sữa.",
+   "pron": "niúnǎi",
+   "img": "🥛",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "女",
+   "back": "Nữ (tính từ)",
+   "ex": "她是我的女朋友。",
+   "ex_vi": "Tā shì wǒ de nǚ péngyou. — Cô ấy là bạn gái tôi.",
+   "pron": "nǚ",
+   "img": "♀️",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "女儿",
+   "back": "Con gái (danh từ)",
+   "ex": "他有一个女儿。",
+   "ex_vi": "Tā yǒu yí ge nǚ'ér. — Anh ấy có một cô con gái.",
+   "pron": "nǚ'ér",
+   "img": "👧",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "女人",
+   "back": "Phụ nữ (danh từ)",
+   "ex": "那个女人是医生。",
+   "ex_vi": "Nàge nǚrén shì yīshēng. — Người phụ nữ kia là bác sĩ.",
+   "pron": "nǚrén",
+   "img": "👩",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "朋友",
+   "back": "Bạn bè (danh từ)",
+   "ex": "他是我的好朋友。",
+   "ex_vi": "Tā shì wǒ de hǎo péngyou. — Anh ấy là bạn tốt của tôi.",
+   "pron": "péngyou",
+   "img": "🧑‍🤝‍🧑",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "便宜",
+   "back": "Rẻ (tính từ)",
+   "ex": "这里的水果很便宜。",
+   "ex_vi": "Zhèlǐ de shuǐguǒ hěn piányi. — Hoa quả ở đây rất rẻ.",
+   "pron": "piányi",
+   "img": "🏷️",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "漂亮",
+   "back": "Xinh đẹp (tính từ)",
+   "ex": "你的妹妹很漂亮。",
+   "ex_vi": "Nǐ de mèimei hěn piàoliang. — Em gái bạn rất xinh.",
+   "pron": "piàoliang",
+   "img": "🌹",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "苹果",
+   "back": "Quả táo (danh từ)",
+   "ex": "我想吃苹果。",
+   "ex_vi": "Wǒ xiǎng chī píngguǒ. — Tôi muốn ăn táo.",
+   "pron": "píngguǒ",
+   "img": "🍎",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "七",
+   "back": "Số 7 (số từ)",
+   "ex": "我七点吃早饭。",
+   "ex_vi": "Wǒ qī diǎn chī zǎofàn. — Tôi ăn sáng lúc 7 giờ.",
+   "pron": "qī",
+   "img": "7️⃣",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "起床",
+   "back": "Thức dậy (động từ ly hợp)",
+   "ex": "你几点起床？",
+   "ex_vi": "Nǐ jǐ diǎn qǐchuáng? — Bạn dậy lúc mấy giờ?",
+   "pron": "qǐchuáng",
+   "img": "⏰",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "汽车",
+   "back": "Ô tô (danh từ)",
+   "ex": "他买了一辆汽车。",
+   "ex_vi": "Tā mǎi le yí liàng qìchē. — Anh ấy đã mua một chiếc ô tô.",
+   "pron": "qìchē",
+   "img": "🚘",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "前天",
+   "back": "Hôm kia (danh từ)",
+   "ex": "前天我去了北京。",
+   "ex_vi": "Qiántiān wǒ qù le Běijīng. — Hôm kia tôi đã đi Bắc Kinh.",
+   "pron": "qiántiān",
+   "img": "⏪",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "钱",
+   "back": "Tiền (danh từ)",
+   "ex": "你有多少钱？",
+   "ex_vi": "Nǐ yǒu duōshao qián? — Bạn có bao nhiêu tiền?",
+   "pron": "qián",
+   "img": "💵",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "请",
+   "back": "Mời; xin vui lòng (động từ)",
+   "ex": "请喝茶。",
+   "ex_vi": "Qǐng hē chá. — Mời uống trà.",
+   "pron": "qǐng",
+   "img": "🙏",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "请假",
+   "back": "Xin nghỉ (động từ ly hợp)",
+   "ex": "我明天想请假。",
+   "ex_vi": "Wǒ míngtiān xiǎng qǐngjià. — Ngày mai tôi muốn xin nghỉ.",
+   "pron": "qǐngjià",
+   "img": "📝",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "请问",
+   "back": "Xin hỏi (cụm từ)",
+   "ex": "请问，医院在哪儿？",
+   "ex_vi": "Qǐngwèn, yīyuàn zài nǎr? — Xin hỏi, bệnh viện ở đâu?",
+   "pron": "qǐngwèn",
+   "img": "🙋",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "去",
+   "back": "Đi (động từ)",
+   "ex": "我去学校。",
+   "ex_vi": "Wǒ qù xuéxiào. — Tôi đi đến trường.",
+   "pron": "qù",
+   "img": "🚶",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "去年",
+   "back": "Năm ngoái (danh từ)",
+   "ex": "去年我来中国了。",
+   "ex_vi": "Qùnián wǒ lái Zhōngguó le. — Năm ngoái tôi đã đến Trung Quốc.",
+   "pron": "qùnián",
+   "img": "⏮️",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "热",
+   "back": "Nóng (tính từ)",
+   "ex": "今天太热了。",
+   "ex_vi": "Jīntiān tài rè le. — Hôm nay nóng quá.",
+   "pron": "rè",
+   "img": "🔥",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "人",
+   "back": "Người (danh từ)",
+   "ex": "这里有很多人。",
+   "ex_vi": "Zhèlǐ yǒu hěn duō rén. — Ở đây có rất nhiều người.",
+   "pron": "rén",
+   "img": "🧍",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "认识",
+   "back": "Quen biết (động từ)",
+   "ex": "你认识他吗？",
+   "ex_vi": "Nǐ rènshi tā ma? — Bạn có quen anh ấy không?",
+   "pron": "rènshi",
+   "img": "🤝",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "认真",
+   "back": "Chăm chỉ, nghiêm túc (tính từ)",
+   "ex": "他学习很认真。",
+   "ex_vi": "Tā xuéxí hěn rènzhēn. — Anh ấy học rất chăm chỉ.",
+   "pron": "rènzhēn",
+   "img": "📐",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "日",
+   "back": "Ngày (danh từ)",
+   "ex": "五月一日是劳动节。",
+   "ex_vi": "Wǔyuè yī rì shì Láodòng Jié. — Ngày 1 tháng 5 là ngày Quốc tế Lao động.",
+   "pron": "rì",
+   "img": "📅",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "三",
+   "back": "Số 3 (số từ)",
+   "ex": "我学了三个月汉语。",
+   "ex_vi": "Wǒ xué le sān ge yuè Hànyǔ. — Tôi đã học tiếng Trung 3 tháng.",
+   "pron": "sān",
+   "img": "3️⃣",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "山",
+   "back": "Núi (danh từ)",
+   "ex": "那座山很高。",
+   "ex_vi": "Nà zuò shān hěn gāo. — Ngọn núi kia rất cao.",
+   "pron": "shān",
+   "img": "⛰️",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "商店",
+   "back": "Cửa hàng (danh từ)",
+   "ex": "商店几点开门？",
+   "ex_vi": "Shāngdiàn jǐ diǎn kāi mén? — Cửa hàng mấy giờ mở cửa?",
+   "pron": "shāngdiàn",
+   "img": "🏬",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "上",
+   "back": "Trên; lên (danh từ phương vị / động từ)",
+   "ex": "书在桌子上。",
+   "ex_vi": "Shū zài zhuōzi shàng. — Sách ở trên bàn.",
+   "pron": "shàng",
+   "img": "⬆️",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "上班",
+   "back": "Đi làm (động từ ly hợp)",
+   "ex": "我八点上班。",
+   "ex_vi": "Wǒ bā diǎn shàngbān. — Tôi đi làm lúc 8 giờ.",
+   "pron": "shàngbān",
+   "img": "🏢",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "上课",
+   "back": "Lên lớp, vào học (động từ ly hợp)",
+   "ex": "我们现在上课。",
+   "ex_vi": "Wǒmen xiànzài shàngkè. — Bây giờ chúng ta vào học.",
+   "pron": "shàngkè",
+   "img": "🧑‍🏫",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "上午",
+   "back": "Buổi sáng (danh từ)",
+   "ex": "上午我在家。",
+   "ex_vi": "Shàngwǔ wǒ zài jiā. — Buổi sáng tôi ở nhà.",
+   "pron": "shàngwǔ",
+   "img": "🌤️",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "上学",
+   "back": "Đi học (động từ ly hợp)",
+   "ex": "弟弟每天走路上学。",
+   "ex_vi": "Dìdi měitiān zǒulù shàngxué. — Em trai ngày nào cũng đi bộ đi học.",
+   "pron": "shàngxué",
+   "img": "🎒",
+   "group": "Từ 181–200"
+  }
+ ]
+}

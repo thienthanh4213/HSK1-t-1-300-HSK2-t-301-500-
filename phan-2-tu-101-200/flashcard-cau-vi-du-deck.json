@@ -1,0 +1,911 @@
+{
+ "title": "🎯 HSK · Phần 2 – Câu ví dụ 101–200",
+ "lang": "vi-VN",
+ "progressKey": "hsk500-p2-cau-vi-du",
+ "themePrimary": "#f59e0b",
+ "themePrimaryDark": "#ea580c",
+ "themePrimaryLight": "#fef9c3",
+ "scoreSheetUrl": "",
+ "cards": [
+  {
+   "front": "Tôi về nhà lúc 6 giờ.",
+   "back": "我六点回家。",
+   "ex": "Wǒ liù diǎn huíjiā.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏡",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Tôi biết nói tiếng Trung.",
+   "back": "我会说汉语。",
+   "ex": "Wǒ huì shuō Hànyǔ.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧠",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Chúng ta đi tàu hỏa nhé.",
+   "back": "我们坐火车去吧。",
+   "ex": "Wǒmen zuò huǒchē qù ba.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🚆",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Sáng nay tôi ăn 2 quả trứng.",
+   "back": "我早上吃了两个鸡蛋。",
+   "ex": "Wǒ zǎoshang chī le liǎng ge jīdàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥚",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Nhà bạn có mấy người?",
+   "back": "你家有几口人？",
+   "ex": "Nǐ jiā yǒu jǐ kǒu rén?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔢",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Hãy nhớ tên tôi nhé.",
+   "back": "请记住我的名字。",
+   "ex": "Qǐng jìzhù wǒ de míngzi.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📌",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Nhà tôi ở Hà Nội.",
+   "back": "我家在河内。",
+   "ex": "Wǒ jiā zài Hénèi.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏠",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Tôi rất nhớ người nhà.",
+   "back": "我很想家人。",
+   "ex": "Wǒ hěn xiǎng jiārén.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👪",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Mai gặp lại!",
+   "back": "明天见！",
+   "ex": "Míngtiān jiàn!",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👀",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Chúng ta gặp nhau ở đâu?",
+   "back": "我们在哪儿见面？",
+   "ex": "Wǒmen zài nǎr jiànmiàn?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🤝",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Bạn tên là gì?",
+   "back": "你叫什么名字？",
+   "ex": "Nǐ jiào shénme míngzi?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📛",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Tôi thấy tiếng Trung không khó.",
+   "back": "我觉得汉语不难。",
+   "ex": "Wǒ juéde Hànyǔ bù nán.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💭",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Chị gái tôi là giáo viên.",
+   "back": "我姐姐是老师。",
+   "ex": "Wǒ jiějie shì lǎoshī.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👩",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Năm nay bạn bao nhiêu tuổi?",
+   "back": "你今年多大？",
+   "ex": "Nǐ jīnnián duō dà?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🗓️",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Hôm nay là thứ Hai.",
+   "back": "今天是星期一。",
+   "ex": "Jīntiān shì xīngqīyī.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📅",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Tôi vào học lúc 9 giờ.",
+   "back": "我九点上课。",
+   "ex": "Wǒ jiǔ diǎn shàngkè.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "9️⃣",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Làm ơn mở cửa.",
+   "back": "请开门。",
+   "ex": "Qǐng kāi mén.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔓",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Bố lái xe đi làm.",
+   "back": "爸爸开车去上班。",
+   "ex": "Bàba kāichē qù shàngbān.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🚙",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Tôi thích đọc sách.",
+   "back": "我喜欢看书。",
+   "ex": "Wǒ xǐhuan kàn shū.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👁️",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Tôi đến bệnh viện khám bệnh.",
+   "back": "我去医院看病。",
+   "ex": "Wǒ qù yīyuàn kànbìng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🩺",
+   "group": "Từ 101–120"
+  },
+  {
+   "front": "Bạn có thấy điện thoại của tôi không?",
+   "back": "你看见我的手机了吗？",
+   "ex": "Nǐ kànjiàn wǒ de shǒujī le ma?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔍",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Tôi rất khát, muốn uống nước.",
+   "back": "我很渴，想喝水。",
+   "ex": "Wǒ hěn kě, xiǎng hē shuǐ.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥵",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Hôm nay có 3 tiết học.",
+   "back": "今天有三节课。",
+   "ex": "Jīntiān yǒu sān jié kè.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📘",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Mời mở sách giáo khoa ra.",
+   "back": "请打开课本。",
+   "ex": "Qǐng dǎkāi kèběn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📕",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Nhà tôi có 4 người.",
+   "back": "我家有四口人。",
+   "ex": "Wǒ jiā yǒu sì kǒu rén.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👄",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Một quả táo 5 tệ.",
+   "back": "一个苹果五块钱。",
+   "ex": "Yí ge píngguǒ wǔ kuài qián.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💴",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Khi nào bạn đến?",
+   "back": "你什么时候来？",
+   "ex": "Nǐ shénme shíhou lái?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🚶",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Máy tính của tôi cũ lắm rồi.",
+   "back": "我的电脑很老了。",
+   "ex": "Wǒ de diànnǎo hěn lǎo le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👴",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Trong công viên có nhiều người già.",
+   "back": "公园里有很多老人。",
+   "ex": "Gōngyuán lǐ yǒu hěn duō lǎorén.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧓",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Thầy Vương là giáo viên tiếng Trung của chúng tôi.",
+   "back": "王老师是我们的汉语老师。",
+   "ex": "Wáng lǎoshī shì wǒmen de Hànyǔ lǎoshī.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👩‍🏫",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Tôi ăn cơm rồi.",
+   "back": "我吃饭了。",
+   "ex": "Wǒ chīfàn le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "✔️",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Hôm nay rất lạnh.",
+   "back": "今天很冷。",
+   "ex": "Jīntiān hěn lěng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥶",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Trong cặp có gì?",
+   "back": "书包里有什么？",
+   "ex": "Shūbāo lǐ yǒu shénme?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📥",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Tôi có hai anh trai.",
+   "back": "我有两个哥哥。",
+   "ex": "Wǒ yǒu liǎng ge gēge.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "✌️",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Số của tôi là 098.",
+   "back": "我的号是零九八。",
+   "ex": "Wǒ de hào shì líng jiǔ bā.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "0️⃣",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Tôi dậy lúc 6 giờ.",
+   "back": "我六点起床。",
+   "ex": "Wǒ liù diǎn qǐchuáng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "6️⃣",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Mẹ đang nấu cơm.",
+   "back": "妈妈在做饭。",
+   "ex": "Māma zài zuò fàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👩",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Tôi đến ngay.",
+   "back": "我马上来。",
+   "ex": "Wǒ mǎshàng lái.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⚡",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Bạn là học sinh phải không?",
+   "back": "你是学生吗？",
+   "ex": "Nǐ shì xuésheng ma?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "❔",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Tôi muốn mua một cái điện thoại.",
+   "back": "我想买一个手机。",
+   "ex": "Wǒ xiǎng mǎi yí ge shǒujī.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🛒",
+   "group": "Từ 121–140"
+  },
+  {
+   "front": "Cửa hàng này bán hoa quả.",
+   "back": "这个商店卖水果。",
+   "ex": "Zhège shāngdiàn mài shuǐguǒ.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏪",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Dạo này tôi rất bận.",
+   "back": "我最近很忙。",
+   "ex": "Wǒ zuìjìn hěn máng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏃",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Nhà tôi có một con mèo.",
+   "back": "我家有一只猫。",
+   "ex": "Wǒ jiā yǒu yì zhī māo.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🐱",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Tôi đã không đến trường.",
+   "back": "我没去学校。",
+   "ex": "Wǒ méi qù xuéxiào.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⛔",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Không sao, bạn đừng lo.",
+   "back": "没关系，你别担心。",
+   "ex": "Méi guānxi, nǐ bié dānxīn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🙂",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Tôi không có tiền.",
+   "back": "我没有钱。",
+   "ex": "Wǒ méiyǒu qián.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🈚",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Em gái tôi rất đáng yêu.",
+   "back": "我妹妹很可爱。",
+   "ex": "Wǒ mèimei hěn kě'ài.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👧",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Tôi muốn một bát cơm.",
+   "back": "我要一碗米饭。",
+   "ex": "Wǒ yào yì wǎn mǐfàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🍚",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Buổi sáng tôi ăn bánh mì.",
+   "back": "早上我吃面包。",
+   "ex": "Zǎoshang wǒ chī miànbāo.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🍞",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Tôi thích ăn mì.",
+   "back": "我喜欢吃面条儿。",
+   "ex": "Wǒ xǐhuan chī miàntiáor.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🍜",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Tên bạn rất hay.",
+   "back": "你的名字很好听。",
+   "ex": "Nǐ de míngzi hěn hǎotīng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏷️",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Tôi hiểu ý bạn.",
+   "back": "我明白你的意思。",
+   "ex": "Wǒ míngbai nǐ de yìsi.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💡",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Năm sau tôi đi Trung Quốc.",
+   "back": "明年我去中国。",
+   "ex": "Míngnián wǒ qù Zhōngguó.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🗓️",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Ngày mai chúng ta đi công viên.",
+   "back": "明天我们去公园。",
+   "ex": "Míngtiān wǒmen qù gōngyuán.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🌄",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Bạn thích cái nào?",
+   "back": "你喜欢哪个？",
+   "ex": "Nǐ xǐhuan nǎge?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🤔",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Bạn đi đâu?",
+   "back": "你去哪儿？",
+   "ex": "Nǐ qù nǎr?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📍",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Kia là giáo viên của tôi.",
+   "back": "那是我的老师。",
+   "ex": "Nà shì wǒ de lǎoshī.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👉",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Ở đó có một cửa hàng.",
+   "back": "那儿有一个商店。",
+   "ex": "Nàr yǒu yí ge shāngdiàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📌",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Những quyển sách kia là của ai?",
+   "back": "那些书是谁的？",
+   "ex": "Nàxiē shū shì shéi de?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📚",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Lớp chúng tôi có nhiều học sinh nam.",
+   "back": "我们班男学生很多。",
+   "ex": "Wǒmen bān nán xuésheng hěn duō.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "♂️",
+   "group": "Từ 141–160"
+  },
+  {
+   "front": "Người đàn ông kia là ai?",
+   "back": "那个男人是谁？",
+   "ex": "Nàge nánrén shì shéi?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👨",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Việt Nam ở phía nam Trung Quốc.",
+   "back": "越南在中国的南边。",
+   "ex": "Yuènán zài Zhōngguó de nánbian.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⬇️",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Câu này rất khó.",
+   "back": "这个题很难。",
+   "ex": "Zhège tí hěn nán.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "😣",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Tôi khỏe, còn bạn?",
+   "back": "我很好，你呢？",
+   "ex": "Wǒ hěn hǎo, nǐ ne?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💬",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Bạn có thể giúp tôi không?",
+   "back": "你能帮我吗？",
+   "ex": "Nǐ néng bāng wǒ ma?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💪",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Xin chào!",
+   "back": "你好！",
+   "ex": "Nǐ hǎo!",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🫵",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Các bạn là người nước nào?",
+   "back": "你们是哪国人？",
+   "ex": "Nǐmen shì nǎ guó rén?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👥",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Tôi đã học tiếng Trung 1 năm.",
+   "back": "我学了一年汉语。",
+   "ex": "Wǒ xué le yì nián Hànyǔ.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📆",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Chào ông/bà, mời ngồi.",
+   "back": "您好，请坐。",
+   "ex": "Nín hǎo, qǐng zuò.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🙇",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Ngày nào tôi cũng uống sữa.",
+   "back": "我每天喝牛奶。",
+   "ex": "Wǒ měitiān hē niúnǎi.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🥛",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Cô ấy là bạn gái tôi.",
+   "back": "她是我的女朋友。",
+   "ex": "Tā shì wǒ de nǚ péngyou.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "♀️",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Anh ấy có một cô con gái.",
+   "back": "他有一个女儿。",
+   "ex": "Tā yǒu yí ge nǚ'ér.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👧",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Người phụ nữ kia là bác sĩ.",
+   "back": "那个女人是医生。",
+   "ex": "Nàge nǚrén shì yīshēng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "👩",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Anh ấy là bạn tốt của tôi.",
+   "back": "他是我的好朋友。",
+   "ex": "Tā shì wǒ de hǎo péngyou.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧑‍🤝‍🧑",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Hoa quả ở đây rất rẻ.",
+   "back": "这里的水果很便宜。",
+   "ex": "Zhèlǐ de shuǐguǒ hěn piányi.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏷️",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Em gái bạn rất xinh.",
+   "back": "你的妹妹很漂亮。",
+   "ex": "Nǐ de mèimei hěn piàoliang.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🌹",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Tôi muốn ăn táo.",
+   "back": "我想吃苹果。",
+   "ex": "Wǒ xiǎng chī píngguǒ.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🍎",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Tôi ăn sáng lúc 7 giờ.",
+   "back": "我七点吃早饭。",
+   "ex": "Wǒ qī diǎn chī zǎofàn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "7️⃣",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Bạn dậy lúc mấy giờ?",
+   "back": "你几点起床？",
+   "ex": "Nǐ jǐ diǎn qǐchuáng?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⏰",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Anh ấy đã mua một chiếc ô tô.",
+   "back": "他买了一辆汽车。",
+   "ex": "Tā mǎi le yí liàng qìchē.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🚘",
+   "group": "Từ 161–180"
+  },
+  {
+   "front": "Hôm kia tôi đã đi Bắc Kinh.",
+   "back": "前天我去了北京。",
+   "ex": "Qiántiān wǒ qù le Běijīng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⏪",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Bạn có bao nhiêu tiền?",
+   "back": "你有多少钱？",
+   "ex": "Nǐ yǒu duōshao qián?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "💵",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Mời uống trà.",
+   "back": "请喝茶。",
+   "ex": "Qǐng hē chá.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🙏",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Ngày mai tôi muốn xin nghỉ.",
+   "back": "我明天想请假。",
+   "ex": "Wǒ míngtiān xiǎng qǐngjià.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📝",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Xin hỏi, bệnh viện ở đâu?",
+   "back": "请问，医院在哪儿？",
+   "ex": "Qǐngwèn, yīyuàn zài nǎr?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🙋",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Tôi đi đến trường.",
+   "back": "我去学校。",
+   "ex": "Wǒ qù xuéxiào.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🚶",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Năm ngoái tôi đã đến Trung Quốc.",
+   "back": "去年我来中国了。",
+   "ex": "Qùnián wǒ lái Zhōngguó le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⏮️",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Hôm nay nóng quá.",
+   "back": "今天太热了。",
+   "ex": "Jīntiān tài rè le.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🔥",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Ở đây có rất nhiều người.",
+   "back": "这里有很多人。",
+   "ex": "Zhèlǐ yǒu hěn duō rén.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧍",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Bạn có quen anh ấy không?",
+   "back": "你认识他吗？",
+   "ex": "Nǐ rènshi tā ma?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🤝",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Anh ấy học rất chăm chỉ.",
+   "back": "他学习很认真。",
+   "ex": "Tā xuéxí hěn rènzhēn.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📐",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Ngày 1 tháng 5 là ngày Quốc tế Lao động.",
+   "back": "五月一日是劳动节。",
+   "ex": "Wǔyuè yī rì shì Láodòng Jié.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "📅",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Tôi đã học tiếng Trung 3 tháng.",
+   "back": "我学了三个月汉语。",
+   "ex": "Wǒ xué le sān ge yuè Hànyǔ.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "3️⃣",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Ngọn núi kia rất cao.",
+   "back": "那座山很高。",
+   "ex": "Nà zuò shān hěn gāo.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⛰️",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Cửa hàng mấy giờ mở cửa?",
+   "back": "商店几点开门？",
+   "ex": "Shāngdiàn jǐ diǎn kāi mén?",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏬",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Sách ở trên bàn.",
+   "back": "书在桌子上。",
+   "ex": "Shū zài zhuōzi shàng.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "⬆️",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Tôi đi làm lúc 8 giờ.",
+   "back": "我八点上班。",
+   "ex": "Wǒ bā diǎn shàngbān.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🏢",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Bây giờ chúng ta vào học.",
+   "back": "我们现在上课。",
+   "ex": "Wǒmen xiànzài shàngkè.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🧑‍🏫",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Buổi sáng tôi ở nhà.",
+   "back": "上午我在家。",
+   "ex": "Shàngwǔ wǒ zài jiā.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🌤️",
+   "group": "Từ 181–200"
+  },
+  {
+   "front": "Em trai ngày nào cũng đi bộ đi học.",
+   "back": "弟弟每天走路上学。",
+   "ex": "Dìdi měitiān zǒulù shàngxué.",
+   "ex_vi": "",
+   "pron": "",
+   "img": "🎒",
+   "group": "Từ 181–200"
+  }
+ ]
+}

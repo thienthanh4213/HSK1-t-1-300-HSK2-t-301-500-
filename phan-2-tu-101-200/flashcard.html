@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#f59e0b" />
+<title>🀄 HSK · Phần 2 – Từ 101–200</title>
+<style>
+  :root{
+    --green:#f59e0b; --green-d:#ea580c; --green-l:#fef9c3;
+    --teal:#ea580c;
+    --red:#E4574C; --red-l:#FCEBEA;
+    --ink:#1F2A28; --muted:#6B7A76; --bg:#F1F5F3;
+    --card:#FFFFFF; --line:#E3EAE7; --gold:#F4B740;
+    --grad:linear-gradient(135deg,#f59e0b,#ea580c);
+    --grad-warm:linear-gradient(135deg,#F4B740,#F08A5D);
+    --glow:0 22px 45px -14px rgba(245,158,11,.32),0 4px 12px rgba(234,88,12,.08);
+    --page:radial-gradient(1100px 560px at 50% -12%,#fef9c3 0%,#F1F5F3 55%);
+  }
+  [data-theme="dark"]{
+    --green:#F8C060; --green-d:#F6B492; --green-l:#2C1C02;
+    --teal:#F6B492;
+    --red:#F0736A; --red-l:#3A201E;
+    --ink:#EAF2EF; --muted:#9DB0AA; --bg:#0E1413;
+    --card:#18211F; --line:#28352F; --gold:#F4B740;
+    --grad:linear-gradient(135deg,#F8C060,#F6B492);
+    --grad-warm:linear-gradient(135deg,#F4B740,#F0736A);
+    --glow:0 22px 48px -14px rgba(0,0,0,.55),0 4px 14px rgba(0,0,0,.35);
+    --page:radial-gradient(1100px 560px at 50% -12%,#14201C 0%,#0E1413 55%);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+    background:var(--page);background-attachment:fixed;color:var(--ink);
+    min-height:100dvh;display:flex;justify-content:center;padding:14px;
+    transition:background .25s,color .25s;
+  }
+  .layout{width:100%;max-width:700px;display:flex;align-items:flex-start;justify-content:center;gap:16px}
+  .app{width:100%;max-width:440px;flex:1;min-width:0;display:flex;flex-direction:column;gap:14px}
+  :focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:8px}
+
+  /* Sidebar chủ đề — mỗi chủ đề 1 hàng, nằm bên trái */
+  .sidebar{
+    flex:none;width:220px;
+    display:flex;flex-direction:column;gap:6px;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:12px;position:sticky;top:14px;
+  }
+  .sidebar-label{font-size:16px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:2px 6px 6px}
+  .group-chip{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;
+    border:1px solid var(--line);background:var(--bg);color:var(--muted);
+    font-family:inherit;font-weight:700;font-size:18px;text-align:left;
+    padding:10px 12px;border-radius:12px;cursor:pointer;
+  }
+  .group-chip .chip-label{overflow-wrap:anywhere}
+  .group-chip .cnt{flex:none;font-size:16px;font-weight:700;color:var(--muted);background:var(--card);padding:2px 8px;border-radius:999px}
+  .group-chip:active{transform:scale(.98)}
+  .group-chip.on{background:var(--green-l);border-color:var(--green);color:var(--green-d)}
+  .group-chip.on .cnt{background:#fff;color:var(--green-d)}
+
+  @media (max-width: 760px){
+    /* Không đủ chỗ cho cột trái + thẻ cạnh nhau: sidebar chủ đề xếp lên trên,
+       nhưng vẫn giữ mỗi chủ đề một hàng riêng (không gộp thành lưới ngang). */
+    .layout{flex-direction:column}
+    .sidebar{width:100%;position:static}
+  }
+
+  /* Header */
+  .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .title{font-size:25px;font-weight:800;line-height:1.2;letter-spacing:-.01em}
+  /* Icon (emoji) hiển thị nguyên màu — KHÔNG áp gradient-clip lên emoji, vì trình
+     duyệt sẽ tô phẳng glyph màu thành một khối đơn sắc trông giống lỗi. Gradient
+     chỉ áp cho phần chữ. */
+  .title-icon{margin-right:2px}
+  .title-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .title small{display:block;font-size:17px;font-weight:600;color:var(--muted)}
+  .btn-ghost{
+    border:1px solid var(--line);background:var(--card);color:var(--green-d);
+    font-family:inherit;font-weight:700;font-size:17px;
+    padding:8px 12px;border-radius:12px;cursor:pointer;white-space:nowrap;
+  }
+  .btn-ghost:active{transform:scale(.96)}
+  .icon-btn{
+    border:1px solid var(--line);background:var(--card);
+    width:38px;height:36px;border-radius:12px;cursor:pointer;font-size:21px;display:grid;place-items:center;
+  }
+  .icon-btn:active{transform:scale(.94)}
+
+  /* Stats */
+  .stats{
+    display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:8px 10px;font-size:18px;font-weight:600;
+  }
+  .stat{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px}
+  .stat.ok{color:var(--green-d);background:var(--green-l)}
+  .stat.no{color:var(--red);background:var(--red-l)}
+  .stat.left{color:var(--muted);background:var(--bg)}
+  .dot{display:none}
+  .round{margin-left:auto;background:var(--green-l);color:var(--green-d);padding:4px 10px;border-radius:999px;font-size:17px;font-weight:700}
+  .shuffle{background:none;border:none;font-family:inherit;font-weight:700;color:var(--green-d);cursor:pointer;font-size:18px;padding:4px}
+  .shuffle:active{transform:scale(.94)}
+
+  /* Progress */
+  .prog{height:6px;background:var(--line);border-radius:999px;overflow:hidden}
+  .prog > i{display:block;height:100%;background:var(--grad);width:0%;transition:width .35s ease}
+
+  /* Card scene */
+  .scene{position:relative;perspective:1400px;height:340px}
+  .swipe-hint{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:6;
+    font-size:25px;font-weight:800;color:#fff;padding:8px 16px;border-radius:14px;
+    opacity:0;pointer-events:none;transition:opacity .08s;
+  }
+  .swipe-hint.know{right:16px;background:var(--green)}
+  .swipe-hint.forget{left:16px;background:var(--red)}
+  .drag{position:absolute;inset:0;transition:transform .25s ease;will-change:transform;touch-action:pan-y}
+  .card{
+    position:relative;width:100%;height:100%;cursor:pointer;
+    transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .card.flip{transform:rotateY(180deg)}
+  .face{
+    position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+    background:var(--card);border:1px solid var(--line);border-radius:26px;overflow:hidden;
+    box-shadow:var(--glow);
+    display:flex;flex-direction:column;
+    padding:18px 24px 16px;text-align:center;
+  }
+  .face::before{content:"";position:absolute;top:0;left:0;right:0;height:6px}
+  .front::before{background:var(--grad)}
+  .back::before{background:var(--grad-warm)}
+  /* 3 vùng theo chiều dọc: kicker/tools ở trên, nội dung chính giữa (chiếm hết
+     khoảng trống còn lại để không để trống một mảng lớn giữa thẻ), chấm+gợi ý
+     ở dưới — không còn absolute nên chiều cao thẻ tự phân bổ đều. */
+  .face-top{display:flex;align-items:center;justify-content:space-between;min-height:38px}
+  .face .kicker{font-size:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .back{transform:rotateY(180deg)}
+  .face-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}
+  .icon{font-size:49px;line-height:1;margin-bottom:8px}
+  .icon:empty{display:none;margin:0}
+  .word{font-size:47px;font-weight:800;line-height:1.12;letter-spacing:-.02em;word-break:break-word}
+  .pron{margin-top:6px;color:var(--muted);font-size:19px;font-weight:500}
+  .meaning{font-size:31px;font-weight:700;line-height:1.25;color:var(--ink)}
+  .example{margin-top:14px;font-size:19px;color:var(--muted);font-weight:500;font-style:italic;max-width:90%}
+  .example-vi{margin-top:4px;font-size:17px;color:var(--muted);font-weight:500;opacity:.8;max-width:90%}
+  .example-vi:empty{display:none;margin:0}
+  .face-bottom{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .hint{font-size:17px;color:var(--muted);font-weight:600}
+  .dots{display:flex;gap:5px}
+  .dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+  .dots i.on{background:var(--green)}
+  .face-tools{display:flex;gap:6px}
+  .tool{border:1px solid var(--line);background:var(--card);border-radius:12px;width:38px;height:38px;font-size:21px;cursor:pointer;display:grid;place-items:center}
+  .tool:active{transform:scale(.9);background:var(--green-l)}
+
+  /* Controls */
+  .controls{display:grid;grid-template-columns:1fr 1.2fr 1.2fr 1fr;gap:8px}
+  .ctl{border:none;font-family:inherit;font-weight:700;font-size:19px;padding:14px 6px;border-radius:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px}
+  .ctl:active{transform:translateY(1px) scale(.98)}
+  .ctl.nav{background:var(--card);border:1px solid var(--line);color:var(--ink)}
+  .ctl.forget{background:var(--red-l);color:var(--red)}
+  .ctl.know{background:var(--grad);color:#fff;box-shadow:0 8px 20px -4px rgba(245,158,11,.5)}
+  .ctl:disabled{opacity:.4;cursor:not-allowed}
+  .swipe-tip{text-align:center;font-size:17px;color:var(--muted);font-weight:600;margin-top:2px}
+
+  /* Overlays */
+  .overlay{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px 22px;text-align:center}
+  .overlay .emoji{font-size:57px}
+  .overlay h2{margin:10px 0 6px;font-size:27px}
+  .overlay p{margin:0;color:var(--muted);font-weight:500}
+  .review-list{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0}
+  .chip{background:var(--red-l);color:var(--red);padding:6px 12px;border-radius:999px;font-size:18px;font-weight:600}
+  .btn-primary{margin-top:18px;background:var(--grad);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:21px;padding:14px 22px;border-radius:16px;cursor:pointer;width:100%;box-shadow:0 8px 20px -4px rgba(245,158,11,.45)}
+  .btn-primary:active{transform:scale(.98)}
+  .btn-outline{margin-top:10px;background:var(--card);color:var(--green-d);border:1px solid var(--green);font-family:inherit;font-weight:700;font-size:20px;padding:12px 22px;border-radius:16px;cursor:pointer;width:100%}
+  .btn-outline.danger{color:var(--red);border-color:var(--red)}
+  .hidden{display:none !important}
+
+  /* Modal */
+  .modal-bg{position:fixed;inset:0;background:rgba(10,18,16,.55);display:flex;align-items:flex-end;justify-content:center;z-index:50}
+  .modal{background:var(--card);width:100%;max-width:480px;border-radius:24px 24px 0 0;padding:20px;max-height:88dvh;overflow:auto}
+  .modal h3{margin:0 0 4px;font-size:23px}
+  .modal .sub{color:var(--muted);font-size:18px;font-weight:500;margin:0 0 14px}
+  .modal label{display:block;font-size:18px;font-weight:700;margin:14px 0 6px}
+  .modal input,.modal textarea,.modal select{width:100%;font-family:inherit;font-size:20px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);resize:vertical}
+  .modal textarea{min-height:150px;line-height:1.5}
+  .modal input:focus,.modal textarea:focus,.modal select:focus{outline:none;border-color:var(--green)}
+  .row{display:flex;gap:8px}
+  .count-note{font-size:17px;color:var(--muted);font-weight:600;margin-top:6px}
+  .seg{display:flex;gap:6px}
+  .seg button{flex:1;padding:10px 4px;border:1px solid var(--line);background:var(--card);border-radius:12px;font-family:inherit;font-weight:700;font-size:18px;color:var(--muted);cursor:pointer}
+  .seg button.on{background:var(--green-l);border-color:var(--green);color:var(--green-d)}
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;margin-top:16px;font-weight:600;font-size:19px}
+  .switch{width:48px;height:28px;border-radius:999px;border:none;background:var(--line);position:relative;cursor:pointer;transition:.2s;flex:none}
+  .switch::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+  .switch.on{background:var(--green)} .switch.on::after{left:23px}
+
+  /* Hoạt ảnh thẻ mới xuất hiện + ăn mừng */
+  @keyframes cardIn{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+  .scene.enter .drag{animation:cardIn .32s cubic-bezier(.2,.8,.2,1)}
+  @keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.05)}100%{transform:scale(1)}}
+  .scene.knowpop{animation:pop .34s ease}
+  .confetti{position:absolute;top:24%;left:50%;z-index:8;pointer-events:none}
+  .confetti i{position:absolute;width:9px;height:9px;border-radius:2px;opacity:0}
+  @keyframes conf{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--cx),var(--cy)) rotate(var(--cr))}}
+
+  @media (prefers-reduced-motion: reduce){
+    .card,.drag,.prog>i,body,.switch,.switch::after{transition:none !important}
+    .scene.enter .drag,.scene.knowpop,.confetti i{animation:none !important}
+  }
+
+  /* ---------- Kiểm tra từ vựng (quiz trắc nghiệm, dùng chung DECK) ---------- */
+  .mode-toggle{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px}
+  .mode-btn{flex:1;border:none;background:none;font-family:inherit;font-weight:700;font-size:18px;color:var(--muted);padding:10px 6px;border-radius:12px;cursor:pointer}
+  .mode-btn.on{background:var(--grad);color:#fff}
+  .mode-btn:active{transform:scale(.97)}
+
+  .quiz-progress{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 12px;font-size:18px;font-weight:700;color:var(--muted)}
+  .quiz-progress .prog{flex:1;margin:0}
+  .quiz-score-live{color:var(--green-d);flex:none}
+  .quiz-submit-btn{
+    flex:none;border:1px solid var(--green);background:var(--green-l);color:var(--green-d);
+    font-family:inherit;font-weight:700;font-size:17px;padding:6px 10px;border-radius:10px;cursor:pointer;
+    white-space:nowrap;
+  }
+  .quiz-submit-btn:active{transform:scale(.95)}
+  .quiz-submit-btn:disabled{opacity:.4;cursor:not-allowed}
+  .quiz-partial-note{font-size:17px;color:var(--muted);font-weight:600;margin-top:-4px}
+
+  .quiz-card{background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--glow);padding:26px 22px;text-align:center;margin-top:14px}
+  .quiz-icon{font-size:45px;line-height:1;margin-bottom:6px}
+  .quiz-icon:empty{display:none;margin:0}
+  .quiz-speak{margin:10px auto 2px;display:inline-flex;align-items:center;gap:6px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:800;font-size:19px;padding:8px 18px;border-radius:999px;cursor:pointer}
+  .quiz-speak:active{transform:scale(.96)}
+  .quiz-word{font-size:33px;font-weight:800;line-height:1.2;letter-spacing:-.01em;word-break:break-word}
+  .quiz-pron{margin-top:4px;color:var(--muted);font-size:19px;font-weight:500;margin-bottom:8px}
+  .quiz-hint{font-size:17px;color:var(--muted);font-weight:600;margin-bottom:14px}
+  .quiz-options{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .quiz-opt{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--line);background:var(--bg);border-radius:14px;padding:12px 14px;font-family:inherit;font-weight:600;font-size:19px;color:var(--ink);cursor:pointer}
+  .quiz-opt:active{transform:scale(.98)}
+  .quiz-opt-label{flex:none;width:24px;height:24px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;font-size:17px;font-weight:800;color:var(--muted)}
+  .quiz-opt.correct{background:var(--green-l);border-color:var(--green);color:var(--green-d)}
+  .quiz-opt.correct .quiz-opt-label{background:var(--green);color:#fff;border-color:var(--green)}
+  .quiz-opt.wrong{background:var(--red-l);border-color:var(--red);color:var(--red)}
+  .quiz-opt.wrong .quiz-opt-label{background:var(--red);color:#fff;border-color:var(--red)}
+  .quiz-opt:disabled{cursor:default}
+  .quiz-feedback{margin-top:14px;font-weight:700;font-size:19px;min-height:20px}
+  .quiz-feedback.correct{color:var(--green-d)}
+  .quiz-feedback.wrong{color:var(--red)}
+  .quiz-footer{display:flex;justify-content:flex-end;margin-top:12px}
+  .quiz-next-btn{background:var(--grad);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:19px;padding:11px 20px;border-radius:14px;cursor:pointer}
+  .quiz-next-btn:active{transform:scale(.97)}
+  .quiz-result-score{font-size:calc(2.2rem + 5px);font-weight:800;color:var(--green-d);margin:8px 0 2px}
+  .wm-footer{margin-top:14px;padding-top:10px;border-top:1px dashed var(--line);text-align:center;font-size:16px;color:var(--muted);opacity:.7}
+</style>
+</head>
+<body>
+<div class="layout">
+  <!-- Sidebar chủ đề (trái, mỗi chủ đề 1 hàng) — chỉ hiện khi thẻ có field 'group' -->
+  <aside class="sidebar hidden" id="groupSidebar"></aside>
+
+  <div class="app">
+  <!-- Header -->
+  <div class="top">
+    <div class="title" id="deckTitle"><span class="title-icon" id="titleIcon">🎯</span><span class="title-text" id="titleText">Flashcard</span><small id="deckSub">Tự soạn từ vựng</small></div>
+    <div class="row">
+      <button class="icon-btn" id="btnSettings" aria-label="Cài đặt">⚙️</button>
+    </div>
+  </div>
+
+  <!-- Chuyển chế độ: Ôn thẻ / Kiểm tra -->
+  <div class="mode-toggle" id="modeToggle">
+    <button type="button" class="mode-btn on" data-mode="study">🎴 Ôn thẻ</button>
+    <button type="button" class="mode-btn" data-mode="quiz">📝 Kiểm tra</button>
+  </div>
+
+  <!-- Stats (chỉ hiện ở chế độ Ôn thẻ) -->
+  <div id="statsBarWrap">
+  <div class="stats">
+    <span class="stat ok">✓ Nhớ: <b id="sKnow">0</b></span><span class="dot"></span>
+    <span class="stat no">✗ Quên: <b id="sForget">0</b></span><span class="dot"></span>
+    <span class="stat left">◎ Còn: <b id="sLeft">0</b></span>
+    <span class="round">Vòng <b id="sRound">1</b></span>
+    <button class="shuffle" id="btnShuffle">🔀 Trộn</button>
+  </div>
+  <div class="prog"><i id="progBar"></i></div>
+  </div>
+
+  <!-- Study view -->
+  <div id="studyView">
+    <div class="scene" id="scene">
+      <div class="swipe-hint forget" id="hintForget">😕 Quên</div>
+      <div class="swipe-hint know" id="hintKnow">✓ Nhớ</div>
+      <div class="drag" id="drag">
+        <div class="card" id="card">
+          <div class="face front">
+            <div class="face-top">
+              <div class="kicker" id="frontKicker">Từ vựng</div>
+              <div class="face-tools">
+                <button class="tool" id="btnSpeak" aria-label="Nghe phát âm">🔊</button>
+                <button class="tool" id="btnImage" aria-label="Xem hình gợi ý">🖼️</button>
+              </div>
+            </div>
+            <div class="face-body">
+              <div class="icon" id="frontIcon"></div>
+              <div class="word" id="frontWord">—</div>
+              <div class="pron" id="frontPron"></div>
+            </div>
+            <div class="face-bottom">
+              <div class="dots" id="frontDots"></div>
+              <div class="hint">👆 Nhấn để lật · ↔ vuốt để chấm</div>
+            </div>
+          </div>
+          <div class="face back">
+            <div class="face-top">
+              <div class="kicker" id="backKicker">Nghĩa</div>
+            </div>
+            <div class="face-body">
+              <div class="icon" id="backIcon"></div>
+              <div class="meaning" id="backMeaning">—</div>
+              <div class="example" id="backExample"></div>
+              <div class="example-vi" id="backExampleVi"></div>
+            </div>
+            <div class="face-bottom">
+              <div class="hint">👆 Nhấn để lật lại</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls" style="margin-top:14px">
+      <button class="ctl nav" id="btnPrev">← Trước</button>
+      <button class="ctl forget" id="btnForget">😕 Quên</button>
+      <button class="ctl know" id="btnKnow">✓ Nhớ</button>
+      <button class="ctl nav" id="btnNext">Sau →</button>
+    </div>
+    <div class="swipe-tip">Mẹo: vuốt trái = Quên · vuốt phải = Nhớ</div>
+  </div>
+
+  <!-- Review round -->
+  <div id="reviewView" class="overlay hidden">
+    <div class="emoji">😕</div>
+    <h2 id="reviewTitle">Còn 0 từ chưa nhớ</h2>
+    <p>Hãy ôn lại những từ này:</p>
+    <div class="review-list" id="reviewList"></div>
+    <button class="btn-primary" id="btnReviewNow">🔁 Ôn lại ngay</button>
+  </div>
+
+  <!-- Done -->
+  <div id="doneView" class="overlay hidden">
+    <div class="emoji">🏆</div>
+    <h2>Xuất sắc!</h2>
+    <p id="doneSub">Bạn đã nhớ tất cả từ vựng!</p>
+    <button class="btn-primary" id="btnRestart">🔄 Học lại từ đầu</button>
+  </div>
+
+  <!-- Empty -->
+  <div id="emptyView" class="overlay hidden">
+    <div class="emoji">📭</div>
+    <h2>Bộ thẻ trống</h2>
+    <p>Bộ từ vựng chưa có nội dung. Hãy liên hệ giáo viên của bạn.</p>
+  </div>
+
+  <!-- Kiểm tra từ vựng — trắc nghiệm, dùng chung DECK + bộ lọc chủ đề -->
+  <div id="quizView" class="hidden">
+    <div class="quiz-progress">
+      <span id="quizCounter">Câu 1/1</span>
+      <div class="prog"><i id="quizProgFill"></i></div>
+      <span class="quiz-score-live">✓ <b id="quizScoreLive">0</b></span>
+      <button type="button" class="quiz-submit-btn" id="quizSubmitBtn" disabled>📤 Nộp bài</button>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-icon" id="quizIcon"></div>
+      <div class="quiz-word" id="quizWord">—</div>
+      <button type="button" class="quiz-speak" id="quizSpeak" aria-label="Nghe phát âm">🔊 Nghe</button>
+      <div class="quiz-pron" id="quizPron"></div>
+      <div class="quiz-hint">Chọn nghĩa đúng của từ trên</div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+    </div>
+    <div class="quiz-footer">
+      <button type="button" class="quiz-next-btn hidden" id="quizNext">Câu tiếp →</button>
+    </div>
+  </div>
+
+  <!-- Kết quả kiểm tra -->
+  <div id="quizResultView" class="overlay hidden">
+    <div class="emoji">📝</div>
+    <h2>Kết quả kiểm tra</h2>
+    <p id="quizScoreLabel">0/0 câu đúng</p>
+    <div class="quiz-result-score" id="quizScorePct">0%</div>
+    <button class="btn-primary" id="btnQuizRetry">🔁 Làm lại</button>
+    <button class="btn-outline" id="btnQuizToStudy">🎴 Quay lại ôn thẻ</button>
+  </div>
+  <div class="wm-footer" id="wmFooter">© Ms. Thủy Tiên · 0388929741</div>
+  </div><!-- /.app -->
+</div><!-- /.layout -->
+
+<!-- (Đã gỡ trình soạn thẻ – học sinh không chỉnh sửa nội dung) -->
+
+<!-- Settings modal -->
+<div class="modal-bg hidden" id="setModal">
+  <div class="modal">
+    <h3>⚙️ Cài đặt học</h3>
+    <p class="sub">Điều chỉnh cách ôn cho phù hợp với bạn.</p>
+    <label>Chiều học</label>
+    <div class="seg" id="segDir">
+      <button data-v="fwd">Từ → Nghĩa</button>
+      <button data-v="rev">Nghĩa → Từ</button>
+      <button data-v="mix">Trộn</button>
+    </div>
+    <div class="toggle-row"><span>🔊 Tự phát âm khi hiện thẻ</span><button class="switch" id="tglAudio" aria-label="Tự phát âm"></button></div>
+    <div class="toggle-row"><span>🌙 Giao diện tối</span><button class="switch" id="tglDark" aria-label="Giao diện tối"></button></div>
+    <div class="toggle-row"><span>🎯 Ưu tiên từ chưa thuộc</span><button class="switch" id="tglWeak" aria-label="Ưu tiên từ yếu"></button></div>
+    <button class="btn-outline danger" id="btnResetProg">↺ Đặt lại tiến độ thuộc</button>
+    <button class="btn-primary" id="btnCloseSet">Xong</button>
+  </div>
+</div>
+
+<!-- Tên học sinh — chỉ hỏi 1 lần trên máy này, dùng để ghi điểm Kiểm tra về Sheet -->
+<div class="modal-bg hidden" id="nameModal">
+  <div class="modal">
+    <h3>🏷️ Tên của bạn</h3>
+    <p class="sub">Nhập tên để giáo viên biết ai vừa làm bài kiểm tra này. Máy này sẽ nhớ tên, chỉ cần nhập 1 lần.</p>
+    <label>Tên học sinh</label>
+    <input type="text" id="nameInput" placeholder="VD: Nguyễn Văn A" autocomplete="name">
+    <button class="btn-primary" id="btnSaveName">Lưu &amp; xem kết quả</button>
+  </div>
+</div>
+
+<!-- Xác nhận nộp bài giữa chừng — cho phép nộp điểm bất cứ lúc nào, không cần làm hết thẻ -->
+<div class="modal-bg hidden" id="submitConfirmModal">
+  <div class="modal">
+    <h3>📤 Nộp bài ngay?</h3>
+    <p class="sub" id="submitConfirmSub">Bạn đã làm 0/0 câu, đúng 0 câu.</p>
+    <button class="btn-primary" id="btnSubmitConfirmYes">✅ Nộp bài</button>
+    <button class="btn-outline" id="btnSubmitConfirmNo">Làm tiếp</button>
+  </div>
+</div>
+
+<script>
+/* ---------- Lưu trữ an toàn ---------- */
+const store = {
+  save(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
+  load(k,d){ try{ const v=localStorage.getItem(k); return v?JSON.parse(v):d; }catch(e){ return d; } }
+};
+
+/* ---------- Bộ thẻ nhúng sẵn (giáo viên soạn) ---------- */
+const DECK = {"title": "🀄 HSK · Phần 2 – Từ 101–200", "lang": "zh-CN", "scoreSheetUrl": "", "classLabel": "", "unitLabel": "", "levelLabel": "", "cards": [{"front": "回家", "back": "Về nhà (động từ ly hợp)", "ex": "我六点回家。", "ex_vi": "Wǒ liù diǎn huíjiā. — Tôi về nhà lúc 6 giờ.", "pron": "huíjiā", "img": "🏡", "group": "Từ 101–120"}, {"front": "会", "back": "Biết (làm gì); sẽ (động từ năng nguyện)", "ex": "我会说汉语。", "ex_vi": "Wǒ huì shuō Hànyǔ. — Tôi biết nói tiếng Trung.", "pron": "huì", "img": "🧠", "group": "Từ 101–120"}, {"front": "火车", "back": "Tàu hỏa (danh từ)", "ex": "我们坐火车去吧。", "ex_vi": "Wǒmen zuò huǒchē qù ba. — Chúng ta đi tàu hỏa nhé.", "pron": "huǒchē", "img": "🚆", "group": "Từ 101–120"}, {"front": "鸡蛋", "back": "Trứng gà (danh từ)", "ex": "我早上吃了两个鸡蛋。", "ex_vi": "Wǒ zǎoshang chī le liǎng ge jīdàn. — Sáng nay tôi ăn 2 quả trứng.", "pron": "jīdàn", "img": "🥚", "group": "Từ 101–120"}, {"front": "几", "back": "Mấy (đại từ nghi vấn)", "ex": "你家有几口人？", "ex_vi": "Nǐ jiā yǒu jǐ kǒu rén? — Nhà bạn có mấy người?", "pron": "jǐ", "img": "🔢", "group": "Từ 101–120"}, {"front": "记住", "back": "Nhớ kỹ (động từ)", "ex": "请记住我的名字。", "ex_vi": "Qǐng jìzhù wǒ de míngzi. — Hãy nhớ tên tôi nhé.", "pron": "jìzhù", "img": "📌", "group": "Từ 101–120"}, {"front": "家", "back": "Nhà, gia đình (danh từ)", "ex": "我家在河内。", "ex_vi": "Wǒ jiā zài Hénèi. — Nhà tôi ở Hà Nội.", "pron": "jiā", "img": "🏠", "group": "Từ 101–120"}, {"front": "家人", "back": "Người nhà (danh từ)", "ex": "我很想家人。", "ex_vi": "Wǒ hěn xiǎng jiārén. — Tôi rất nhớ người nhà.", "pron": "jiārén", "img": "👪", "group": "Từ 101–120"}, {"front": "见", "back": "Gặp, thấy (động từ)", "ex": "明天见！", "ex_vi": "Míngtiān jiàn! — Mai gặp lại!", "pron": "jiàn", "img": "👀", "group": "Từ 101–120"}, {"front": "见面", "back": "Gặp mặt (động từ ly hợp)", "ex": "我们在哪儿见面？", "ex_vi": "Wǒmen zài nǎr jiànmiàn? — Chúng ta gặp nhau ở đâu?", "pron": "jiànmiàn", "img": "🤝", "group": "Từ 101–120"}, {"front": "叫", "back": "Gọi, tên là (động từ)", "ex": "你叫什么名字？", "ex_vi": "Nǐ jiào shénme míngzi? — Bạn tên là gì?", "pron": "jiào", "img": "📛", "group": "Từ 101–120"}, {"front": "觉得", "back": "Cảm thấy (động từ)", "ex": "我觉得汉语不难。", "ex_vi": "Wǒ juéde Hànyǔ bù nán. — Tôi thấy tiếng Trung không khó.", "pron": "juéde", "img": "💭", "group": "Từ 101–120"}, {"front": "姐姐", "back": "Chị gái (danh từ)", "ex": "我姐姐是老师。", "ex_vi": "Wǒ jiějie shì lǎoshī. — Chị gái tôi là giáo viên.", "pron": "jiějie", "img": "👩", "group": "Từ 101–120"}, {"front": "今年", "back": "Năm nay (danh từ)", "ex": "你今年多大？", "ex_vi": "Nǐ jīnnián duō dà? — Năm nay bạn bao nhiêu tuổi?", "pron": "jīnnián", "img": "🗓️", "group": "Từ 101–120"}, {"front": "今天", "back": "Hôm nay (danh từ)", "ex": "今天是星期一。", "ex_vi": "Jīntiān shì xīngqīyī. — Hôm nay là thứ Hai.", "pron": "jīntiān", "img": "📅", "group": "Từ 101–120"}, {"front": "九", "back": "Số 9 (số từ)", "ex": "我九点上课。", "ex_vi": "Wǒ jiǔ diǎn shàngkè. — Tôi vào học lúc 9 giờ.", "pron": "jiǔ", "img": "9️⃣", "group": "Từ 101–120"}, {"front": "开", "back": "Mở, lái (động từ)", "ex": "请开门。", "ex_vi": "Qǐng kāi mén. — Làm ơn mở cửa.", "pron": "kāi", "img": "🔓", "group": "Từ 101–120"}, {"front": "开车", "back": "Lái xe (động từ ly hợp)", "ex": "爸爸开车去上班。", "ex_vi": "Bàba kāichē qù shàngbān. — Bố lái xe đi làm.", "pron": "kāichē", "img": "🚙", "group": "Từ 101–120"}, {"front": "看", "back": "Xem, nhìn (động từ)", "ex": "我喜欢看书。", "ex_vi": "Wǒ xǐhuan kàn shū. — Tôi thích đọc sách.", "pron": "kàn", "img": "👁️", "group": "Từ 101–120"}, {"front": "看病", "back": "Khám bệnh (động từ ly hợp)", "ex": "我去医院看病。", "ex_vi": "Wǒ qù yīyuàn kànbìng. — Tôi đến bệnh viện khám bệnh.", "pron": "kànbìng", "img": "🩺", "group": "Từ 101–120"}, {"front": "看见", "back": "Nhìn thấy (động từ)", "ex": "你看见我的手机了吗？", "ex_vi": "Nǐ kànjiàn wǒ de shǒujī le ma? — Bạn có thấy điện thoại của tôi không?", "pron": "kànjiàn", "img": "🔍", "group": "Từ 121–140"}, {"front": "渴", "back": "Khát (tính từ)", "ex": "我很渴，想喝水。", "ex_vi": "Wǒ hěn kě, xiǎng hē shuǐ. — Tôi rất khát, muốn uống nước.", "pron": "kě", "img": "🥵", "group": "Từ 121–140"}, {"front": "课", "back": "Bài học, tiết học (danh từ)", "ex": "今天有三节课。", "ex_vi": "Jīntiān yǒu sān jié kè. — Hôm nay có 3 tiết học.", "pron": "kè", "img": "📘", "group": "Từ 121–140"}, {"front": "课本", "back": "Sách giáo khoa (danh từ)", "ex": "请打开课本。", "ex_vi": "Qǐng dǎkāi kèběn. — Mời mở sách giáo khoa ra.", "pron": "kèběn", "img": "📕", "group": "Từ 121–140"}, {"front": "口", "back": "Miệng; khẩu (người) (danh từ / lượng từ)", "ex": "我家有四口人。", "ex_vi": "Wǒ jiā yǒu sì kǒu rén. — Nhà tôi có 4 người.", "pron": "kǒu", "img": "👄", "group": "Từ 121–140"}, {"front": "块", "back": "Đồng (tệ); miếng (lượng từ)", "ex": "一个苹果五块钱。", "ex_vi": "Yí ge píngguǒ wǔ kuài qián. — Một quả táo 5 tệ.", "pron": "kuài", "img": "💴", "group": "Từ 121–140"}, {"front": "来", "back": "Đến (động từ)", "ex": "你什么时候来？", "ex_vi": "Nǐ shénme shíhou lái? — Khi nào bạn đến?", "pron": "lái", "img": "🚶", "group": "Từ 121–140"}, {"front": "老", "back": "Già, cũ (tính từ)", "ex": "我的电脑很老了。", "ex_vi": "Wǒ de diànnǎo hěn lǎo le. — Máy tính của tôi cũ lắm rồi.", "pron": "lǎo", "img": "👴", "group": "Từ 121–140"}, {"front": "老人", "back": "Người già (danh từ)", "ex": "公园里有很多老人。", "ex_vi": "Gōngyuán lǐ yǒu hěn duō lǎorén. — Trong công viên có nhiều người già.", "pron": "lǎorén", "img": "🧓", "group": "Từ 121–140"}, {"front": "老师", "back": "Giáo viên (danh từ)", "ex": "王老师是我们的汉语老师。", "ex_vi": "Wáng lǎoshī shì wǒmen de Hànyǔ lǎoshī. — Thầy Vương là giáo viên tiếng Trung của chúng tôi.", "pron": "lǎoshī", "img": "👩‍🏫", "group": "Từ 121–140"}, {"front": "了", "back": "Rồi (trợ từ) (trợ từ)", "ex": "我吃饭了。", "ex_vi": "Wǒ chīfàn le. — Tôi ăn cơm rồi.", "pron": "le", "img": "✔️", "group": "Từ 121–140"}, {"front": "冷", "back": "Lạnh (tính từ)", "ex": "今天很冷。", "ex_vi": "Jīntiān hěn lěng. — Hôm nay rất lạnh.", "pron": "lěng", "img": "🥶", "group": "Từ 121–140"}, {"front": "里", "back": "Trong, bên trong (danh từ phương vị)", "ex": "书包里有什么？", "ex_vi": "Shūbāo lǐ yǒu shénme? — Trong cặp có gì?", "pron": "lǐ", "img": "📥", "group": "Từ 121–140"}, {"front": "两", "back": "Hai (số từ)", "ex": "我有两个哥哥。", "ex_vi": "Wǒ yǒu liǎng ge gēge. — Tôi có hai anh trai.", "pron": "liǎng", "img": "✌️", "group": "Từ 121–140"}, {"front": "零", "back": "Số 0 (số từ)", "ex": "我的号是零九八。", "ex_vi": "Wǒ de hào shì líng jiǔ bā. — Số của tôi là 098.", "pron": "líng", "img": "0️⃣", "group": "Từ 121–140"}, {"front": "六", "back": "Số 6 (số từ)", "ex": "我六点起床。", "ex_vi": "Wǒ liù diǎn qǐchuáng. — Tôi dậy lúc 6 giờ.", "pron": "liù", "img": "6️⃣", "group": "Từ 121–140"}, {"front": "妈妈", "back": "Mẹ (danh từ)", "ex": "妈妈在做饭。", "ex_vi": "Māma zài zuò fàn. — Mẹ đang nấu cơm.", "pron": "māma", "img": "👩", "group": "Từ 121–140"}, {"front": "马上", "back": "Ngay lập tức (phó từ)", "ex": "我马上来。", "ex_vi": "Wǒ mǎshàng lái. — Tôi đến ngay.", "pron": "mǎshàng", "img": "⚡", "group": "Từ 121–140"}, {"front": "吗", "back": "Không? (câu hỏi) (trợ từ ngữ khí)", "ex": "你是学生吗？", "ex_vi": "Nǐ shì xuésheng ma? — Bạn là học sinh phải không?", "pron": "ma", "img": "❔", "group": "Từ 121–140"}, {"front": "买", "back": "Mua (động từ)", "ex": "我想买一个手机。", "ex_vi": "Wǒ xiǎng mǎi yí ge shǒujī. — Tôi muốn mua một cái điện thoại.", "pron": "mǎi", "img": "🛒", "group": "Từ 121–140"}, {"front": "卖", "back": "Bán (động từ)", "ex": "这个商店卖水果。", "ex_vi": "Zhège shāngdiàn mài shuǐguǒ. — Cửa hàng này bán hoa quả.", "pron": "mài", "img": "🏪", "group": "Từ 141–160"}, {"front": "忙", "back": "Bận (tính từ)", "ex": "我最近很忙。", "ex_vi": "Wǒ zuìjìn hěn máng. — Dạo này tôi rất bận.", "pron": "máng", "img": "🏃", "group": "Từ 141–160"}, {"front": "猫", "back": "Con mèo (danh từ)", "ex": "我家有一只猫。", "ex_vi": "Wǒ jiā yǒu yì zhī māo. — Nhà tôi có một con mèo.", "pron": "māo", "img": "🐱", "group": "Từ 141–160"}, {"front": "没", "back": "Không, chưa (phó từ)", "ex": "我没去学校。", "ex_vi": "Wǒ méi qù xuéxiào. — Tôi đã không đến trường.", "pron": "méi", "img": "⛔", "group": "Từ 141–160"}, {"front": "没关系", "back": "Không sao (cụm từ)", "ex": "没关系，你别担心。", "ex_vi": "Méi guānxi, nǐ bié dānxīn. — Không sao, bạn đừng lo.", "pron": "méi guānxi", "img": "🙂", "group": "Từ 141–160"}, {"front": "没有", "back": "Không có (động từ)", "ex": "我没有钱。", "ex_vi": "Wǒ méiyǒu qián. — Tôi không có tiền.", "pron": "méiyǒu", "img": "🈚", "group": "Từ 141–160"}, {"front": "妹妹", "back": "Em gái (danh từ)", "ex": "我妹妹很可爱。", "ex_vi": "Wǒ mèimei hěn kě'ài. — Em gái tôi rất đáng yêu.", "pron": "mèimei", "img": "👧", "group": "Từ 141–160"}, {"front": "米饭", "back": "Cơm (danh từ)", "ex": "我要一碗米饭。", "ex_vi": "Wǒ yào yì wǎn mǐfàn. — Tôi muốn một bát cơm.", "pron": "mǐfàn", "img": "🍚", "group": "Từ 141–160"}, {"front": "面包", "back": "Bánh mì (danh từ)", "ex": "早上我吃面包。", "ex_vi": "Zǎoshang wǒ chī miànbāo. — Buổi sáng tôi ăn bánh mì.", "pron": "miànbāo", "img": "🍞", "group": "Từ 141–160"}, {"front": "面条儿", "back": "Mì sợi (danh từ)", "ex": "我喜欢吃面条儿。", "ex_vi": "Wǒ xǐhuan chī miàntiáor. — Tôi thích ăn mì.", "pron": "miàntiáor", "img": "🍜", "group": "Từ 141–160"}, {"front": "名字", "back": "Tên (danh từ)", "ex": "你的名字很好听。", "ex_vi": "Nǐ de míngzi hěn hǎotīng. — Tên bạn rất hay.", "pron": "míngzi", "img": "🏷️", "group": "Từ 141–160"}, {"front": "明白", "back": "Hiểu rõ (động từ)", "ex": "我明白你的意思。", "ex_vi": "Wǒ míngbai nǐ de yìsi. — Tôi hiểu ý bạn.", "pron": "míngbai", "img": "💡", "group": "Từ 141–160"}, {"front": "明年", "back": "Năm sau (danh từ)", "ex": "明年我去中国。", "ex_vi": "Míngnián wǒ qù Zhōngguó. — Năm sau tôi đi Trung Quốc.", "pron": "míngnián", "img": "🗓️", "group": "Từ 141–160"}, {"front": "明天", "back": "Ngày mai (danh từ)", "ex": "明天我们去公园。", "ex_vi": "Míngtiān wǒmen qù gōngyuán. — Ngày mai chúng ta đi công viên.", "pron": "míngtiān", "img": "🌄", "group": "Từ 141–160"}, {"front": "哪", "back": "Nào (đại từ nghi vấn)", "ex": "你喜欢哪个？", "ex_vi": "Nǐ xǐhuan nǎge? — Bạn thích cái nào?", "pron": "nǎ", "img": "🤔", "group": "Từ 141–160"}, {"front": "哪儿", "back": "Ở đâu (đại từ nghi vấn)", "ex": "你去哪儿？", "ex_vi": "Nǐ qù nǎr? — Bạn đi đâu?", "pron": "nǎr", "img": "📍", "group": "Từ 141–160"}, {"front": "那", "back": "Kia, đó (đại từ)", "ex": "那是我的老师。", "ex_vi": "Nà shì wǒ de lǎoshī. — Kia là giáo viên của tôi.", "pron": "nà", "img": "👉", "group": "Từ 141–160"}, {"front": "那儿", "back": "Ở đó (đại từ)", "ex": "那儿有一个商店。", "ex_vi": "Nàr yǒu yí ge shāngdiàn. — Ở đó có một cửa hàng.", "pron": "nàr", "img": "📌", "group": "Từ 141–160"}, {"front": "那些", "back": "Những cái kia (đại từ)", "ex": "那些书是谁的？", "ex_vi": "Nàxiē shū shì shéi de? — Những quyển sách kia là của ai?", "pron": "nàxiē", "img": "📚", "group": "Từ 141–160"}, {"front": "男", "back": "Nam (tính từ)", "ex": "我们班男学生很多。", "ex_vi": "Wǒmen bān nán xuésheng hěn duō. — Lớp chúng tôi có nhiều học sinh nam.", "pron": "nán", "img": "♂️", "group": "Từ 141–160"}, {"front": "男人", "back": "Đàn ông (danh từ)", "ex": "那个男人是谁？", "ex_vi": "Nàge nánrén shì shéi? — Người đàn ông kia là ai?", "pron": "nánrén", "img": "👨", "group": "Từ 161–180"}, {"front": "南", "back": "Phía nam (danh từ phương vị)", "ex": "越南在中国的南边。", "ex_vi": "Yuènán zài Zhōngguó de nánbian. — Việt Nam ở phía nam Trung Quốc.", "pron": "nán", "img": "⬇️", "group": "Từ 161–180"}, {"front": "难", "back": "Khó (tính từ)", "ex": "这个题很难。", "ex_vi": "Zhège tí hěn nán. — Câu này rất khó.", "pron": "nán", "img": "😣", "group": "Từ 161–180"}, {"front": "呢", "back": "Thì sao? (trợ từ hỏi) (trợ từ ngữ khí)", "ex": "我很好，你呢？", "ex_vi": "Wǒ hěn hǎo, nǐ ne? — Tôi khỏe, còn bạn?", "pron": "ne", "img": "💬", "group": "Từ 161–180"}, {"front": "能", "back": "Có thể (động từ năng nguyện)", "ex": "你能帮我吗？", "ex_vi": "Nǐ néng bāng wǒ ma? — Bạn có thể giúp tôi không?", "pron": "néng", "img": "💪", "group": "Từ 161–180"}, {"front": "你", "back": "Bạn (đại từ)", "ex": "你好！", "ex_vi": "Nǐ hǎo! — Xin chào!", "pron": "nǐ", "img": "🫵", "group": "Từ 161–180"}, {"front": "你们", "back": "Các bạn (đại từ)", "ex": "你们是哪国人？", "ex_vi": "Nǐmen shì nǎ guó rén? — Các bạn là người nước nào?", "pron": "nǐmen", "img": "👥", "group": "Từ 161–180"}, {"front": "年", "back": "Năm (danh từ)", "ex": "我学了一年汉语。", "ex_vi": "Wǒ xué le yì nián Hànyǔ. — Tôi đã học tiếng Trung 1 năm.", "pron": "nián", "img": "📆", "group": "Từ 161–180"}, {"front": "您", "back": "Ngài, ông/bà (kính trọng) (đại từ)", "ex": "您好，请坐。", "ex_vi": "Nín hǎo, qǐng zuò. — Chào ông/bà, mời ngồi.", "pron": "nín", "img": "🙇", "group": "Từ 161–180"}, {"front": "牛奶", "back": "Sữa bò (danh từ)", "ex": "我每天喝牛奶。", "ex_vi": "Wǒ měitiān hē niúnǎi. — Ngày nào tôi cũng uống sữa.", "pron": "niúnǎi", "img": "🥛", "group": "Từ 161–180"}, {"front": "女", "back": "Nữ (tính từ)", "ex": "她是我的女朋友。", "ex_vi": "Tā shì wǒ de nǚ péngyou. — Cô ấy là bạn gái tôi.", "pron": "nǚ", "img": "♀️", "group": "Từ 161–180"}, {"front": "女儿", "back": "Con gái (danh từ)", "ex": "他有一个女儿。", "ex_vi": "Tā yǒu yí ge nǚ'ér. — Anh ấy có một cô con gái.", "pron": "nǚ'ér", "img": "👧", "group": "Từ 161–180"}, {"front": "女人", "back": "Phụ nữ (danh từ)", "ex": "那个女人是医生。", "ex_vi": "Nàge nǚrén shì yīshēng. — Người phụ nữ kia là bác sĩ.", "pron": "nǚrén", "img": "👩", "group": "Từ 161–180"}, {"front": "朋友", "back": "Bạn bè (danh từ)", "ex": "他是我的好朋友。", "ex_vi": "Tā shì wǒ de hǎo péngyou. — Anh ấy là bạn tốt của tôi.", "pron": "péngyou", "img": "🧑‍🤝‍🧑", "group": "Từ 161–180"}, {"front": "便宜", "back": "Rẻ (tính từ)", "ex": "这里的水果很便宜。", "ex_vi": "Zhèlǐ de shuǐguǒ hěn piányi. — Hoa quả ở đây rất rẻ.", "pron": "piányi", "img": "🏷️", "group": "Từ 161–180"}, {"front": "漂亮", "back": "Xinh đẹp (tính từ)", "ex": "你的妹妹很漂亮。", "ex_vi": "Nǐ de mèimei hěn piàoliang. — Em gái bạn rất xinh.", "pron": "piàoliang", "img": "🌹", "group": "Từ 161–180"}, {"front": "苹果", "back": "Quả táo (danh từ)", "ex": "我想吃苹果。", "ex_vi": "Wǒ xiǎng chī píngguǒ. — Tôi muốn ăn táo.", "pron": "píngguǒ", "img": "🍎", "group": "Từ 161–180"}, {"front": "七", "back": "Số 7 (số từ)", "ex": "我七点吃早饭。", "ex_vi": "Wǒ qī diǎn chī zǎofàn. — Tôi ăn sáng lúc 7 giờ.", "pron": "qī", "img": "7️⃣", "group": "Từ 161–180"}, {"front": "起床", "back": "Thức dậy (động từ ly hợp)", "ex": "你几点起床？", "ex_vi": "Nǐ jǐ diǎn qǐchuáng? — Bạn dậy lúc mấy giờ?", "pron": "qǐchuáng", "img": "⏰", "group": "Từ 161–180"}, {"front": "汽车", "back": "Ô tô (danh từ)", "ex": "他买了一辆汽车。", "ex_vi": "Tā mǎi le yí liàng qìchē. — Anh ấy đã mua một chiếc ô tô.", "pron": "qìchē", "img": "🚘", "group": "Từ 161–180"}, {"front": "前天", "back": "Hôm kia (danh từ)", "ex": "前天我去了北京。", "ex_vi": "Qiántiān wǒ qù le Běijīng. — Hôm kia tôi đã đi Bắc Kinh.", "pron": "qiántiān", "img": "⏪", "group": "Từ 181–200"}, {"front": "钱", "back": "Tiền (danh từ)", "ex": "你有多少钱？", "ex_vi": "Nǐ yǒu duōshao qián? — Bạn có bao nhiêu tiền?", "pron": "qián", "img": "💵", "group": "Từ 181–200"}, {"front": "请", "back": "Mời; xin vui lòng (động từ)", "ex": "请喝茶。", "ex_vi": "Qǐng hē chá. — Mời uống trà.", "pron": "qǐng", "img": "🙏", "group": "Từ 181–200"}, {"front": "请假", "back": "Xin nghỉ (động từ ly hợp)", "ex": "我明天想请假。", "ex_vi": "Wǒ míngtiān xiǎng qǐngjià. — Ngày mai tôi muốn xin nghỉ.", "pron": "qǐngjià", "img": "📝", "group": "Từ 181–200"}, {"front": "请问", "back": "Xin hỏi (cụm từ)", "ex": "请问，医院在哪儿？", "ex_vi": "Qǐngwèn, yīyuàn zài nǎr? — Xin hỏi, bệnh viện ở đâu?", "pron": "qǐngwèn", "img": "🙋", "group": "Từ 181–200"}, {"front": "去", "back": "Đi (động từ)", "ex": "我去学校。", "ex_vi": "Wǒ qù xuéxiào. — Tôi đi đến trường.", "pron": "qù", "img": "🚶", "group": "Từ 181–200"}, {"front": "去年", "back": "Năm ngoái (danh từ)", "ex": "去年我来中国了。", "ex_vi": "Qùnián wǒ lái Zhōngguó le. — Năm ngoái tôi đã đến Trung Quốc.", "pron": "qùnián", "img": "⏮️", "group": "Từ 181–200"}, {"front": "热", "back": "Nóng (tính từ)", "ex": "今天太热了。", "ex_vi": "Jīntiān tài rè le. — Hôm nay nóng quá.", "pron": "rè", "img": "🔥", "group": "Từ 181–200"}, {"front": "人", "back": "Người (danh từ)", "ex": "这里有很多人。", "ex_vi": "Zhèlǐ yǒu hěn duō rén. — Ở đây có rất nhiều người.", "pron": "rén", "img": "🧍", "group": "Từ 181–200"}, {"front": "认识", "back": "Quen biết (động từ)", "ex": "你认识他吗？", "ex_vi": "Nǐ rènshi tā ma? — Bạn có quen anh ấy không?", "pron": "rènshi", "img": "🤝", "group": "Từ 181–200"}, {"front": "认真", "back": "Chăm chỉ, nghiêm túc (tính từ)", "ex": "他学习很认真。", "ex_vi": "Tā xuéxí hěn rènzhēn. — Anh ấy học rất chăm chỉ.", "pron": "rènzhēn", "img": "📐", "group": "Từ 181–200"}, {"front": "日", "back": "Ngày (danh từ)", "ex": "五月一日是劳动节。", "ex_vi": "Wǔyuè yī rì shì Láodòng Jié. — Ngày 1 tháng 5 là ngày Quốc tế Lao động.", "pron": "rì", "img": "📅", "group": "Từ 181–200"}, {"front": "三", "back": "Số 3 (số từ)", "ex": "我学了三个月汉语。", "ex_vi": "Wǒ xué le sān ge yuè Hànyǔ. — Tôi đã học tiếng Trung 3 tháng.", "pron": "sān", "img": "3️⃣", "group": "Từ 181–200"}, {"front": "山", "back": "Núi (danh từ)", "ex": "那座山很高。", "ex_vi": "Nà zuò shān hěn gāo. — Ngọn núi kia rất cao.", "pron": "shān", "img": "⛰️", "group": "Từ 181–200"}, {"front": "商店", "back": "Cửa hàng (danh từ)", "ex": "商店几点开门？", "ex_vi": "Shāngdiàn jǐ diǎn kāi mén? — Cửa hàng mấy giờ mở cửa?", "pron": "shāngdiàn", "img": "🏬", "group": "Từ 181–200"}, {"front": "上", "back": "Trên; lên (danh từ phương vị / động từ)", "ex": "书在桌子上。", "ex_vi": "Shū zài zhuōzi shàng. — Sách ở trên bàn.", "pron": "shàng", "img": "⬆️", "group": "Từ 181–200"}, {"front": "上班", "back": "Đi làm (động từ ly hợp)", "ex": "我八点上班。", "ex_vi": "Wǒ bā diǎn shàngbān. — Tôi đi làm lúc 8 giờ.", "pron": "shàngbān", "img": "🏢", "group": "Từ 181–200"}, {"front": "上课", "back": "Lên lớp, vào học (động từ ly hợp)", "ex": "我们现在上课。", "ex_vi": "Wǒmen xiànzài shàngkè. — Bây giờ chúng ta vào học.", "pron": "shàngkè", "img": "🧑‍🏫", "group": "Từ 181–200"}, {"front": "上午", "back": "Buổi sáng (danh từ)", "ex": "上午我在家。", "ex_vi": "Shàngwǔ wǒ zài jiā. — Buổi sáng tôi ở nhà.", "pron": "shàngwǔ", "img": "🌤️", "group": "Từ 181–200"}, {"front": "上学", "back": "Đi học (động từ ly hợp)", "ex": "弟弟每天走路上学。", "ex_vi": "Dìdi měitiān zǒulù shàngxué. — Em trai ngày nào cũng đi bộ đi học.", "pron": "shàngxué", "img": "🎒", "group": "Từ 181–200"}]};
+
+/* ---------- Trạng thái ---------- */
+let deck = (DECK && Array.isArray(DECK.cards) && DECK.cards.length) ? DECK
+         : {title:"🎯 Flashcard", lang:"en-US", cards:[]};
+let lang = deck.lang || "en-US";
+let settings = Object.assign({dir:"fwd", autoAudio:false, dark:false, weakFirst:true}, store.load("fc_settings", {}));
+const PKEY = "fc_progress_" + (deck.title||"deck").replace(/\s+/g,"_");
+let progress = store.load(PKEY, {});   // front -> level 0..5
+
+let queue=[], pos=0, roundCards=[], round=1, flipped=false;
+let forgotten=new Set(), cleared=new Set(), scored=new Set(), sideMap={};
+let currentGroupFilter="all";   // "all" hoặc đúng tên group của thẻ
+let currentMode="study";        // "study" (flashcard) hoặc "quiz" (kiểm tra)
+let quizQueue=[], quizPos=0, quizScore=0, quizAnswered=false, quizAnsweredCount=0;
+let quizStartMs=null, quizDetails=[];  // dùng để tính thời gian làm + ghi chi tiết từng câu về Sheet (nếu có)
+
+const $ = id => document.getElementById(id);
+
+/* Tách emoji dẫn đầu tiêu đề khỏi phần chữ, để chỉ tô gradient phần chữ —
+   emoji giữ nguyên màu gốc (xem ghi chú tại .title-text trong CSS). */
+function setDeckTitle(){
+  const raw = (deck.title||"🎯 Flashcard").replace(/<.*/,"");
+  const m = raw.match(/^(\p{Extended_Pictographic}[\uFE0F\u200D\p{Extended_Pictographic}]*)\s*/u);
+  $("titleIcon").textContent = m ? m[1] : "";
+  $("titleText").textContent = m ? raw.slice(m[0].length) : raw;
+}
+const shuffleArr = a => { for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const getLvl = f => Math.max(0, Math.min(5, progress[f] ?? 0));
+function setLvl(f,v){ progress[f]=Math.max(0,Math.min(5,v)); store.save(PKEY,progress); }
+function saveSettings(){ store.save("fc_settings", settings); }
+
+/* ---------- Lọc theo chủ đề (group) ---------- */
+function uniqueGroups(){
+  const seen=new Set(), list=[];
+  deck.cards.forEach(c=>{ const g=(c.group||"").trim(); if(g && !seen.has(g)){ seen.add(g); list.push(g); } });
+  return list;
+}
+function currentPool(){
+  if(currentGroupFilter==="all") return deck.cards;
+  return deck.cards.filter(c=>c.group===currentGroupFilter);
+}
+function activeIndices(){
+  if(currentGroupFilter==="all") return deck.cards.map((_,i)=>i);
+  const out=[]; deck.cards.forEach((c,i)=>{ if(c.group===currentGroupFilter) out.push(i); }); return out;
+}
+function renderGroupNav(){
+  const nav=$("groupSidebar");
+  const groups=uniqueGroups();
+  nav.innerHTML="";
+  if(!groups.length){ nav.classList.add("hidden"); return; }
+  nav.classList.remove("hidden");
+
+  const label=document.createElement("div");
+  label.className="sidebar-label"; label.textContent="Chủ đề";
+  nav.appendChild(label);
+
+  const counts={};
+  deck.cards.forEach(c=>{ const g=(c.group||"").trim(); if(g) counts[g]=(counts[g]||0)+1; });
+
+  function addChip(label, count, key){
+    const b=document.createElement("button");
+    b.type="button"; b.className="group-chip"+(currentGroupFilter===key?" on":"");
+    b.dataset.g=key;
+    const lab=document.createElement("span"); lab.className="chip-label"; lab.textContent=label;
+    const cnt=document.createElement("span"); cnt.className="cnt"; cnt.textContent=count;
+    b.appendChild(lab); b.appendChild(cnt);
+    b.addEventListener("click", ()=>{
+      if(currentGroupFilter===key) return;
+      currentGroupFilter=key; renderGroupNav();
+      if(currentMode==="quiz") startQuiz(); else startSession();
+    });
+    nav.appendChild(b);
+  }
+  addChip("Tất cả", deck.cards.length, "all");
+  groups.forEach(g=> addChip(g, counts[g], g));
+}
+
+/* ---------- Thứ tự học ---------- */
+function orderIndices(){
+  const idxs = activeIndices();
+  const arr = idxs.map(i=>({i, lvl:getLvl(deck.cards[i].front), r:Math.random()}));
+  if(settings.weakFirst) arr.sort((a,b)=> a.lvl-b.lvl || a.r-b.r);
+  else arr.sort((a,b)=> a.r-b.r);
+  return arr.map(o=>o.i);
+}
+function startSession(){
+  round=1; scored=new Set(); sideMap={};
+  if(activeIndices().length===0){ showEmpty(); return; }
+  startRound(orderIndices(), false);
+  showStudy();
+}
+function startRound(indices, doShuffle){
+  roundCards=[...new Set(indices)];
+  queue = doShuffle ? shuffleArr(roundCards.slice()) : roundCards.slice();
+  forgotten=new Set(); cleared=new Set(); pos=0; flipped=false;
+  render();
+}
+
+/* ---------- Hiển thị mặt thẻ ---------- */
+function sideFor(idx){
+  if(settings.dir==="fwd") return "front";
+  if(settings.dir==="rev") return "back";
+  if(!(idx in sideMap)) sideMap[idx] = Math.random()<0.5 ? "front":"back";
+  return sideMap[idx];
+}
+
+function updateStats(){
+  const total = roundCards.length || 1;
+  let nho=0; cleared.forEach(i=>{ if(!forgotten.has(i)) nho++; });
+  $("sKnow").textContent = nho;
+  $("sForget").textContent = forgotten.size;
+  $("sLeft").textContent = Math.max(total - nho - forgotten.size, 0);
+  $("sRound").textContent = round;
+  $("progBar").style.width = Math.min((cleared.size/total)*100,100)+"%";
+  const pool = currentPool();
+  const mastered = pool.filter(c=>getLvl(c.front)>=4).length;
+  $("deckSub").textContent = `Thuộc ${mastered}/${pool.length} từ`;
+}
+
+function render(){
+  setDeckTitle();
+  if(!deck.cards || deck.cards.length===0 || activeIndices().length===0){ showEmpty(); return; }
+  if(pos>=queue.length){ endRound(); return; }
+
+  const idx = queue[pos];
+  const c = deck.cards[idx];
+  const promptWord = sideFor(idx)==="front";   // mặt trước có phải là "từ" không
+
+  flipped=false; $("card").classList.remove("flip");
+  $("frontWord").textContent   = promptWord ? c.front : c.back;
+  $("frontPron").textContent   = promptWord ? (c.pron||"") : "";
+  $("frontKicker").textContent = promptWord ? "Từ vựng" : "Nghĩa";
+  $("backMeaning").textContent = promptWord ? c.back : c.front;
+  $("backKicker").textContent  = promptWord ? "Nghĩa" : "Từ vựng";
+  $("backExample").textContent = c.ex||"";
+  $("backExampleVi").textContent = c.ex_vi||"";
+  // icon minh họa luôn đi kèm mặt "từ vựng", dù mặt đó là front hay back
+  $("frontIcon").textContent = promptWord ? (c.img||"") : "";
+  $("backIcon").textContent  = promptWord ? "" : (c.img||"");
+  $("btnPrev").disabled = pos===0;
+
+  // độ thuộc (chấm)
+  const lvl=getLvl(c.front), dots=$("frontDots"); dots.innerHTML="";
+  for(let i=0;i<5;i++){ const d=document.createElement("i"); if(i<lvl) d.className="on"; dots.appendChild(d); }
+
+  updateStats();
+  animateEnter();
+  if(settings.autoAudio && promptWord) setTimeout(()=>speakWord(c.front), 260);
+}
+
+function endRound(){
+  if(forgotten.size===0){ showDone(); return; }
+  $("reviewTitle").textContent = `Còn ${forgotten.size} từ chưa nhớ`;
+  const list=$("reviewList"); list.innerHTML="";
+  forgotten.forEach(i=>{ const s=document.createElement("span"); s.className="chip"; s.textContent=deck.cards[i].front; list.appendChild(s); });
+  showReview();
+}
+
+/* ---------- Chuyển màn ---------- */
+function hideAll(){ ["studyView","reviewView","doneView","emptyView","quizView","quizResultView"].forEach(v=>$(v).classList.add("hidden")); }
+function showStudy(){ hideAll(); $("studyView").classList.remove("hidden"); render(); }
+function showReview(){ hideAll(); $("reviewView").classList.remove("hidden"); updateStats(); }
+function showDone(){ hideAll(); $("doneView").classList.remove("hidden");
+  const pool=currentPool();
+  const mastered=pool.filter(c=>getLvl(c.front)>=4).length;
+  $("doneSub").textContent=`Bạn đã hoàn thành! Đã thuộc ${mastered}/${pool.length} từ.`;
+  updateStats(); }
+function showEmpty(){ hideAll(); $("emptyView").classList.remove("hidden"); updateStats(); }
+
+/* ---------- Hoạt ảnh ---------- */
+const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function animateEnter(){ if(reduceMotion) return; const s=$("scene"); if(!s) return; s.classList.remove("enter"); void s.offsetWidth; s.classList.add("enter"); }
+function knowFx(){
+  if(reduceMotion) return;
+  const s=$("scene"); if(!s) return;
+  s.classList.remove("knowpop"); void s.offsetWidth; s.classList.add("knowpop");
+  const wrap=document.createElement("div"); wrap.className="confetti";
+  const colors=["#f59e0b","#ea580c","#F4B740","#F08A5D","#F6B492"];
+  for(let i=0;i<14;i++){
+    const p=document.createElement("i"), ang=Math.random()*Math.PI*2, dist=60+Math.random()*70;
+    p.style.background=colors[i%colors.length];
+    p.style.setProperty("--cx", Math.cos(ang)*dist+"px");
+    p.style.setProperty("--cy", (Math.sin(ang)*dist-24)+"px");
+    p.style.setProperty("--cr", (Math.random()*360)+"deg");
+    p.style.animation="conf .7s ease-out forwards";
+    p.style.animationDelay=(Math.random()*.05)+"s";
+    wrap.appendChild(p);
+  }
+  s.appendChild(wrap); setTimeout(()=>wrap.remove(), 820);
+}
+
+/* ---------- Hành động cốt lõi ---------- */
+function toggleFlip(){ flipped=!flipped; $("card").classList.toggle("flip", flipped); }
+function doKnow(){
+  if(pos>=queue.length) return;
+  const idx=queue[pos], f=deck.cards[idx].front;
+  cleared.add(idx); knowFx();
+  if(!scored.has(idx)){ scored.add(idx); setLvl(f, getLvl(f)+1); }
+  for(let i=queue.length-1;i>pos;i--){ if(queue[i]===idx) queue.splice(i,1); }
+  pos++; render();
+}
+function doForget(){
+  if(pos>=queue.length) return;
+  const idx=queue[pos], f=deck.cards[idx].front;
+  forgotten.add(idx); cleared.delete(idx);
+  if(!scored.has(idx)){ scored.add(idx); setLvl(f, getLvl(f)-1); }
+  let ahead=false;
+  for(let i=pos+1;i<queue.length;i++){ if(queue[i]===idx){ ahead=true; break; } }
+  if(!ahead){ const at=pos+1+Math.floor(Math.random()*(queue.length-pos)); queue.splice(at,0,idx); }
+  pos++; render();
+}
+function doNext(){ if(pos<queue.length-1){ pos++; render(); } }
+function doPrev(){ if(pos>0){ pos--; render(); } }
+
+$("btnKnow").addEventListener("click", doKnow);
+$("btnForget").addEventListener("click", doForget);
+$("btnNext").addEventListener("click", doNext);
+$("btnPrev").addEventListener("click", doPrev);
+$("btnReviewNow").addEventListener("click", ()=>{ round++; startRound([...forgotten], true); showStudy(); });
+$("btnRestart").addEventListener("click", startSession);
+$("btnShuffle").addEventListener("click", ()=>{ const h=queue.slice(0,pos), t=shuffleArr(queue.slice(pos)); queue=h.concat(t); render(); });
+
+/* ---------- Kiểm tra từ vựng (quiz trắc nghiệm) ---------- */
+function setMode(mode){
+  if(mode===currentMode) return;
+  currentMode=mode;
+  [...$("modeToggle").children].forEach(b=> b.classList.toggle("on", b.dataset.mode===mode));
+  if(mode==="study"){
+    $("statsBarWrap").classList.remove("hidden");
+    showStudy();
+  } else {
+    $("statsBarWrap").classList.add("hidden");
+    startQuiz();
+  }
+}
+$("modeToggle").addEventListener("click", e=>{
+  const b=e.target.closest(".mode-btn"); if(!b) return;
+  setMode(b.dataset.mode);
+});
+
+// Chọn tối đa 3 phương án nhiễu — lấy từ toàn bộ deck (không chỉ nhóm đang lọc)
+// để luôn đủ lựa chọn kể cả khi một nhóm chỉ có 1-2 thẻ.
+function pickQuizDistractors(correctCard){
+  const seenBacks = new Set([correctCard.back]);
+  const out = [];
+  shuffleArr(deck.cards.filter(c=>c!==correctCard).slice()).forEach(c=>{
+    if(out.length>=3) return;
+    if(!seenBacks.has(c.back)){ seenBacks.add(c.back); out.push(c.back); }
+  });
+  return out;
+}
+
+function startQuiz(){
+  hideAll(); $("quizView").classList.remove("hidden");
+  const pool = currentPool();
+  if(!pool.length){ hideAll(); $("emptyView").classList.remove("hidden"); return; }
+  quizQueue = shuffleArr(pool.slice());
+  quizPos = 0; quizScore = 0; quizAnswered = false; quizAnsweredCount = 0;
+  quizStartMs = Date.now(); quizDetails = [];
+  updateQuizSubmitBtn();
+  renderQuizQuestion();
+}
+
+// Nút "Nộp bài" chỉ dùng được sau khi đã trả lời ít nhất 1 câu — tránh nộp bài trống.
+function updateQuizSubmitBtn(){
+  $("quizSubmitBtn").disabled = quizAnsweredCount===0;
+}
+
+function renderQuizQuestion(){
+  if(quizPos>=quizQueue.length){ showQuizResult(); return; }
+  const c = quizQueue[quizPos];
+  quizAnswered = false;
+  $("quizCounter").textContent = `Câu ${quizPos+1}/${quizQueue.length}`;
+  $("quizProgFill").style.width = Math.round((quizPos/quizQueue.length)*100)+"%";
+  $("quizScoreLive").textContent = quizScore;
+  $("quizIcon").textContent = "";          // bỏ hình gợi ý
+  $("quizWord").textContent = c.front;
+  $("quizPron").textContent = "";          // ẩn pinyin, hiện lại sau khi trả lời
+  if(settings.autoAudio) setTimeout(()=>speakWord(c.front), 260);
+
+  const options = shuffleArr([c.back, ...pickQuizDistractors(c)]);
+  const wrap = $("quizOptions"); wrap.innerHTML="";
+  options.forEach((opt,i)=>{
+    const btn=document.createElement("button");
+    btn.type="button"; btn.className="quiz-opt";
+    const lab=document.createElement("span"); lab.className="quiz-opt-label"; lab.textContent=String.fromCharCode(65+i);
+    const txt=document.createElement("span"); txt.className="quiz-opt-text"; txt.textContent=opt;
+    btn.appendChild(lab); btn.appendChild(txt);
+    btn.addEventListener("click", ()=> answerQuiz(btn, opt, c.back, c.front));
+    wrap.appendChild(btn);
+  });
+  $("quizFeedback").className="quiz-feedback"; $("quizFeedback").textContent="";
+  $("quizNext").classList.add("hidden");
+}
+
+function answerQuiz(btn, chosen, correct, word){
+  { const qc=quizQueue[quizPos]; if(qc && !quizAnswered) $("quizPron").textContent = qc.pron||""; }
+  if(quizAnswered) return;
+  quizAnswered = true;
+  [...$("quizOptions").children].forEach(b=>{
+    b.disabled = true;
+    const text = b.querySelector(".quiz-opt-text").textContent;
+    if(text===correct) b.classList.add("correct");
+    else if(b===btn) b.classList.add("wrong");
+  });
+  const fb=$("quizFeedback");
+  const isCorrect = chosen===correct;
+  quizAnsweredCount++;
+  updateQuizSubmitBtn();
+  // Ghi lại chi tiết câu này — dùng để gửi kèm scoreSheetUrl (cột "Xem chi tiết" +
+  // tab thống kê câu hay sai, nếu Apps Script phía giáo viên hỗ trợ detailsJson).
+  quizDetails.push({ no: quizDetails.length+1, label: word||"", given: chosen||"", answer: correct||"", correct: isCorrect });
+  if(isCorrect){
+    quizScore++;
+    fb.className="quiz-feedback correct"; fb.textContent="✅ Chính xác!";
+  } else {
+    fb.className="quiz-feedback wrong"; fb.textContent=`❌ Chưa đúng — đáp án: ${correct}`;
+  }
+  $("quizScoreLive").textContent = quizScore;
+  $("quizNext").classList.remove("hidden");
+}
+
+function nextQuiz(){ quizPos++; renderQuizQuestion(); }
+
+// finishQuiz(partial): partial=false khi đã trả lời hết toàn bộ hàng đợi (đường thường);
+// partial=true khi học sinh chủ động bấm "Nộp bài" giữa chừng — total dùng số câu ĐÃ TRẢ LỜI
+// (quizAnsweredCount), không phải tổng số thẻ, để không tính những câu chưa làm là sai.
+function finishQuiz(partial){
+  const score = quizScore;
+  const total = partial ? Math.max(quizAnsweredCount, 1) : (quizQueue.length || 1);
+  const pct = Math.round((score/total)*100);
+  $("quizScorePct").textContent = pct+"%";
+  $("quizScoreLabel").textContent = partial
+    ? `${score}/${total} câu đúng (nộp giữa chừng — đã làm ${quizAnsweredCount}/${quizQueue.length} câu)`
+    : `${score}/${total} câu đúng`;
+  hideAll(); $("quizResultView").classList.remove("hidden");
+  maybeSubmitScore(score, total, pct);
+}
+
+function showQuizResult(){ finishQuiz(false); }
+
+/* ---------- Nộp bài giữa chừng (bất cứ lúc nào, không cần làm hết thẻ) ---------- */
+function openSubmitConfirm(){
+  if(quizAnsweredCount===0) return; // nút đã bị disable, đây là chốt an toàn thêm
+  $("submitConfirmSub").textContent =
+    `Bạn đã làm ${quizAnsweredCount}/${quizQueue.length} câu, đúng ${quizScore} câu. Nộp bài ngay?`;
+  $("submitConfirmModal").classList.remove("hidden");
+}
+$("quizSubmitBtn").addEventListener("click", openSubmitConfirm);
+$("btnSubmitConfirmNo").addEventListener("click", ()=> $("submitConfirmModal").classList.add("hidden"));
+$("btnSubmitConfirmYes").addEventListener("click", ()=>{
+  $("submitConfirmModal").classList.add("hidden");
+  finishQuiz(true);
+});
+
+$("quizNext").addEventListener("click", nextQuiz);
+$("btnQuizRetry").addEventListener("click", startQuiz);
+$("btnQuizToStudy").addEventListener("click", ()=> setMode("study"));
+
+/* ---------- Ghi điểm Kiểm tra về Google Sheet (tùy chọn, qua Apps Script) ---------- */
+const NAME_KEY = "fc_student_name"; // dùng chung cho mọi bộ thẻ trên máy này, chỉ hỏi 1 lần
+let pendingScoreSubmit = null;
+
+function getStudentName(){ return (store.load(NAME_KEY, "")||"").trim(); }
+function setStudentName(n){ store.save(NAME_KEY, n); }
+
+// Gọi sau mỗi lần xem kết quả Kiểm tra. Không làm gì nếu deck không cấu hình scoreSheetUrl.
+function maybeSubmitScore(score, total, pct){
+  const url = (deck.scoreSheetUrl||"").trim();
+  if(!url) return;
+  const name = getStudentName();
+  if(!name){
+    pendingScoreSubmit = {score, total, pct};
+    $("nameInput").value = "";
+    $("nameModal").classList.remove("hidden");
+    return;
+  }
+  submitScoreToSheet(url, name, score, total, pct);
+}
+
+function fmtMMSS(totalSec){
+  const s = Math.max(0, Math.round(totalSec));
+  const m = Math.floor(s/60), r = s%60;
+  return String(m).padStart(2,"0") + ":" + String(r).padStart(2,"0");
+}
+
+function submitScoreToSheet(url, name, score, total, pct){
+  const nowIso = new Date().toISOString();
+  const elapsedSec = quizStartMs!=null ? Math.round((Date.now()-quizStartMs)/1000) : "";
+  const payload = {
+    name, deck: deck.title||"", score, total, pct,
+    // Trường "ts" giữ để tương thích flashcard-score-sheet.gs (schema đơn giản mặc định
+    // của SKILL_Flashcard); "timestamp"/"class"/"unit"/"level"/"timeSeconds"/
+    // "timeFormatted"/"detailsJson" phục vụ schema phong phú hơn (vd PET calm-wave
+    // logger) — cả hai kiểu Apps Script đều đọc được cùng một payload này.
+    ts: nowIso, timestamp: nowIso,
+    class: deck.classLabel||"", unit: deck.unitLabel||"", level: deck.levelLabel||"",
+    timeSeconds: elapsedSec, timeFormatted: elapsedSec!==""? fmtMMSS(elapsedSec) : "",
+    detailsJson: JSON.stringify(quizDetails)
+  };
+  // Content-Type: text/plain tránh CORS preflight (Apps Script Web App không xử lý OPTIONS).
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload)
+  }).catch(()=>{ /* im lặng bỏ qua — không được làm gián đoạn trải nghiệm học sinh */ });
+}
+
+$("btnSaveName").addEventListener("click", ()=>{
+  const n = $("nameInput").value.trim();
+  if(!n) return;
+  setStudentName(n);
+  $("nameModal").classList.add("hidden");
+  if(pendingScoreSubmit){
+    const { score, total, pct } = pendingScoreSubmit;
+    pendingScoreSubmit = null;
+    submitScoreToSheet((deck.scoreSheetUrl||"").trim(), n, score, total, pct);
+  }
+});
+
+/* ---------- Vuốt + chạm ---------- */
+const drag=$("drag");
+let sx=0, dx=0, down=false, moved=false;
+drag.addEventListener("pointerdown", e=>{
+  if(e.target.closest(".tool")) return;
+  if(pos>=queue.length) return;
+  down=true; moved=false; sx=e.clientX; dx=0;
+  drag.style.transition="none";
+  try{ drag.setPointerCapture(e.pointerId); }catch(_){}
+});
+drag.addEventListener("pointermove", e=>{
+  if(!down) return;
+  dx=e.clientX-sx; if(Math.abs(dx)>8) moved=true;
+  drag.style.transform=`translateX(${dx}px) rotate(${dx/45}deg)`;
+  $("hintKnow").style.opacity   = dx>0 ? Math.min(dx/90,1) : 0;
+  $("hintForget").style.opacity = dx<0 ? Math.min(-dx/90,1) : 0;
+});
+function resetDrag(){ drag.style.transition="transform .25s ease"; drag.style.transform=""; $("hintKnow").style.opacity=0; $("hintForget").style.opacity=0; }
+drag.addEventListener("pointerup", ()=>{
+  if(!down) return; down=false;
+  const d=dx, T=90; resetDrag();
+  if(d>T) doKnow();
+  else if(d<-T) doForget();
+  else if(!moved) toggleFlip();
+});
+drag.addEventListener("pointercancel", ()=>{ down=false; resetDrag(); });
+
+/* ---------- Phát âm ---------- */
+function speakWord(text){
+  try{ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang=lang; u.rate=.9; speechSynthesis.speak(u); }catch(e){}
+}
+$("quizSpeak").addEventListener("click", e=>{ e.stopPropagation(); const c=quizQueue[quizPos]; if(c) speakWord(c.front); });
+$("btnSpeak").addEventListener("click", e=>{ e.stopPropagation(); const c=deck.cards[queue[pos]]; if(c) speakWord(c.front); });
+$("btnImage").addEventListener("click", e=>{ e.stopPropagation(); const c=deck.cards[queue[pos]]; if(c) window.open("https://www.google.com/search?tbm=isch&q="+encodeURIComponent(c.front),"_blank"); });
+
+/* ---------- Cài đặt ---------- */
+function applySettings(){
+  document.documentElement.setAttribute("data-theme", settings.dark?"dark":"light");
+  [...$("segDir").children].forEach(b=> b.classList.toggle("on", b.dataset.v===settings.dir));
+  $("tglAudio").classList.toggle("on", settings.autoAudio);
+  $("tglDark").classList.toggle("on", settings.dark);
+  $("tglWeak").classList.toggle("on", settings.weakFirst);
+}
+$("btnSettings").addEventListener("click", ()=> $("setModal").classList.remove("hidden"));
+$("btnCloseSet").addEventListener("click", ()=> $("setModal").classList.add("hidden"));
+$("segDir").addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b) return; settings.dir=b.dataset.v; saveSettings(); applySettings(); render(); });
+$("tglAudio").addEventListener("click", ()=>{ settings.autoAudio=!settings.autoAudio; saveSettings(); applySettings(); });
+$("tglDark").addEventListener("click", ()=>{ settings.dark=!settings.dark; saveSettings(); applySettings(); });
+$("tglWeak").addEventListener("click", ()=>{ settings.weakFirst=!settings.weakFirst; saveSettings(); applySettings(); });
+$("btnResetProg").addEventListener("click", ()=>{
+  if(confirm("Đặt lại toàn bộ độ thuộc của các từ về 0?")){
+    progress={}; store.save(PKEY,progress);
+    $("setModal").classList.add("hidden"); startSession();
+  }
+});
+
+/* ---------- Đóng modal khi chạm nền ---------- */
+document.querySelectorAll(".modal-bg").forEach(bg=> bg.addEventListener("click", e=>{ if(e.target===bg) bg.classList.add("hidden"); }));
+
+/* ---------- Bàn phím ---------- */
+document.addEventListener("keydown", e=>{
+  if($("studyView").classList.contains("hidden")) return;
+  if(e.key===" "){ e.preventDefault(); toggleFlip(); }
+  else if(e.key==="ArrowRight") doNext();
+  else if(e.key==="ArrowLeft") doPrev();
+  else if(e.key==="Enter") doKnow();
+  else if(e.key==="Backspace"){ e.preventDefault(); doForget(); }
+});
+
+/* ---------- Chạy ---------- */
+applySettings();
+renderGroupNav();
+startSession();
+</script>
+
+<!--NAV-START--><style>
+.nav-fab{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:'Plus Jakarta Sans','Outfit',system-ui,sans-serif}
+.nav-fab>button{width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;font-size:26px;color:#fff;
+ background:linear-gradient(135deg,#f59e0b,#ea580c);box-shadow:0 8px 22px rgba(234,88,12,.4)}
+.nav-fab>button:active{transform:scale(.94)}
+.nav-menu{display:none;position:absolute;right:0;bottom:70px;min-width:230px;background:#fff;border:2px solid #fde68a;
+ border-radius:18px;padding:8px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.nav-fab.open .nav-menu{display:block}
+.nav-menu a{display:block;padding:12px 14px;border-radius:12px;color:#c2410c;font-weight:800;font-size:19px;text-decoration:none}
+.nav-menu a:hover{background:#fef3c7}
+.nav-menu .cap{padding:6px 14px 2px;color:#9ca3af;font-size:14px;font-weight:700}
+@media (prefers-color-scheme:dark){.nav-menu{background:#292524;border-color:#44403c}.nav-menu a{color:#fdba74}.nav-menu a:hover{background:#3a2f1c}}
+body{padding-bottom:84px}
+</style><div class="nav-fab" id="navFab"><div class="nav-menu"><div class="cap">Đi tới</div><a href="index.html">📖 Mục lục Phần 2</a><a href="../index.html">🏠 Mục lục tổng</a></div><button type="button" aria-label="Mục lục" title="Mục lục" onclick="event.stopPropagation();this.parentNode.classList.toggle('open')">☰</button></div><script>document.addEventListener("click",function(e){var f=document.getElementById("navFab");if(f&&!f.contains(e.target))f.classList.remove("open")});</script><!--NAV-END-->
+</body>
+</html>
